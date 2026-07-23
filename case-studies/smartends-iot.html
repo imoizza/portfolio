@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Making 1,000 sensors legible to humans — Moizza Azhar</title>
+<meta name="description" content="Five client-critical IoT platforms monitoring over a thousand physical devices — and the design system that stopped each one being reinvented from scratch." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="hover-preview" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html" data-cursor="back">← All work</a>
+    <p class="eyebrow">IoT · Design systems · 001</p>
+    <h1>Making 1,000 sensors legible to humans</h1>
+    <p class="lede">Five client-critical IoT platforms monitoring over a thousand physical devices — and the design system that stopped each one being reinvented from scratch.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div>
+        <p class="label">Role</p>
+        <p class="value">Product Designer (lead)</p>
+      </div>
+      <div>
+        <p class="label">Timeline</p>
+        <p class="value">Jul 2023 – Feb 2025</p>
+      </div>
+      <div>
+        <p class="label">Team</p>
+        <p class="value">Cross-functional · designers + engineers</p>
+      </div>
+      <div>
+        <p class="label">Tools</p>
+        <p class="value">Figma, Webflow</p>
+      </div>
+    </div>
+
+    <div class="image-frame reveal">
+      <span class="cap">hero image — 1600 × 900</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="cs-section wrap reveal">
+      <p class="num">01 — Context</p>
+      <h2>What was actually broken</h2>
+      <p>[Set the scene in 2–3 short paragraphs. Who had this problem, what
+      they were doing instead, and why it mattered to the business or the
+      people involved. Be concrete — name the moment things fell apart.]</p>
+      <p>[Second paragraph: the constraints you were designing inside.
+      Timeline, team size, technical limits, existing systems you couldn't
+      change. Constraints make the rest of the story readable.]</p>
+    </section>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">02 — Research</p>
+      <h2>How I got my bearings</h2>
+      <p>[What you did to understand the problem: interviews, competitive
+      audits, analytics, shadowing users. For each method, say what it
+      changed about your direction — research that didn't change anything
+      is decoration, and readers can tell.]</p>
+      <ul>
+        <li>[Insight #1 — and the design decision it caused]</li>
+        <li>[Insight #2 — and the design decision it caused]</li>
+        <li>[Insight #3 — and the design decision it caused]</li>
+      </ul>
+    </section>
+
+    <section class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">sketches / wireframes</span></div>
+        <div class="image-frame tall"><span class="cap">testing / iteration</span></div>
+      </div>
+    </section>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">03 — The design</p>
+      <h2>What I built and why</h2>
+      <p>[Walk through the solution. Not a feature list — the two or three
+      decisions you'd defend in an interview, and the reasoning behind each.
+      This is the section hiring managers read closest.]</p>
+      <blockquote class="pull-quote">"[A line of real feedback, or the
+      sentence that captures what this project taught you.]"</blockquote>
+      <p>[Anything you cut, and why. Showing restraint reads as seniority.]</p>
+    </section>
+
+    <div class="wrap">
+      <div class="image-frame reveal"><span class="cap">final screens / key flow</span></div>
+    </div>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">04 — Outcome</p>
+      <h2>What happened next</h2>
+      <p>[Results. Hard numbers if you have them; honest qualitative results
+      if you don't — "5 of 6 testers finished unaided, up from 2" is worth
+      more than a vague claim.]</p>
+      <p>[Then reflect: what you'd do differently, what you learned about the
+      problem space, and where the project stands today.]</p>
+    </section>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <span></span>
+      <a href="inovo.html" data-cursor="next">
+        <p class="label">Next project</p>
+        <p class="title">A bike-share built for Lahore's worst air days →</p>
+      </a>
+    </div>
+  </div>
+
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar — built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza-Azhar-Resume.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

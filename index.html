@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moizza Azhar — Product Designer</title>
+<meta name="description" content="Product designer working across IoT, AI and fintech. HCI master's student at Universite Paris-Saclay." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="hover-preview" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="current">Work</a>
+        <a href="about.html">About</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="reveal">
+        <p class="eyebrow">Product designer · Orsay, France</p>
+        <h1>Designs that<br>work, <em>and know it</em></h1>
+        <p class="hero-lede">
+          I'm <strong>Moizza</strong> — a product designer who started out writing code,
+          which means I know exactly how annoying my own handoffs used to be.
+          Two years shipping IoT, AI and fintech products; currently doing an
+          <strong>HCI master's at Université Paris-Saclay</strong>.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#work" data-magnetic="0.25" data-cursor="scroll">See the work ↓</a>
+          <a class="btn ghost" href="about.html" data-cursor="about">Who is this person</a>
+        </div>
+      </div>
+
+      <div class="polaroid reveal" data-cursor="hi">
+        <div class="polaroid-frame">
+          <!-- Swap for: <img src="assets/profile.jpg" alt="Moizza Azhar"> -->
+          <p class="polaroid-placeholder">drop your photo in<br>assets/profile.jpg</p>
+        </div>
+        <p class="polaroid-caption">that's me, probably iterating</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="opal-hero wrap reveal" aria-hidden="true">
+    <div class="opal-stage">
+      <div class="opal-blob"></div>
+      <span class="opal-sparkle">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c0 6.6 5.4 12 12 12-6.6 0-12 5.4-12 12 0-6.6-5.4-12-12-12C6.6 12 12 6.6 12 0z"/>
+        </svg>
+      </span>
+      <div class="opal-dust"></div>
+      <div class="opal-caption">
+        <span class="tag">Product design · Interaction</span>
+        <span class="go">↗</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Product design</span><span>Design systems</span><span>IoT interfaces</span>
+      <span>User research</span><span>Figma</span><span>Webflow</span>
+      <span>Prototyping</span><span>Human-computer interaction</span>
+      <span>Product design</span><span>Design systems</span><span>IoT interfaces</span>
+      <span>User research</span><span>Figma</span><span>Webflow</span>
+      <span>Prototyping</span><span>Human-computer interaction</span>
+    </div>
+  </div>
+
+  <main class="work wrap" id="work">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected work</p>
+      <p class="eyebrow">Three case studies</p>
+    </div>
+
+    <a class="project-row reveal" href="case-studies/smartends-iot.html"
+       data-preview="IoT monitoring dashboards — 1,000+ devices" data-cursor="open">
+      <span class="project-num">001</span>
+      <span class="project-title">Making 1,000 sensors legible to humans</span>
+      <span class="project-tags">IoT · Design systems · SmartEnds</span>
+      <span class="project-arrow">→</span>
+    </a>
+
+    <a class="project-row reveal" href="case-studies/inovo.html"
+       data-preview="INOVO — bike sharing for Lahore" data-cursor="open">
+      <span class="project-num">002</span>
+      <span class="project-title">A bike-share built for Lahore's worst air days</span>
+      <span class="project-tags">Service design · Research · INOVO</span>
+      <span class="project-arrow">→</span>
+    </a>
+
+    <a class="project-row reveal" href="case-studies/quran-recitation.html"
+       data-preview="Learn to Recite — Islamic Finder" data-cursor="open">
+      <span class="project-num">003</span>
+      <span class="project-title">Teaching recitation without shaming beginners</span>
+      <span class="project-tags">Mobile · Accessibility · VentureDive</span>
+      <span class="project-arrow">→</span>
+    </a>
+  </main>
+
+  <section class="cta-band wrap reveal">
+    <p class="eyebrow">Currently in Orsay, France · open to 2026 internships</p>
+    <h2>Let's make something<br><em>worth clicking on</em></h2>
+    <a class="btn" href="mailto:moizzaazhar24@gmail.com" data-magnetic="0.3" data-cursor="say hi">
+      moizzaazhar24@gmail.com →
+    </a>
+  </section>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar — built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="Moizza-Azhar-Resume.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
