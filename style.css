@@ -399,13 +399,12 @@ body.cursor-ready .cursor-ring { opacity: 1; }
 /* polaroid */
 .polaroid {
   background: var(--paper);
-  padding: 14px 14px 42px;
+  padding: 14px 14px 20px;
   border-radius: 2px;
   box-shadow: 0 30px 60px -30px rgba(20, 17, 15, 0.35),
               0 2px 5px rgba(20, 17, 15, 0.06);
   transform: rotate(-3.5deg);
   transition: transform 0.6s var(--ease);
-  position: relative;
 }
 .polaroid:hover { transform: rotate(-1deg) translateY(-6px); }
 
@@ -431,9 +430,7 @@ body.cursor-ready .cursor-ring { opacity: 1; }
 }
 
 .polaroid-caption {
-  position: absolute;
-  bottom: 12px;
-  left: 0; right: 0;
+  margin: 16px 0 0;
   text-align: center;
   font-family: var(--font-display);
   font-style: italic;

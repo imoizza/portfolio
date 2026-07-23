@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A floating chat that keeps up when you're multitasking — Moizza Azhar</title>
+<meta name="description" content="Redesigning an AI chat app around speech, not screens." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="hover-preview" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html" data-cursor="back">← All work</a>
+    <p class="eyebrow">Mobile · Accessibility · 001</p>
+    <h1>A floating chat that keeps up when you're multitasking</h1>
+    <p class="lede">Redesigning an AI chat app around speech, not screens — so voice input, text-to-speech, and a floating window let people keep talking to it while doing something else entirely.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">UI/UX Designer</p></div>
+      <div><p class="label">Timeline</p><p class="value">4 weeks</p></div>
+      <div><p class="label">Team</p><p class="value">Solo project</p></div>
+      <div><p class="label">Tools</p><p class="value">Figma, Notion</p></div>
+    </div>
+    <div class="image-frame"><span class="cap">SmartChat — marketing landing page</span></div>
+  </div>
+
+  <main>
+    <section class="cs-section wrap reveal">
+      <p class="num">01 — Context</p>
+      <h2>Voice features that nobody could find</h2>
+      <p>SmartChat's speech-to-text and text-to-speech features worked, technically —
+      but the interface around them was cluttered enough that people who actually
+      needed hands-free communication (multitaskers, people on calls, anyone who
+      just wanted to talk instead of type) gave up on discovering them.</p>
+      <p>The brief was narrow on purpose: make voice-first communication actually
+      usable while doing something else, in four weeks, solo.</p>
+    </section>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">02 — Research</p>
+      <h2>Watching how people already talk to AI</h2>
+      <p>Rather than starting from a blank page, I ran contextual inquiry sessions
+      watching people use ChatGPT's text-to-speech and Copilot's speech-to-text —
+      specifically how they moved between apps while doing it.</p>
+      <ul>
+        <li>Both tools helped, but neither supported real multitasking — switching
+        apps broke the flow of conversation entirely.</li>
+        <li>People kept describing a want for something that could "float" above
+        whatever they were already doing, rather than take over the screen.</li>
+        <li>This reframed accessibility for the project: not a feature to bolt on,
+        but the core interaction model.</li>
+      </ul>
+    </section>
+
+    <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Core interaction flow — voice + text entry</span></div>
+        <div class="image-frame tall"><span class="cap">Low-fidelity concepts, early iteration</span></div>
+      </div>
+    </div>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">03 — Design</p>
+      <h2>A window that follows you, not the other way around</h2>
+      <p>The centerpiece is a floating icon anchored bottom-right, always reachable,
+      opening a <strong>resizable chat window</strong> that adapts by roughly 20%
+      depending on conversation length instead of staying a fixed size. Everything
+      important — starting a chat, replaying a message, adjusting voice speed —
+      is reachable in 2–3 clicks.</p>
+      <p>I applied Shneiderman's design principles throughout: consistency, user
+      control, and shortcuts for people who'd use this daily rather than once.
+      A small but telling detail — a speaker icon under every message — made
+      text-to-speech discoverable without any onboarding tooltip explaining it.</p>
+      <blockquote class="pull-quote">Ten features shipped in the end: floating
+      icon and chat, speech-to-text, text-to-speech, voice adjustments, font
+      adjustment, theme customization, history, trendy prompts, and personalized
+      recommendations.</blockquote>
+      <p>Brand identity followed the same logic — a speech bubble mark with a
+      rounded, three-dot strip standing in for both "message in progress" and
+      "AI thinking," in a bright trust-signaling blue, set in SF Pro Display.</p>
+    </section>
+
+    <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Logo construction</span></div>
+        <div class="image-frame tall"><span class="cap">Color system — brand, secondary, gradients</span></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="image-frame"><span class="cap">Home screen</span></div>
+    </div>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">04 — Outcome</p>
+      <h2>What A/B testing actually changed</h2>
+      <p>Testing across layout variants showed two clear wins: navigation felt
+      smoother once history moved into the bottom navigation bar, and speech
+      recognition accuracy — or at least people's confidence in it — improved
+      with clearer visual feedback during input.</p>
+      <p>Light mode ended up as the default after testing showed better readability
+      for most people, and I added a notification bell so users could step away
+      from an active chat without losing track of a reply — a small fix for the
+      exact multitasking problem the whole project started from.</p>
+    </section>
+  </main>
+
+  <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Conversation screen — voice input</span></div>
+        <div class="image-frame tall"><span class="cap">Conversation screen — response</span></div>
+      </div>
+    </div>
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <span></span>
+      <a href="trackzone.html" data-cursor="next">
+        <p class="label">Next project</p>
+        <p class="title">Building the software layer for a hardware-first industry →</p>
+      </a>
+    </div>
+  </div>
+
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar — built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza-Azhar-Resume.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

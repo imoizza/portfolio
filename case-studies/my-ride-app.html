@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Redesigning the commute for Lahore's night-shift workforce — Moizza Azhar</title>
+<meta name="description" content="A scheduled-ride app for Lahore's employees, built around safety." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="hover-preview" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html" data-cursor="back">← All work</a>
+    <p class="eyebrow">Mobile · Transportation · 003</p>
+    <h1>Redesigning the commute for Lahore's night-shift workforce</h1>
+    <p class="lede">A scheduled-ride app for employees navigating Lahore's unreliable public transport — built around flexible scheduling, cashless payments, and an SOS feature for the commutes that happen after dark.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">UI/UX Designer</p></div>
+      <div><p class="label">Timeline</p><p class="value">2 weeks</p></div>
+      <div><p class="label">Team</p><p class="value">Small design team</p></div>
+      <div><p class="label">Tools</p><p class="value">Figma, FigJam</p></div>
+    </div>
+    <div class="image-frame"><span class="cap">My Rider — target audience & positioning</span></div>
+  </div>
+
+  <main>
+    <section class="cs-section wrap reveal">
+      <p class="num">01 — Context</p>
+      <h2>Getting to work is not supposed to be the hard part</h2>
+      <p>My Rider partners with companies in Lahore to run scheduled cabs, buses,
+      and vans for employees, standing in for a public transport system that's
+      unreliable enough to make people late — or unsafe enough that late shifts
+      feel risky. This case study covers the employee-facing side of the app.</p>
+      <p>Two weeks, one clear brief: make the daily commute reliable, flexible,
+      and safe — especially after dark.</p>
+    </section>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">02 — Research</p>
+      <h2>Ayesha's day</h2>
+      <p>User interviews and journey mapping surfaced the same handful of needs
+      repeatedly: flexible ride scheduling, secure in-app payments, and — raised
+      unprompted by almost everyone doing late shifts — a way to signal for help
+      quickly if a ride felt unsafe.</p>
+      <p>One persona-driven story from research stuck with the whole project:
+      Ayesha finishes a night shift, adjusts her pickup time from the calendar
+      screen, checks her wallet balance before the ride — and one night, feeling
+      unsafe, taps SOS. Her live location goes straight to her emergency contact.
+      That single moment shaped how much weight the safety feature carried in
+      the final design.</p>
+    </section>
+
+    <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">User persona</span></div>
+        <div class="image-frame tall"><span class="cap">User journey map</span></div>
+      </div>
+    </div>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">03 — Design</p>
+      <h2>Designing around the SOS moment, not around it</h2>
+      <p>Rather than treating safety as one feature among many, I designed the
+      whole flow so an SOS trigger was never more than a tap away, regardless of
+      what screen someone was on — home location, shift scheduling, and the
+      in-app wallet all sit around that same principle of fast, low-friction
+      access when it matters.</p>
+      <blockquote class="pull-quote">She quickly taps the SOS button — her live
+      location is shared instantly with her emergency contact. She feels more
+      secure knowing help is a tap away.</blockquote>
+      <p>The visual system stayed intentionally quiet — Inter throughout, a
+      restrained component set — so the interface never competed with the one
+      job that mattered most: getting someone home.</p>
+    </section>
+
+    <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Low-fidelity prototype</span></div>
+        <div class="image-frame tall"><span class="cap">Style guide — type & components</span></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="image-frame"><span class="cap">High-fidelity prototype</span></div>
+    </div>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">04 — Outcome &amp; reflection</p>
+      <h2>What two weeks actually taught me</h2>
+      <p>Usability testing validated the core flows — scheduling, wallet, and
+      SOS — as fast and low-friction as intended. More broadly, this project
+      taught me to hold user empathy and business goals in the same hand:
+      prioritizing the SOS feature wasn't just the emotionally obvious choice,
+      it was also the one that made the whole product trustworthy enough to use
+      daily.</p>
+      <p>Great design here wasn't about adding more — it was about making a
+      necessary, sometimes stressful part of someone's day feel effortless.</p>
+    </section>
+  </main>
+
+  <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Usability testing sessions</span></div>
+        <div class="image-frame tall"><span class="cap">Marketing landing page</span></div>
+      </div>
+    </div>
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="trackzone.html" data-cursor="back">
+        <p class="label">← Previous</p>
+        <p class="title">Building the software layer for a hardware-first industry</p>
+      </a>
+      <a href="../index.html#work" data-cursor="next">
+        <p class="label">Next project</p>
+        <p class="title">All work →</p>
+      </a>
+    </div>
+  </div>
+
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar — built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza-Azhar-Resume.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

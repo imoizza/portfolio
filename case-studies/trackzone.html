@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Building the software layer for a hardware-first industry — Moizza Azhar</title>
+<meta name="description" content="An 18-month IoT and AI platform for waste management." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="hover-preview" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html" data-cursor="back">← All work</a>
+    <p class="eyebrow">IoT · Enterprise SaaS · 002</p>
+    <h1>Building the software layer for a hardware-first industry</h1>
+    <p class="lede">An 18-month platform turning waste collection into a data problem — sensors, computer vision, and route intelligence, designed across ten modules for cities, industrial sites, and the drivers on the ground.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">UI Designer · UX Researcher · Product Strategist · PM</p></div>
+      <div><p class="label">Timeline</p><p class="value">18 months</p></div>
+      <div><p class="label">Team</p><p class="value">Cross-functional — design, firmware, backend</p></div>
+      <div><p class="label">Tools</p><p class="value">Figma, FigJam, Jira, Confluence</p></div>
+    </div>
+    <div class="image-frame"><span class="cap">TrackZone — platform overview</span></div>
+  </div>
+
+  <main>
+    <section class="cs-section wrap reveal">
+      <p class="num">01 — Context</p>
+      <h2>The question the whole platform had to answer</h2>
+      <p><strong>How might we help cities, industries, and waste collection
+      companies make data-driven decisions through real-time waste insights,
+      efficient routing, and automation?</strong></p>
+      <p>TrackZone runs on physical sensors bolted to real bins in the field,
+      which meant every design decision had a hardware constraint sitting
+      underneath it — camera angles, battery life, offline connectivity. I
+      worked across four roles on this one: product strategist, UX researcher,
+      UI designer, and project manager running the agile process end to end.</p>
+    </section>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">02 — Research</p>
+      <h2>Research done in the field, not a lab</h2>
+      <p>Because this was enterprise hardware, most insight came directly from
+      client meetings — municipal representatives, drivers, and internal
+      hardware engineers — rather than a formal usability panel.</p>
+      <ul>
+        <li><strong>Overflow misdetection</strong> traced back to poor fill-level
+        calibration and incorrect camera sensor angles — a hardware problem the
+        interface needed to surface and explain, not hide.</li>
+        <li><strong>Poor route visibility</strong> — admins had no live feedback
+        on coverage, and drivers navigated with no real guidance.</li>
+        <li><strong>Slow reconfiguration</strong> — onboarding a new area meant
+        manual bin setup and downlink updates, which didn't scale.</li>
+      </ul>
+    </section>
+
+    <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Bins monitoring — real-time status</span></div>
+        <div class="image-frame tall"><span class="cap">Track & trace — GPS bin visibility</span></div>
+      </div>
+    </div>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">03 — Design</p>
+      <h2>Ten modules, one coherent system</h2>
+      <p>The platform split into modular pieces that could ship independently
+      while staying visually and functionally consistent: <strong>Bins
+      Monitoring</strong> (offline/online/full/overflowing states, tamper and
+      fire alerts), <strong>Track & Trace</strong> (GPS-based fleet visibility
+      with geofencing), <strong>Vision AI</strong> (image-based fill and
+      contamination detection across waste types), and <strong>Route
+      Optimization</strong> — both a manual mode for dispatchers and a dynamic
+      mode that auto-generates routes from live fill data.</p>
+      <p>Beyond that: location-based clustering with drag-drop reassignment, a
+      downlink manager for batch device configuration, a sustainability KPI
+      dashboard tracking diversion rates, and a three-tier subscription system
+      built on Mollie for payments. A companion mobile app split cleanly by
+      role — admins get the live map and provisioning tools, drivers get
+      guided navigation to depots and dump sites.</p>
+      <blockquote class="pull-quote">The hardest part wasn't any single screen —
+      it was translating sensor thresholds, camera positioning, and downlink
+      timing into interfaces that felt simple despite the complexity underneath.</blockquote>
+    </section>
+
+    <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Vision AI — contamination + fill detection</span></div>
+        <div class="image-frame tall"><span class="cap">Route optimization — manual and dynamic modes</span></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="image-frame"><span class="cap">KPI dashboard — sustainability metrics</span></div>
+    </div>
+
+    <section class="cs-section wrap reveal">
+      <p class="num">04 — Outcome</p>
+      <h2>A hardware-dominated industry, made SaaS-shaped</h2>
+      <p>TrackZone reduced overflow incidents, cut route time through dynamic
+      optimization, and used contamination detection to lift recycling quality —
+      while introducing a genuinely scalable SaaS layer into an industry that had
+      previously been hardware-only.</p>
+      <p>Running this as PM as well as designer meant every interface decision
+      was already pressure-tested against sprint reality — what firmware could
+      actually deliver, what backend could realistically expose, and what a
+      municipal client would actually pay for.</p>
+    </section>
+  </main>
+
+  <div class="cs-section wide wrap reveal">
+      <div class="image-pair">
+        <div class="image-frame tall"><span class="cap">Mobile app — admin route map</span></div>
+        <div class="image-frame tall"><span class="cap">Mobile app — driver navigation</span></div>
+      </div>
+    </div>
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="smartchat-ai.html" data-cursor="back">
+        <p class="label">← Previous</p>
+        <p class="title">A floating chat that keeps up when you're multitasking</p>
+      </a>
+      <a href="my-ride-app.html" data-cursor="next">
+        <p class="label">Next project</p>
+        <p class="title">Redesigning the commute for Lahore's night-shift workforce →</p>
+      </a>
+    </div>
+  </div>
+
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar — built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza-Azhar-Resume.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
