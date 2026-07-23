@@ -4,15 +4,15 @@
    ========================================================================== */
 
 :root {
-  --bone:       #F1EBE1;
-  --bone-deep:  #E4DACB;
-  --paper:      #FFFDF9;
-  --ink:        #14110F;
-  --ink-soft:   #554D46;
-  --ink-faint:  #90867B;
-  --tan:        #B99B72;
-  --line:       rgba(20, 17, 15, 0.12);
-  --line-soft:  rgba(20, 17, 15, 0.07);
+  --bone:       #F5F2FC;
+  --bone-deep:  #EAE2F7;
+  --paper:      #FFFFFF;
+  --ink:        #1C1A24;
+  --ink-soft:   #5C5769;
+  --ink-faint:  #9791A6;
+  --tan:        #7C82E8;
+  --line:       rgba(28, 26, 36, 0.12);
+  --line-soft:  rgba(28, 26, 36, 0.07);
 
   --font-display: "Instrument Serif", "Times New Roman", serif;
   --font-body:    "Inter Tight", -apple-system, "Segoe UI", sans-serif;
@@ -47,60 +47,55 @@ h1, h2, h3 { font-weight: 400; margin: 0; }
 
 /* --------------------------------------------------------------------------
    CUSTOM CURSOR  (pointer devices only)
+   A small dot tracks the pointer. Moving it draws a trail of expanding,
+   fading rings on a canvas layer — like disturbing water. A floating
+   label appears over anything clickable.
    -------------------------------------------------------------------------- */
-.cursor-dot,
-.cursor-ring {
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 7px; height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+  border-radius: 50%;
+  background: var(--ink);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+body.cursor-ready .cursor-dot { opacity: 1; }
+
+#cursor-trail-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+body.cursor-ready #cursor-trail-canvas { opacity: 1; }
+
+.cursor-label {
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
   z-index: 9999;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.cursor-dot {
-  width: 6px; height: 6px;
-  background: var(--ink);
-  margin: -3px 0 0 -3px;
-}
-
-.cursor-ring {
-  width: 38px; height: 38px;
-  border: 1px solid rgba(20, 17, 15, 0.35);
-  margin: -19px 0 0 -19px;
-  transition: width 0.35s var(--ease), height 0.35s var(--ease),
-              margin 0.35s var(--ease), background 0.35s var(--ease),
-              border-color 0.35s var(--ease), opacity 0.3s;
-}
-
-body.cursor-ready .cursor-dot,
-body.cursor-ready .cursor-ring { opacity: 1; }
-
-/* grows + fills when hovering something clickable */
-.cursor-ring.is-hover {
-  width: 66px; height: 66px;
-  margin: -33px 0 0 -33px;
-  background: rgba(20, 17, 15, 0.07);
-  border-color: transparent;
-}
-.cursor-ring.is-hover::after {
-  content: attr(data-label);
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 9.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--bone);
+  background: var(--ink);
+  padding: 7px 13px;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.28s var(--ease);
 }
-.cursor-dot.is-hover { opacity: 0; }
+.cursor-label.show { opacity: 1; }
 
 @media (hover: none), (pointer: coarse) {
-  .cursor-dot, .cursor-ring { display: none; }
+  .cursor-dot, #cursor-trail-canvas, .cursor-label { display: none; }
 }
 
 /* --------------------------------------------------------------------------
@@ -210,16 +205,16 @@ body.cursor-ready .cursor-ring { opacity: 1; }
 }
 .bg-blob.one {
   width: 46vw; height: 46vw; top: -14vw; left: -10vw;
-  background: radial-gradient(circle at 35% 35%, #FBF6EE, transparent 72%);
+  background: radial-gradient(circle at 35% 35%, #F6E3F2, transparent 72%);
 }
 .bg-blob.two {
   width: 38vw; height: 38vw; top: 26vw; right: -12vw;
-  background: radial-gradient(circle at 60% 40%, #E7DCCB, transparent 72%);
+  background: radial-gradient(circle at 60% 40%, #E1E7FB, transparent 72%);
   animation-delay: -10s;
 }
 .bg-blob.three {
   width: 34vw; height: 34vw; bottom: -16vw; left: 22vw;
-  background: radial-gradient(circle at 50% 50%, #F6EFE3, transparent 72%);
+  background: radial-gradient(circle at 50% 50%, #E2F4EC, transparent 72%);
   animation-delay: -20s;
 }
 
@@ -243,7 +238,7 @@ body.cursor-ready .cursor-ring { opacity: 1; }
   top: 0;
   z-index: 500;
   backdrop-filter: blur(12px);
-  background: rgba(241, 235, 225, 0.72);
+  background: rgba(245, 242, 252, 0.72);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
 }
@@ -361,8 +356,8 @@ body.cursor-ready .cursor-ring { opacity: 1; }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(46px, 8.5vw, 108px);
-  line-height: 0.94;
+  font-size: clamp(32px, 6vw, 74px);
+  line-height: 1.02;
   letter-spacing: -0.02em;
   margin: 0 0 26px;
 }
@@ -410,7 +405,7 @@ body.cursor-ready .cursor-ring { opacity: 1; }
 
 .polaroid-frame {
   aspect-ratio: 4 / 5;
-  background: linear-gradient(160deg, #E9DECC, #F6F0E6 55%, #DED2BE);
+  background: linear-gradient(160deg, #EFE9FB, #FBEAF4 55%, #E3EFFB);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -548,6 +543,7 @@ body.cursor-ready .cursor-ring { opacity: 1; }
   color: var(--ink-faint);
   text-align: center;
   padding: 14px;
+  filter: url(#liquid-distort);
 }
 .hover-preview.show {
   opacity: 1;
@@ -1111,5 +1107,8 @@ body.cursor-ready .cursor-ring { opacity: 1; }
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
-  .cursor-dot, .cursor-ring, .hover-preview { display: none; }
+  .cursor-dot, #cursor-trail-canvas, .cursor-label, .hover-preview { display: none; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-preview { filter: none; }}
