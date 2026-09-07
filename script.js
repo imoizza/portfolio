@@ -25,16 +25,18 @@ function initLoader() {
 
 /* ---------------------------------------------------------------------
    0. Favicon
-   Injects the paw icon as the site favicon on every page, working out
-   the right relative path whether the page lives at the root or one
-   folder down inside /case-studies/.
+   Recolours the paw into a pastel purple and injects it as a data URI,
+   so it works from any page depth without a file path.
    --------------------------------------------------------------------- */
 function initFavicon() {
-  const prefix = window.location.pathname.includes("/case-studies/") ? "../" : "";
+  const FAVICON_COLOR = "#A78BD9"; // pastel purple
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.839 48.839">` +
+    `<path fill="${FAVICON_COLOR}" d="${PAW_PATH_D}"/></svg>`;
   const link = document.createElement("link");
   link.rel = "icon";
   link.type = "image/svg+xml";
-  link.href = prefix + "assets/svg/dog-paw-svgrepo-com.svg";
+  link.href = "data:image/svg+xml;utf8," + encodeURIComponent(svg);
   document.head.appendChild(link);
 }
 
