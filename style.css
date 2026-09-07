@@ -187,7 +187,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   background-image:
     linear-gradient(var(--line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-  background-size: 62px 62px;
+  background-size: 34px 34px;
   mask-image: radial-gradient(ellipse 85% 65% at 50% 15%, #000 35%, transparent 88%);
 }
 
