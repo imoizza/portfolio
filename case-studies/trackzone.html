@@ -221,48 +221,24 @@
         </div>
 
         <div class="cs-mod reveal" id="tzapp">
-          <h3>Mobile app · the driver's routing flow</h3>
-          <p>Admins provision bins by QR and watch routes live. The driver side is one guided loop, kept deliberately simple for use at the wheel: pick up the day's route, follow turn-by-turn to each bin, mark it done or skip with a reason, and close out at the depot.</p>
-          <!-- Moizza: the 6 phone images below are placeholders. Replace these files with the real
-               screens (keep the same names): tz-app-route / tz-app-navigate / tz-app-confirm /
-               tz-app-stops / tz-app-scan / tz-app-bins .png in assets/images/. -->
-
-          <div class="cs-screen">
-            <div class="cs-screen-text">
-              <h4>The day's route</h4>
-              <p>Home opens on the assigned route (date, waste type, bin count, distance and time) with the whole loop on the map and one action: Start Route.</p>
-            </div>
-            <div class="cs-screen-media"><img src="../assets/images/tz-app-route.png" alt="Driver home, the day's route" loading="lazy"></div>
-          </div>
-
-          <div class="cs-screen reverse">
-            <div class="cs-screen-text">
-              <h4>Turn-by-turn to the next bin</h4>
-              <p>Navigation runs full-screen on HERE Maps (next turn, distance, speed) with the route card tucked at the bottom, one swipe from the full stop list.</p>
-            </div>
-            <div class="cs-screen-media"><img src="../assets/images/tz-app-navigate.png" alt="Turn-by-turn navigation to a bin" loading="lazy"></div>
-          </div>
-
-          <div class="cs-screen">
-            <div class="cs-screen-text">
-              <h4>Done, or skip with a reason</h4>
-              <p>At each stop the driver confirms the pickup or skips it for a reason like a blocked bin or roadworks, and that flows straight back to the dashboard.</p>
-            </div>
-            <div class="cs-screen-media"><img src="../assets/images/tz-app-confirm.png" alt="Confirm or skip a stop" loading="lazy"></div>
-          </div>
-
-          <div class="cs-screen reverse">
-            <div class="cs-screen-text">
-              <h4>Depot to destination</h4>
-              <p>The stop list is the spine of the run: Depot, each numbered bin, then Dump and final Destination, with the active stop highlighted as the driver moves through it.</p>
-            </div>
-            <div class="cs-screen-media"><img src="../assets/images/tz-app-stops.png" alt="Route stop list" loading="lazy"></div>
-          </div>
-
-          <p class="cs-modnote">On the admin side, the same app scans a bin's QR to provision it in seconds, and mirrors the dashboard's alerts and maps in the field.</p>
-          <div class="cs-shot-pair">
-            <figure><img src="../assets/images/tz-app-scan.png" alt="QR scanner for bin provisioning" loading="lazy"><figcaption>QR provisioning</figcaption></figure>
-            <figure><img src="../assets/images/tz-app-bins.png" alt="Bins list on mobile" loading="lazy"><figcaption>Bins, on mobile</figcaption></figure>
+          <h3>Mobile app: the driver's routing flow</h3>
+          <p>Admins provision bins by QR and watch routes live. The driver side is one guided loop, kept deliberately simple for use at the wheel: pick up the day's route on a map, follow turn-by-turn to each bin, mark it done or skip with a reason, and close out at the depot.</p>
+          <!-- Moizza: the 3 phone images below are placeholders. Replace these exact files with the
+               real screens (keep the names): tz-app-route.png, tz-app-navigate.png, tz-app-stops.png
+               in assets/images/. -->
+          <div class="cs-phonestrip">
+            <figure>
+              <img src="../assets/images/tz-app-route.png" alt="Driver home with the day's route on a map" loading="lazy">
+              <figcaption>The day's route, one tap to start</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/tz-app-navigate.png" alt="Turn-by-turn navigation to a bin" loading="lazy">
+              <figcaption>Turn-by-turn to each bin</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/tz-app-stops.png" alt="Route stop list, depot to destination" loading="lazy">
+              <figcaption>Stop list: depot, bins, dump, destination</figcaption>
+            </figure>
           </div>
         </div>
 

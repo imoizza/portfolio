@@ -523,7 +523,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
    -------------------------------------------------------------------------- */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: clamp(20px, 3vw, 40px);
   margin-top: clamp(40px, 5vw, 60px);
 }
@@ -1255,26 +1255,34 @@ figure.cs-winfig figcaption {
 }
 .cs-phone img { width: 100%; display: block; }
 
-/* mobile-app walkthrough inside a module block */
-#tzapp .cs-screen { padding: clamp(26px, 4vw, 44px) 0; }
-#tzapp .cs-screen-text h4 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(18px, 2.2vw, 23px);
-  letter-spacing: -0.005em;
-  color: var(--ink);
-  margin: 0 0 10px;
+/* mobile-app screens — a simple row of 2-3 phones, no alternating layout */
+.cs-phonestrip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 36px);
+  margin-top: 26px;
 }
-#tzapp .cs-screen-media img {
-  max-height: 470px;
-  border-radius: 24px;
+.cs-phonestrip figure {
+  flex: 0 1 210px;
+  margin: 0;
+  text-align: center;
 }
-#tzapp .cs-modnote { margin: 24px 0 0; }
-#tzapp .cs-shot-pair {
-  max-width: 460px;
-  margin-top: 16px;
+.cs-phonestrip img {
+  width: 100%;
+  display: block;
+  border-radius: 26px;
+  box-shadow: 0 34px 55px -32px rgba(28, 26, 36, 0.4);
 }
-#tzapp .cs-shot-pair img { border-radius: 22px; }
+.cs-phonestrip figcaption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 12px;
+  line-height: 1.4;
+}
 
 .cs-cols {
   display: grid;
