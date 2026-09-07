@@ -523,7 +523,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
    -------------------------------------------------------------------------- */
 .bento-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(20px, 3vw, 40px);
   margin-top: clamp(40px, 5vw, 60px);
 }
