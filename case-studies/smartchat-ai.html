@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>A floating chat that keeps up when you're multitasking — Moizza Azhar</title>
+<title>A floating chat that keeps up when you're multitasking · Moizza Azhar</title>
 <meta name="description" content="Redesigning an AI chat app around speech, not screens." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,6 @@
 
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
-  <div class="hover-preview" aria-hidden="true"></div>
 
   <nav class="site-nav">
     <div class="nav-inner">
@@ -55,125 +54,270 @@
 
   <header class="page-head wrap reveal">
     <a class="cs-back" href="../index.html" data-cursor="back">← All work</a>
-    <p class="eyebrow">Mobile · Accessibility · 001</p>
-    <h1>A floating chat that keeps up when you're multitasking</h1>
-    <p class="lede">Redesigning an AI chat app around speech, not screens — so voice input, text-to-speech, and a floating window let people keep talking to it while doing something else entirely.</p>
+    <p class="eyebrow">Mobile · Accessibility · 002</p>
+    <h1>SmartChat AI- Floating App</h1>
+    <p class="lede">SmartChat is a redesigned AI chat application focused on accessibility, hands-free communication, and multitasking. The goal was to build a smarter, more inclusive chat experience by integrating speech-to-text, text-to-speech, and a floating chat interface that remains accessible across apps.</p>
   </header>
 
   <div class="wrap">
     <div class="cs-meta reveal">
       <div><p class="label">Role</p><p class="value">UI/UX Designer</p></div>
       <div><p class="label">Timeline</p><p class="value">4 weeks</p></div>
-      <div><p class="label">Team</p><p class="value">Solo project</p></div>
+      <div><p class="label">Year</p><p class="value">2023</p></div>
       <div><p class="label">Tools</p><p class="value">Figma, Notion</p></div>
     </div>
-    <div class="image-frame"><span class="cap">SmartChat — marketing landing page</span></div>
+    <div class="image-frame"><img src="../assets/images/SMARTCHAT_COVER.png" alt="SmartChat AI Cover"><span class="cap">SmartChat · marketing landing page</span></div>
   </div>
 
-  <main>
-    <section class="cs-section wrap reveal">
-      <p class="num">01 — Context</p>
-      <h2>Voice features that nobody could find</h2>
-      <p>SmartChat's speech-to-text and text-to-speech features worked, technically —
-      but the interface around them was cluttered enough that people who actually
-      needed hands-free communication (multitaskers, people on calls, anyone who
-      just wanted to talk instead of type) gave up on discovering them.</p>
-      <p>The brief was narrow on purpose: make voice-first communication actually
-      usable while doing something else, in four weeks, solo.</p>
-    </section>
+  <main class="cs-layout wrap">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#site">Marketing site</a></li>
+        <li><a href="#friction">The friction</a></li>
+        <li><a href="#approach">Approach &amp; goals</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#system">Style</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screens">The screens</a></li>
+        <li><a href="#learned">What I learned</a></li>
+      </ol>
+    </aside>
 
-    <section class="cs-section wrap reveal">
-      <p class="num">02 — Research</p>
-      <h2>Watching how people already talk to AI</h2>
-      <p>Rather than starting from a blank page, I ran contextual inquiry sessions
-      watching people use ChatGPT's text-to-speech and Copilot's speech-to-text —
-      specifically how they moved between apps while doing it.</p>
-      <ul>
-        <li>Both tools helped, but neither supported real multitasking — switching
-        apps broke the flow of conversation entirely.</li>
-        <li>People kept describing a want for something that could "float" above
-        whatever they were already doing, rather than take over the screen.</li>
-        <li>This reframed accessibility for the project: not a feature to bolt on,
-        but the core interaction model.</li>
-      </ul>
-    </section>
+    <div class="cs-body">
 
-    <div class="cs-section wide wrap reveal">
-      <div class="image-pair">
-        <div class="image-frame tall"><span class="cap">Core interaction flow — voice + text entry</span></div>
-        <div class="image-frame tall"><span class="cap">Low-fidelity concepts, early iteration</span></div>
-      </div>
+      <section class="cs-block" id="site" data-rail="Marketing site">
+        <p class="cs-kicker">The marketing site</p>
+        <h2>Where the redesign makes its pitch</h2>
+        <p class="reveal">The landing page frames SmartChat for the people who'd never think to go looking for a floating chat window: professionals, students, and anyone who leans on voice. It leads with the multitasking story, then the speech features, then the proof.</p>
+        <div class="cs-browser reveal">
+          <div class="cs-browser-bar"><span></span><span></span><span></span><em>smartchat.app</em></div>
+          <div class="cs-browser-view">
+            <img src="../assets/images/Landing_page.png" alt="SmartChat marketing landing page, full scroll" loading="lazy">
+          </div>
+        </div>
+        <p class="cs-hint">Scroll inside the window ↑</p>
+      </section>
+
+      <section class="cs-block" id="friction" data-rail="The friction">
+        <p class="cs-kicker">01 · Main frustration</p>
+        <h2>Powerful voice features, buried where no one looked</h2>
+        <p class="reveal">This was a self-directed redesign. I picked an AI chat app whose speech-to-text and text-to-speech worked fine on paper but were lost inside a cluttered interface, and treated closing that gap as the brief.</p>
+        <p class="reveal">People who depend on hands-free communication, or who just wanted to keep working in another app, gave up on the voice features entirely. Scope: concept redesign, iOS, solo, four weeks.</p>
+      </section>
+
+      <section class="cs-block" id="approach" data-rail="Approach &amp; goals">
+        <p class="cs-kicker">02 · The approach</p>
+        <h2>Make the voice-first path the obvious one</h2>
+        <p class="reveal">I rebuilt SmartChat around a floating chat window and plain, visible voice controls, and cut the interface back so any key action takes two or three taps, not a hunt through menus.</p>
+
+        <h3>Goals that stayed on screen the whole time</h3>
+        <p class="reveal"><strong>Product goal:</strong> integrate speech-to-text and text-to-speech so people can talk to the AI while using other apps. <strong>Business goal:</strong> widen the audience with an AI chat app that's genuinely usable for professionals, students, and people with accessibility needs. Keeping both in view kept every decision pointed at accessibility, ease of use, and multitasking.</p>
+
+        <p class="reveal">What a win would look like, the bar I held every screen against:</p>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>For the business</h4>
+            <ul>
+              <li>Higher engagement</li>
+              <li>Room for premium features</li>
+              <li>Stronger market position</li>
+              <li>A brand known for accessible communication tech</li>
+            </ul>
+          </div>
+          <div>
+            <h4>For users</h4>
+            <ul>
+              <li>Real speech-to-text accessibility</li>
+              <li>An interface built for multitasking</li>
+              <li>A faster, more engaging way to communicate</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-block" id="process" data-rail="Process">
+        <p class="cs-kicker">03 · Process</p>
+        <h2>How the solution came together</h2>
+        <p class="reveal">Five phases, from sitting with people who use voice tools they already had, to testing the final screens with a small group.</p>
+
+        <div class="cs-step">
+          <h3>Watching how people already talk to AI</h3>
+          <p class="reveal">I sat with a handful of people as they used ChatGPT's text-to-speech and Copilot's speech-to-text, watching how they switched between apps. The features helped, but there was no seamless multitasking: people wanted to stay in a conversation without losing control of everything else. That reframed accessibility for me: not a feature, but a core experience need.</p>
+          <figure class="cs-shot reveal">
+            <img src="../assets/images/Screenshot_2025-05-26_at_2.40.33_PM.png" alt="Contextual inquiry notes on competitor voice tools" loading="lazy">
+            <figcaption>Contextual inquiry · competitor voice tools in real use</figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <h3>Mapping a path that holds up while multitasking</h3>
+          <p class="reveal">I mapped the core interaction flow for both voice and text, and put a floating icon in the bottom-right so SmartChat could open without interrupting whatever was already on screen. This is also where I defined how speech recognition gets triggered and how responses come back: fast, and in a format you can read or hear.</p>
+          <figure class="cs-shot reveal">
+            <img src="../assets/images/Screenshot_2025-05-26_at_2.41.57_PM.png" alt="Hand-drawn user flow from splash screen to conversation" loading="lazy">
+            <figcaption>Core interaction flow · splash to conversation</figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <h3>Testing rough ideas before polishing the wrong one</h3>
+          <p class="reveal">Low-fidelity prototyping let me check assumptions cheaply. One idea that stuck: a small speaker icon under every message, making text-to-speech discoverable with no tooltip. I leaned on Shneiderman's principles throughout: consistency, user control, and shortcuts for people who'd use this every day.</p>
+          <figure class="cs-shot reveal">
+            <img src="../assets/images/Screenshot_2025-05-26_at_2.45.56_PM.png" alt="Low-fidelity wireframe sketches" loading="lazy">
+            <figcaption>Low-fidelity concepts · floating states, speech-to-text, settings</figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <h3>A window that resizes to the conversation</h3>
+          <p class="reveal">The high-fidelity screens came with a full component set and specs. The key call: replace the fixed-height floating window with one that grows about 20% with the conversation, so there's more room when you need it and no clutter when you don't. Quick voice messaging came out of this stage too.</p>
+          <figure class="cs-shot reveal">
+            <img src="../assets/images/Screenshot_2025-05-26_at_2.47.37_PM.png" alt="High-fidelity screens and the floating widget on a home screen" loading="lazy">
+            <figcaption>High-fidelity screens and the floating widget</figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <h3>What testing actually changed</h3>
+          <p class="reveal">I ran a small round of usability and preference testing with a handful of people, comparing layouts and where the voice controls sat. It changed real things: light mode read better for most of them, so it became the default over my instinct for dark; History moved into the bottom nav; and I lightened the new-chat button so it stopped competing with the floating icon. A notification bell went in for replies that land after you've stepped away. People also reached the voice features faster than in the old layout, though at this sample size I'd call that a signal, not a proven number.</p>
+          <!-- Moizza: if you kept a participant count or any task numbers from testing, add them here. Even "5 of 6 started a voice chat unaided" beats the qualitative line. -->
+          <figure class="cs-shot reveal">
+            <img src="../assets/images/Screenshot_2025-05-26_at_2.49.02_PM.png" alt="Old UI compared with the new UI" loading="lazy">
+            <figcaption>Old UI vs. new UI</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cs-block" id="system" data-rail="Style">
+        <p class="cs-kicker">04 · Style</p>
+        <h2>One blue, built to be legible</h2>
+
+        <h3>Logo</h3>
+        <p class="reveal">The mark is a speech bubble with a three-dot strip (a message in progress and the AI thinking) on a clean circular base. Bright blue for trust and clarity, grid-aligned so it holds up from app icon to floating widget to billboard.</p>
+        <div class="cs-shot-pair reveal">
+          <figure><img src="../assets/images/Screenshot_2025-05-26_at_2.49.59_PM.png" alt="SmartChat logo construction grid" loading="lazy"><figcaption>Construction grid</figcaption></figure>
+          <figure><img src="../assets/images/Screenshot_2025-05-26_at_2.50.33_PM.png" alt="SmartChat icon shown in several contexts" loading="lazy"><figcaption>Icon in context</figcaption></figure>
+        </div>
+
+        <h3>Colour</h3>
+        <p class="reveal">Six roles, each with a job: <strong>brand</strong> blue for identity and primary actions, a neutral <strong>secondary</strong>, <strong>grey</strong> for placeholders and dividers, <strong>dark grey</strong> for body text and contrast, and two <strong>gradients</strong>: blue for interactive highlights, greyscale for depth. Each blue and grey step is graded for contrast.</p>
+        <figure class="cs-shot reveal">
+          <img src="../assets/images/Screenshot_2025-05-26_at_2.51.06_PM.png" alt="Full grey and blue colour ramps, graded for contrast" loading="lazy">
+          <figcaption>Grey &amp; blue ramps, each step contrast-checked</figcaption>
+        </figure>
+
+        <h3>Typography</h3>
+        <p class="reveal">SF Pro Display across the whole interface: one typeface, tuned for reading at small sizes.</p>
+      </section>
+
+      <section class="cs-block" id="features" data-rail="Features">
+        <p class="cs-kicker">05 · Features</p>
+        <h2>The full feature set</h2>
+        <p class="reveal">Ten features made it into the concept. Three carried it: the <strong>floating chat</strong> that overlays other apps, the <strong>speaker icon</strong> on every message, and <strong>speech-to-text</strong> built for hands-free use. The rest support those.</p>
+        <div class="cs-features reveal">
+          <div class="cs-feature"><h4>Trendy prompts</h4><p>Ready-to-use AI suggestions for creativity, productivity, and everyday tasks.</p></div>
+          <div class="cs-feature"><h4>Speech-to-text</h4><p>Turns voice into accurate text for hands-free communication.</p></div>
+          <div class="cs-feature"><h4>Text-to-speech</h4><p>Reads messages aloud for visual needs or when you're on the move.</p></div>
+          <div class="cs-feature"><h4>Floating icon</h4><p>Bottom-right, always there, one tap from any screen.</p></div>
+          <div class="cs-feature"><h4>Floating chat</h4><p>A resizable window that overlays other apps so you can keep working.</p></div>
+          <div class="cs-feature"><h4>History</h4><p>A dedicated tab to revisit and continue past conversations.</p></div>
+          <div class="cs-feature"><h4>Font adjustment</h4><p>Set text size for comfortable reading.</p></div>
+          <div class="cs-feature"><h4>Theme customization</h4><p>Light and dark modes for any environment.</p></div>
+          <div class="cs-feature"><h4>Recommendations</h4><p>Personalized suggestions based on how you use the app.</p></div>
+          <div class="cs-feature"><h4>Voice adjustments</h4><p>Tune pitch, speed, and tone for a more natural voice.</p></div>
+        </div>
+      </section>
+
+      <section class="cs-block" id="screens" data-rail="The screens">
+        <p class="cs-kicker">06 · The screens</p>
+        <h2>Walking through the redesign</h2>
+
+        <div class="cs-screen reveal">
+          <div class="cs-screen-text">
+            <h3>Floating icon &amp; chat</h3>
+            <p>The draggable window lets you talk to SmartChat without leaving the app you're in. That's the whole point of the redesign, in one interaction.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/Floating_widget.png" alt="Floating chat widget open over an iOS home screen" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reverse reveal">
+          <div class="cs-screen-text">
+            <h3>Home screen</h3>
+            <p>The hub: start a chat, jump into history, reach settings. Search and trending prompts sit up top; recommendations follow.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/Home_Page.png" alt="SmartChat home screen" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reveal">
+          <div class="cs-screen-text">
+            <h3>Conversation screen</h3>
+            <p>Type or speak; get a reply as text or voice. A speaker icon under every message makes text-to-speech a one-tap thing.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/Speech_Input.png" alt="SmartChat conversation screen with voice input" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reverse reveal">
+          <div class="cs-screen-text">
+            <h3>History screen</h3>
+            <p>Past conversations, grouped by recency, so you can pick up exactly where you left off.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/History.png" alt="SmartChat history screen" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reveal">
+          <div class="cs-screen-text">
+            <h3>Profile screen</h3>
+            <p>Account details and the essentials: privacy, terms, logout, and the toggle for the floating badge icon.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/My_Profile.png" alt="SmartChat profile screen" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reverse reveal">
+          <div class="cs-screen-text">
+            <h3>Setting screen</h3>
+            <p>Speech preferences, notification behaviour, theme, and font size: the controls that let people tailor SmartChat to how they work.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/Settings.png" alt="SmartChat settings screen" loading="lazy"></div>
+        </div>
+      </section>
+
+      <section class="cs-block" id="learned" data-rail="What I learned">
+        <p class="cs-kicker">07 · Reflection</p>
+        <h2>What this project taught me</h2>
+        <ul class="cs-learned reveal">
+          <li>Accessibility framed as a <strong>core experience need</strong>, not a feature, changed every decision that came after it.</li>
+          <li>The smallest affordance can carry a feature: in testing, the speaker icon on each message did more for text-to-speech discovery than any onboarding screen would have.</li>
+          <li>Testing beat my taste. I wanted dark mode as the default; people read light mode more easily, so light mode won.</li>
+          <li>Next time I'd lock in one measurable target before designing, like a task time or completion rate, so the redesign has a number to be judged against, not just a story.</li>
+          <li>Designing a floating window means designing for the app underneath it, not just your own screen.</li>
+        </ul>
+      </section>
+
     </div>
-
-    <section class="cs-section wrap reveal">
-      <p class="num">03 — Design</p>
-      <h2>A window that follows you, not the other way around</h2>
-      <p>The centerpiece is a floating icon anchored bottom-right, always reachable,
-      opening a <strong>resizable chat window</strong> that adapts by roughly 20%
-      depending on conversation length instead of staying a fixed size. Everything
-      important — starting a chat, replaying a message, adjusting voice speed —
-      is reachable in 2–3 clicks.</p>
-      <p>I applied Shneiderman's design principles throughout: consistency, user
-      control, and shortcuts for people who'd use this daily rather than once.
-      A small but telling detail — a speaker icon under every message — made
-      text-to-speech discoverable without any onboarding tooltip explaining it.</p>
-      <blockquote class="pull-quote">Ten features shipped in the end: floating
-      icon and chat, speech-to-text, text-to-speech, voice adjustments, font
-      adjustment, theme customization, history, trendy prompts, and personalized
-      recommendations.</blockquote>
-      <p>Brand identity followed the same logic — a speech bubble mark with a
-      rounded, three-dot strip standing in for both "message in progress" and
-      "AI thinking," in a bright trust-signaling blue, set in SF Pro Display.</p>
-    </section>
-
-    <div class="cs-section wide wrap reveal">
-      <div class="image-pair">
-        <div class="image-frame tall"><span class="cap">Logo construction</span></div>
-        <div class="image-frame tall"><span class="cap">Color system — brand, secondary, gradients</span></div>
-      </div>
-    </div>
-
-    <div class="wrap">
-      <div class="image-frame"><span class="cap">Home screen</span></div>
-    </div>
-
-    <section class="cs-section wrap reveal">
-      <p class="num">04 — Outcome</p>
-      <h2>What A/B testing actually changed</h2>
-      <p>Testing across layout variants showed two clear wins: navigation felt
-      smoother once history moved into the bottom navigation bar, and speech
-      recognition accuracy — or at least people's confidence in it — improved
-      with clearer visual feedback during input.</p>
-      <p>Light mode ended up as the default after testing showed better readability
-      for most people, and I added a notification bell so users could step away
-      from an active chat without losing track of a reply — a small fix for the
-      exact multitasking problem the whole project started from.</p>
-    </section>
   </main>
 
-  <div class="cs-section wide wrap reveal">
-      <div class="image-pair">
-        <div class="image-frame tall"><span class="cap">Conversation screen — voice input</span></div>
-        <div class="image-frame tall"><span class="cap">Conversation screen — response</span></div>
-      </div>
-    </div>
+
   <div class="wrap">
     <div class="cs-next reveal">
-      <span></span>
-      <a href="trackzone.html" data-cursor="next">
+      <a href="trackzone.html" data-cursor="back">
+        <p class="label">← Previous</p>
+        <p class="title">An IoT platform for smarter waste collection</p>
+      </a>
+      <a href="my-ride-app.html" data-cursor="next">
         <p class="label">Next project</p>
-        <p class="title">Building the software layer for a hardware-first industry →</p>
+        <p class="title">Redesigning the commute for Lahore's night-shift workforce →</p>
       </a>
     </div>
   </div>
 
 
   <footer class="site-footer wrap">
-    <span>© 2026 Moizza Azhar — built by hand, no framework.</span>
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
     <div class="footer-links">
       <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
-      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
-      <a href="../Moizza-Azhar-Resume.pdf" data-cursor="pdf">Résumé PDF</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
     </div>
   </footer>
 

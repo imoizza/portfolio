@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Redesigning the commute for Lahore's night-shift workforce — Moizza Azhar</title>
+<title>Redesigning the commute for Lahore's night-shift workforce · Moizza Azhar</title>
 <meta name="description" content="A scheduled-ride app for Lahore's employees, built around safety." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,6 @@
 
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
-  <div class="hover-preview" aria-hidden="true"></div>
 
   <nav class="site-nav">
     <div class="nav-inner">
@@ -56,106 +55,256 @@
   <header class="page-head wrap reveal">
     <a class="cs-back" href="../index.html" data-cursor="back">← All work</a>
     <p class="eyebrow">Mobile · Transportation · 003</p>
-    <h1>Redesigning the commute for Lahore's night-shift workforce</h1>
-    <p class="lede">A scheduled-ride app for employees navigating Lahore's unreliable public transport — built around flexible scheduling, cashless payments, and an SOS feature for the commutes that happen after dark.</p>
+    <h1>My Ride App</h1>
+    <p class="lede">My Rider is a transportation service designed for employees in Lahore, tackling the challenge of unreliable public transport. The app offers scheduled rides with flexible scheduling, secure payments, and critical safety features like SOS for late-night commutes.</p>
   </header>
 
   <div class="wrap">
     <div class="cs-meta reveal">
       <div><p class="label">Role</p><p class="value">UI/UX Designer</p></div>
       <div><p class="label">Timeline</p><p class="value">2 weeks</p></div>
-      <div><p class="label">Team</p><p class="value">Small design team</p></div>
+      <div><p class="label">Year</p><p class="value">2024</p></div>
       <div><p class="label">Tools</p><p class="value">Figma, FigJam</p></div>
     </div>
-    <div class="image-frame"><span class="cap">My Rider — target audience & positioning</span></div>
+    <div class="image-frame"><img src="../assets/images/MYRIDER_COVER.png" alt="My Rider Cover"><span class="cap">My Rider · target audience & positioning</span></div>
   </div>
 
-  <main>
-    <section class="cs-section wrap reveal">
-      <p class="num">01 — Context</p>
-      <h2>Getting to work is not supposed to be the hard part</h2>
-      <p>My Rider partners with companies in Lahore to run scheduled cabs, buses,
-      and vans for employees, standing in for a public transport system that's
-      unreliable enough to make people late — or unsafe enough that late shifts
-      feel risky. This case study covers the employee-facing side of the app.</p>
-      <p>Two weeks, one clear brief: make the daily commute reliable, flexible,
-      and safe — especially after dark.</p>
-    </section>
+  <main class="cs-layout wrap">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#site">Marketing site</a></li>
+        <li><a href="#challenge">The challenge</a></li>
+        <li><a href="#users">The users</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#style">Style</a></li>
+        <li><a href="#testing">Testing</a></li>
+        <li><a href="#hifi">High fidelity</a></li>
+        <li><a href="#learned">What I learned</a></li>
+      </ol>
+    </aside>
 
-    <section class="cs-section wrap reveal">
-      <p class="num">02 — Research</p>
-      <h2>Ayesha's day</h2>
-      <p>User interviews and journey mapping surfaced the same handful of needs
-      repeatedly: flexible ride scheduling, secure in-app payments, and — raised
-      unprompted by almost everyone doing late shifts — a way to signal for help
-      quickly if a ride felt unsafe.</p>
-      <p>One persona-driven story from research stuck with the whole project:
-      Ayesha finishes a night shift, adjusts her pickup time from the calendar
-      screen, checks her wallet balance before the ride — and one night, feeling
-      unsafe, taps SOS. Her live location goes straight to her emergency contact.
-      That single moment shaped how much weight the safety feature carried in
-      the final design.</p>
-    </section>
+    <div class="cs-body">
 
-    <div class="cs-section wide wrap reveal">
-      <div class="image-pair">
-        <div class="image-frame tall"><span class="cap">User persona</span></div>
-        <div class="image-frame tall"><span class="cap">User journey map</span></div>
-      </div>
+      <section class="cs-block" id="site" data-rail="Marketing site">
+        <p class="cs-kicker">The marketing site</p>
+        <h2>How My Rider sells the commute</h2>
+        <p class="reveal">The landing page pitches My Rider to the companies that would sign their staff up: reliability first, then scheduling, then the safety features that matter most on a late shift.</p>
+        <div class="cs-browser reveal">
+          <div class="cs-browser-bar"><span></span><span></span><span></span><em>myrider.pk</em></div>
+          <div class="cs-browser-view">
+            <img src="../assets/images/Landing_page2.png" alt="My Rider marketing landing page, full scroll" loading="lazy">
+          </div>
+        </div>
+        <p class="cs-hint">Scroll inside the window ↑</p>
+      </section>
+
+      <section class="cs-block" id="challenge" data-rail="The challenge">
+        <p class="cs-kicker">01 · The challenge</p>
+        <h2>Getting to work isn't supposed to be the hard part</h2>
+        <p class="reveal">My Rider is a scheduled-ride service for companies in Lahore, a fleet of cabs, buses and vans running fixed routes across shifts. Public transport there is unreliable and inflexible, and late shifts add a safety problem on top. This was a two-week solo project: the employee-facing side of the app.</p>
+        <p class="reveal">The brief was narrow and clear: design an interface that lets an employee manage a daily commute: set a home location and shift times, schedule and track rides, pay without cash, and get help fast if a ride feels unsafe.</p>
+      </section>
+
+      <section class="cs-block" id="users" data-rail="The users">
+        <p class="cs-kicker">02 · The users</p>
+        <h2>Ayesha's day set the priorities</h2>
+        <p class="reveal">I started with user interviews and journey mapping, following how employees actually get to and from work across different shifts. One persona-driven story carried the rest of it.</p>
+
+        <h3>Target audience</h3>
+        <p class="reveal">Three groups touch My Rider. This project designs for the first one; the other two set constraints.</p>
+        <ul class="cs-goals reveal">
+          <li><strong>Employees:</strong> the primary users, commuting daily. They need reliable transport, easy profile management, flexible scheduling, secure payment, and safety.</li>
+          <li><strong>HR &amp; administrative staff:</strong> coordinate transport for the company. They need administrative control, help with employee setup, oversight of schedules, and finance management.</li>
+          <li><strong>Security &amp; safety teams:</strong> responsible for employee safety on the commute. They need real-time location monitoring, emergency response, and incident reporting.</li>
+        </ul>
+
+        <blockquote class="pull-quote reveal">Ayesha finishes dinner and opens My Rider. She adjusts her pickup time for the weekend night shift, adds a note for the driver, and checks her wallet balance. Later, mid-ride, something feels off, so she taps SOS and her live location goes straight to her emergency contact.</blockquote>
+
+        <p class="reveal">That one moment decided how much weight the safety feature carried in every screen that followed.</p>
+
+        <figure class="cs-shot reveal">
+          <img src="../assets/images/Screenshot_2025-05-27_at_2.49.38_PM.png" alt="User persona: Ayesha Khan" loading="lazy">
+          <figcaption>Persona · Ayesha Khan</figcaption>
+        </figure>
+        <figure class="cs-shot reveal">
+          <img src="../assets/images/Screenshot_2025-05-27_at_2.56.04_PM.png" alt="User journey map: planning, commuting, emergency" loading="lazy">
+          <figcaption>Journey map · planning, commuting, emergency</figcaption>
+        </figure>
+
+        <h3>Goals</h3>
+        <ul class="cs-goals reveal">
+          <li><strong>Simplify the daily commute</strong> with a reliable, scheduled ride system.</li>
+          <li><strong>Give users control</strong> over home location, shift timings and ride schedules.</li>
+          <li><strong>Make safety one tap away</strong>, especially on late-night rides, through SOS.</li>
+          <li><strong>Remove cash</strong> with a seamless in-app wallet.</li>
+          <li><strong>Keep navigation obvious</strong> with real-time ride information throughout.</li>
+        </ul>
+      </section>
+
+      <section class="cs-block" id="process" data-rail="Process">
+        <p class="cs-kicker">03 · Process</p>
+        <h2>Flow, sketches, then the safety call</h2>
+
+        <div class="cs-step">
+          <h3>Mapping the whole journey first</h3>
+          <p class="reveal">Before any screens, I mapped the full user flow, every path from onboarding through scheduling, tracking, payment and the SOS trigger, so I could see where safety needed to live relative to everything else.</p>
+          <figure class="cs-shot reveal">
+            <a href="../assets/images/User_Flow.png" target="_blank" rel="noopener">
+              <img src="../assets/images/User_Flow.png" alt="Full user flow diagram for My Rider" loading="lazy">
+            </a>
+            <figcaption>Full user flow, <a href="../assets/images/User_Flow.png" target="_blank" rel="noopener">open full size ↗</a></figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-step">
+          <h3>Sketching around Ayesha's pain points</h3>
+          <p class="reveal">I brainstormed against her four problems (scheduling, real-time tracking, safety, payments), then prioritised: ride tracking and the SOS trigger first for immediate impact, payments and scheduling tools next. Quick sketches and flows kept the app simple before it got detailed.</p>
+          <div class="cs-shot-pair reveal">
+            <figure><img src="../assets/images/Screenshot_2025-05-27_at_2.31.47_PM.png" alt="Low-fidelity prototype screens" loading="lazy"><figcaption>Low-fidelity · core flows</figcaption></figure>
+            <figure><img src="../assets/images/Screenshot_2025-05-27_at_2.32.02_PM.png" alt="Low-fidelity prototype screens" loading="lazy"><figcaption>Low-fidelity · scheduling &amp; wallet</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="cs-step">
+          <h3>Designing so SOS is never more than a tap away</h3>
+          <p class="reveal">The key call: rather than treating safety as one feature among many, I built the layout so an SOS trigger was reachable from any screen: home setup, calendar, tracking, wallet. The visual system stayed deliberately quiet (Inter throughout, a small component set) so nothing competed with the one job that mattered most: getting someone home safely.</p>
+        </div>
+      </section>
+
+      <section class="cs-block" id="style" data-rail="Style">
+        <p class="cs-kicker">04 · Style</p>
+        <h2>Quiet on purpose</h2>
+        <p class="reveal">The interface had to disappear behind the task. One typeface, a tight palette, and a small set of components that repeat, with nothing that draws attention away from a schedule, a route, or an SOS button.</p>
+
+        <h3>Logo</h3>
+        <figure class="cs-shot reveal">
+          <img src="../assets/images/Screenshot_2025-05-27_at_2.34.05_PM.png" alt="My Rider logo lockups on light and green" loading="lazy">
+          <figcaption>Logo · the “R” route mark, on light and on brand green</figcaption>
+        </figure>
+
+        <h3>Colour</h3>
+        <figure class="cs-shot reveal">
+          <img src="../assets/images/Screenshot_2025-05-27_at_2.32.48_PM.png" alt="My Rider colour palette" loading="lazy">
+          <figcaption>Palette · green for brand and go, red reserved for SOS, amber for warnings</figcaption>
+        </figure>
+
+        <h3>Typography</h3>
+        <p class="reveal">Inter, used at every size: a plain, highly legible face and nothing decorative on top of it.</p>
+
+        <h3>Components</h3>
+        <div class="cs-shot-pair reveal">
+          <figure><img src="../assets/images/Screenshot_2025-05-27_at_2.34.55_PM.png" alt="Component set: pickers, progress, shift settings" loading="lazy"><figcaption>Pickers, progress steppers, shift settings</figcaption></figure>
+          <figure><img src="../assets/images/Screenshot_2025-05-27_at_2.35.26_PM.png" alt="Component set: search, list rows, wallet cards" loading="lazy"><figcaption>Search, list rows, wallet cards</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-block" id="testing" data-rail="Testing">
+        <p class="cs-kicker">05 · Testing</p>
+        <h2>An A/B test on the profile setup screen</h2>
+        <p class="reveal">The first screen of onboarding was the one I was least sure about, so I put two versions of it in front of people.</p>
+        <p class="reveal"><strong>A</strong> kept it form-first: a “Personnel Details” card, the three-step progress bar, and Full&nbsp;Name / Gender / Phone&nbsp;number. <strong>B</strong> dropped the card, cut the phone field (it's already captured at boarding-point setup), and pulled one control up from three screens deep: <strong>Enable SOS on the shift end</strong>.</p>
+        <div class="cs-shot-pair reveal">
+          <figure><img src="../assets/images/Screenshot_2025-05-27_at_3.25.31_PM.png" alt="Profile setup screen, version A, form-first with phone field" loading="lazy"><figcaption>A · form-first, phone field, no safety toggle</figcaption></figure>
+          <figure><img src="../assets/images/Screenshot_2025-05-27_at_3.25.55_PM.png" alt="Profile setup screen, version B, lighter, with SOS toggle" loading="lazy"><figcaption>B · lighter, SOS-on-shift-end in onboarding</figcaption></figure>
+        </div>
+        <p class="reveal">B won. One less field made it quicker to finish, and the real result was that most people enabled shift-end SOS without being prompted, just because the toggle was in front of them. That toggle stayed in onboarding for the final build.</p>
+        <!-- Moizza: if you have the numbers (completion time A vs B, or % who enabled SOS in each version), drop them into the paragraph above. That's the line that makes this land. -->
+      </section>
+
+      <section class="cs-block" id="hifi" data-rail="High fidelity">
+        <p class="cs-kicker">06 · High fidelity</p>
+        <h2>The build, screen by screen</h2>
+        <p class="reveal">The final UI, module by module. The core loop is short on purpose: see your ride, take it, pay for it, and reach help fast if you need to.</p>
+
+        <div class="cs-reel reveal" aria-hidden="true">
+          <div class="cs-reel-phone">
+            <img src="../assets/images/myride-home.png" alt="">
+            <img src="../assets/images/myride-wallet.png" alt="">
+            <img src="../assets/images/myride-schedule.png" alt="">
+            <span class="cs-tap"></span>
+          </div>
+          <p class="cs-hint">Auto-playing · home → pay → schedule</p>
+        </div>
+
+        <div class="cs-screen reveal">
+          <div class="cs-screen-text">
+            <h3>Home &amp; the live ride</h3>
+            <p>The map opens on today's ride with a countdown to pickup and a two-minute window to change the pickup point. Everything else (driver, vehicle, route, fare) is one pull-up away.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/myride-home.png" alt="My Rider home screen with live ride map" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reverse reveal">
+          <div class="cs-screen-text">
+            <h3>The ride in detail</h3>
+            <p>Driver name and photo, vehicle and plate, pickup and drop-off, distance and charge, plus call, message and share. Cancel sits at the bottom, deliberately out of the way.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/myride-ride.png" alt="My Rider ride detail screen" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reveal">
+          <div class="cs-screen-text">
+            <h3>Schedule</h3>
+            <p>A week strip up top, ride cards below, each showing route, fare and status. This is where an employee adjusts pickup times around a changing shift.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/myride-schedule.png" alt="My Rider schedule screen" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reverse reveal">
+          <div class="cs-screen-text">
+            <h3>Wallet</h3>
+            <p>Balance first, then a single Add Credit action, then history grouped by day. Cashless was a goal from the brief: no fumbling for change with a driver at 6am.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/myride-wallet.png" alt="My Rider wallet screen" loading="lazy"></div>
+        </div>
+
+        <div class="cs-screen reveal">
+          <div class="cs-screen-text">
+            <h3>SOS &amp; safety</h3>
+            <p>One screen, one job. Location coordinates at the top, a full-width SOS button in the middle, and the trusted contacts it will reach at the bottom, so there's no doubt about what happens when it's pressed.</p>
+          </div>
+          <div class="cs-screen-media"><img src="../assets/images/myride-sos.png" alt="My Rider emergency SOS screen" loading="lazy"></div>
+        </div>
+
+        <figure class="cs-shot reveal">
+          <a href="../assets/images/Frame_1123.png" target="_blank" rel="noopener">
+            <img src="../assets/images/Frame_1123.png" alt="Five My Rider screens side by side" loading="lazy">
+          </a>
+          <figcaption>The core screen set, <a href="../assets/images/Frame_1123.png" target="_blank" rel="noopener">open full size ↗</a></figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="learned" data-rail="What I learned">
+        <p class="cs-kicker">07 · Reflection</p>
+        <h2>What this project taught me</h2>
+
+        <p class="reveal">What the solution is meant to deliver:</p>
+        <ul class="cs-goals reveal">
+          <li><strong>A reliable commute:</strong> scheduled, optimised rides that get people to work on time.</li>
+          <li><strong>Flexible scheduling:</strong> pickup points and shift timings the rider controls.</li>
+          <li><strong>Safety that's reachable:</strong> SOS one tap from anywhere, aimed at women and late-night riders.</li>
+          <li><strong>Cashless payments:</strong> an in-app wallet instead of handling cash with a driver.</li>
+        </ul>
+
+        <ul class="cs-learned reveal">
+          <li>When one need outweighs the rest, design the layout around it first. Putting SOS everywhere changed how every other screen was built.</li>
+          <li>A persona story is only useful if it forces a decision. Ayesha's night ride did; it's why safety got the weight it did.</li>
+          <li>A deliberately plain visual system is a choice, not a lack of one, and here it was the point.</li>
+          <li>Next time I'd define one measurable target up front, like time to schedule a ride or SOS success rate in testing, so the work has a number to be judged on.</li>
+        </ul>
+      </section>
+
     </div>
-
-    <section class="cs-section wrap reveal">
-      <p class="num">03 — Design</p>
-      <h2>Designing around the SOS moment, not around it</h2>
-      <p>Rather than treating safety as one feature among many, I designed the
-      whole flow so an SOS trigger was never more than a tap away, regardless of
-      what screen someone was on — home location, shift scheduling, and the
-      in-app wallet all sit around that same principle of fast, low-friction
-      access when it matters.</p>
-      <blockquote class="pull-quote">She quickly taps the SOS button — her live
-      location is shared instantly with her emergency contact. She feels more
-      secure knowing help is a tap away.</blockquote>
-      <p>The visual system stayed intentionally quiet — Inter throughout, a
-      restrained component set — so the interface never competed with the one
-      job that mattered most: getting someone home.</p>
-    </section>
-
-    <div class="cs-section wide wrap reveal">
-      <div class="image-pair">
-        <div class="image-frame tall"><span class="cap">Low-fidelity prototype</span></div>
-        <div class="image-frame tall"><span class="cap">Style guide — type & components</span></div>
-      </div>
-    </div>
-
-    <div class="wrap">
-      <div class="image-frame"><span class="cap">High-fidelity prototype</span></div>
-    </div>
-
-    <section class="cs-section wrap reveal">
-      <p class="num">04 — Outcome &amp; reflection</p>
-      <h2>What two weeks actually taught me</h2>
-      <p>Usability testing validated the core flows — scheduling, wallet, and
-      SOS — as fast and low-friction as intended. More broadly, this project
-      taught me to hold user empathy and business goals in the same hand:
-      prioritizing the SOS feature wasn't just the emotionally obvious choice,
-      it was also the one that made the whole product trustworthy enough to use
-      daily.</p>
-      <p>Great design here wasn't about adding more — it was about making a
-      necessary, sometimes stressful part of someone's day feel effortless.</p>
-    </section>
   </main>
 
-  <div class="cs-section wide wrap reveal">
-      <div class="image-pair">
-        <div class="image-frame tall"><span class="cap">Usability testing sessions</span></div>
-        <div class="image-frame tall"><span class="cap">Marketing landing page</span></div>
-      </div>
-    </div>
+
   <div class="wrap">
     <div class="cs-next reveal">
-      <a href="trackzone.html" data-cursor="back">
+      <a href="smartchat-ai.html" data-cursor="back">
         <p class="label">← Previous</p>
-        <p class="title">Building the software layer for a hardware-first industry</p>
+        <p class="title">A floating chat that keeps up when you're multitasking</p>
       </a>
       <a href="../index.html#work" data-cursor="next">
         <p class="label">Next project</p>
@@ -166,11 +315,11 @@
 
 
   <footer class="site-footer wrap">
-    <span>© 2026 Moizza Azhar — built by hand, no framework.</span>
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
     <div class="footer-links">
       <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
-      <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
-      <a href="../Moizza-Azhar-Resume.pdf" data-cursor="pdf">Résumé PDF</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
     </div>
   </footer>
 

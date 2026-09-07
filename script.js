@@ -25,16 +25,19 @@ function initLoader() {
 
 /* ---------------------------------------------------------------------
    0. Favicon
-   Injects the paw icon as the site favicon on every page, working out
-   the right relative path whether the page lives at the root or one
-   folder down inside /case-studies/.
+   Recolors the paw into a darker pastel (distinct from the trail
+   colors, since a light pastel disappears at favicon size) and
+   injects it as a data URI — works the same from any page depth.
    --------------------------------------------------------------------- */
 function initFavicon() {
-  const prefix = window.location.pathname.includes("/case-studies/") ? "../" : "";
+  const FAVICON_COLOR = "#8B6BB8"; // darker pastel plum — visible at tab size
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.839 48.839">` +
+    `<path fill="${FAVICON_COLOR}" d="${PAW_PATH_D}"/></svg>`;
   const link = document.createElement("link");
   link.rel = "icon";
   link.type = "image/svg+xml";
-  link.href = prefix + "assets/svg/dog-paw-svgrepo-com.svg";
+  link.href = "data:image/svg+xml;utf8," + encodeURIComponent(svg);
   document.head.appendChild(link);
 }
 
@@ -45,18 +48,22 @@ function initFavicon() {
    can stamp onto the canvas.
    --------------------------------------------------------------------- */
 const PAW_PATH_D =
-  "M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252" +
-  "c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373" +
-  "c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742" +
-  "c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181" +
-  "C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0" +
-  "S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971" +
-  "s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878" +
-  "c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z" +
-  "M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414" +
-  "S48.455,16.861,45.727,15.602z";
+  "M132.64,177.859c31.162,0,56.508-34.014,56.508-75.834c0-41.817-25.347-75.841-56.508-75.841" +
+  "c-31.153,0-56.502,34.023-56.502,75.841C76.138,143.845,101.487,177.859,132.64,177.859z" +
+  "M300.246,251.628c-1.159-1.579-2.27-3.068-2.864-4.348c-12.635-27.046-47.27-58.931-103.382-59.724l-2.159-0.012" +
+  "c-55.25,0-89.627,30.197-103.381,58.469c-0.475,0.967-1.52,2.222-2.627,3.549c-1.31,1.555-2.606,3.146-3.714,4.875" +
+  "c-11.619,18.075-17.543,38.426-16.669,57.299c0.916,20.037,9.305,36.131,23.581,45.312c5.768,3.705,11.992,5.572,18.522,5.572" +
+  "c13.465,0,25.793-7.584,40.079-16.368c9.083-5.598,18.465-11.374,28.886-15.697c1.168-0.385,5.954-0.973,13.781-0.973" +
+  "c9.307,0,15.991,0.828,17.419,1.321c10.173,4.491,19.107,10.382,27.748,16.068c13.247,8.731,25.755,16.97,39.326,16.97" +
+  "c5.824,0,11.469-1.537,16.795-4.563c29.382-16.693,34.979-62.492,12.484-102.088C302.942,255.303,301.597,253.448,300.246,251.628z" +
+  "M252.796,177.859c31.147,0,56.499-34.014,56.499-75.834c0-41.817-25.352-75.841-56.499-75.841" +
+  "c-31.165,0-56.511,34.023-56.511,75.841C196.285,143.845,221.631,177.859,252.796,177.859z" +
+  "M345.595,138.918c-24.975,0-44.521,25.901-44.521,58.967c0,33.051,19.558,58.955,44.521,58.955" +
+  "c24.961,0,44.531-25.904,44.531-58.955C390.126,164.82,370.568,138.918,345.595,138.918z" +
+  "M89.048,197.885c0-33.065-19.558-58.967-44.522-58.967C19.561,138.918,0,164.82,0,197.885" +
+  "c0,33.051,19.561,58.955,44.526,58.955C69.491,256.84,89.048,230.936,89.048,197.885z";
 
-const PAW_COLORS = ["#E7A8D0", "#9AB0EE", "#8FDDBE"]; // pastel pink, blue, mint
+const PAW_COLORS = ["#D98FBB", "#7C93E0", "#6FC9A8"]; // darker pastel pink, blue, mint
 
 function buildPawImages() {
   return PAW_COLORS.map((color) => {
@@ -160,7 +167,7 @@ function initCursor() {
         ctx.restore();
       }
 
-      p.alpha -= 0.005;
+      p.alpha -= 0.01;
       if (p.alpha <= 0) steps.splice(i, 1);
     }
     requestAnimationFrame(paint);
@@ -232,105 +239,7 @@ function initMagnetic() {
 }
 
 /* ---------------------------------------------------------------------
-   5. Project hover preview
-   A floating thumbnail that follows the cursor over each project row.
-   --------------------------------------------------------------------- */
-function initHoverPreview() {
-  if (!finePointer || reduceMotion) return;
-
-  const preview = document.querySelector(".hover-preview");
-  const rows = document.querySelectorAll("[data-preview]");
-  if (!preview || !rows.length) return;
-
-  rows.forEach((row) => {
-    row.addEventListener("mouseenter", () => {
-      const src = row.dataset.previewImg;
-      preview.innerHTML = src
-        ? `<img src="${src}" alt="">`
-        : row.dataset.preview;
-      preview.classList.add("show");
-    });
-
-    row.addEventListener("mousemove", (e) => {
-      preview.style.left = e.clientX + "px";
-      preview.style.top  = e.clientY + "px";
-    });
-
-    row.addEventListener("mouseleave", () => {
-      preview.classList.remove("show");
-    });
-  });
-}
-
-/* ---------------------------------------------------------------------
-   6. Liquid distortion
-   Builds an SVG turbulence/displacement filter and drives its strength
-   from cursor speed — the faster you move, the more the hover-preview
-   thumbnail ripples, settling flat the moment you stop. A lightweight,
-   non-WebGL stand-in for that effect.
-   --------------------------------------------------------------------- */
-function initLiquidDistortion() {
-  if (!finePointer || reduceMotion) return;
-
-  const svgNS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(svgNS, "svg");
-  svg.setAttribute("width", "0");
-  svg.setAttribute("height", "0");
-  svg.style.position = "absolute";
-  svg.setAttribute("aria-hidden", "true");
-
-  const filter = document.createElementNS(svgNS, "filter");
-  filter.setAttribute("id", "liquid-distort");
-  filter.setAttribute("x", "-20%");
-  filter.setAttribute("y", "-20%");
-  filter.setAttribute("width", "140%");
-  filter.setAttribute("height", "140%");
-
-  const turb = document.createElementNS(svgNS, "feTurbulence");
-  turb.setAttribute("type", "fractalNoise");
-  turb.setAttribute("baseFrequency", "0.012 0.03");
-  turb.setAttribute("numOctaves", "2");
-  turb.setAttribute("seed", "4");
-  turb.setAttribute("result", "noise");
-
-  const disp = document.createElementNS(svgNS, "feDisplacementMap");
-  disp.setAttribute("in", "SourceGraphic");
-  disp.setAttribute("in2", "noise");
-  disp.setAttribute("scale", "0");
-  disp.setAttribute("xChannelSelector", "R");
-  disp.setAttribute("yChannelSelector", "G");
-
-  filter.appendChild(turb);
-  filter.appendChild(disp);
-  svg.appendChild(filter);
-  document.body.appendChild(svg);
-
-  let lastX = 0, lastY = 0, lastT = performance.now();
-  let targetScale = 0, currentScale = 0;
-
-  document.addEventListener("mousemove", (e) => {
-    const now = performance.now();
-    const dt = Math.max(now - lastT, 1);
-    const dist = Math.hypot(e.clientX - lastX, e.clientY - lastY);
-    const speed = dist / dt; // px per ms
-
-    targetScale = Math.min(speed * 90, 55);
-
-    lastX = e.clientX;
-    lastY = e.clientY;
-    lastT = now;
-  });
-
-  (function settle() {
-    currentScale += (targetScale - currentScale) * 0.25;
-    targetScale *= 0.9; // decays on its own between mousemove events
-    disp.setAttribute("scale", currentScale.toFixed(1));
-    requestAnimationFrame(settle);
-  })();
-}
-
-/* ---------------------------------------------------------------------
-   7. Opal dust
+   5. Opal dust
    Scatters small drifting specks around the blob visual. Pure CSS
    handles the motion — JS just randomizes position, size and drift.
    --------------------------------------------------------------------- */
@@ -364,7 +273,189 @@ function initOpalDust() {
 }
 
 /* ---------------------------------------------------------------------
-   8. Sticky nav hairline
+   6. Word-by-word heading reveal
+   Wraps each word of the main headings in a span and staggers them in,
+   timed to land just as the dice loader finishes fading.
+   --------------------------------------------------------------------- */
+function initWordReveal() {
+  if (reduceMotion) return;
+
+  function wrapWords(node) {
+    Array.from(node.childNodes).forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach((piece) => {
+          if (piece.trim() === "") {
+            frag.appendChild(document.createTextNode(piece));
+          } else {
+            const span = document.createElement("span");
+            span.className = "word";
+            span.textContent = piece;
+            frag.appendChild(span);
+          }
+        });
+        node.replaceChild(frag, child);
+      } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== "BR") {
+        wrapWords(child);
+      }
+    });
+  }
+
+  const headings = document.querySelectorAll(".hero h1, .page-head h1");
+  headings.forEach((h) => wrapWords(h));
+
+  // Land the first word right as the loader finishes (~1.6s), then
+  // stagger the rest in shortly after.
+  setTimeout(() => {
+    headings.forEach((h) => {
+      h.querySelectorAll(".word").forEach((w, i) => {
+        setTimeout(() => w.classList.add("in"), i * 45);
+      });
+    });
+  }, 1650);
+}
+
+/* ---------------------------------------------------------------------
+   7. Animated count-up stats
+   Numbers on the résumé page count up from 0 the first time they
+   scroll into view, preserving whatever prefix/suffix they had
+   ("60%", "1,000+", etc).
+   --------------------------------------------------------------------- */
+function initCountUp() {
+  const els = document.querySelectorAll(".stat .big");
+  if (!els.length || reduceMotion || !("IntersectionObserver" in window)) return;
+
+  function animate(el) {
+    const raw = el.textContent.trim();
+    const match = raw.match(/^(\D*)([\d,]+)(.*)$/);
+    if (!match) return;
+
+    const [, prefix, numStr, suffix] = match;
+    const target = parseInt(numStr.replace(/,/g, ""), 10);
+    const hasComma = numStr.includes(",");
+    const duration = 1100;
+    const start = performance.now();
+
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const val = Math.round(target * eased);
+      el.textContent = prefix + (hasComma ? val.toLocaleString() : val) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      animate(entry.target);
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+
+  els.forEach((el) => io.observe(el));
+}
+
+/* ---------------------------------------------------------------------
+   8. Section progress rail
+   On pages with several numbered .cs-section elements (case studies),
+   builds a small fixed dot-rail that highlights the section currently
+   in view — a lightweight nod to scroll-progress patterns.
+   --------------------------------------------------------------------- */
+function initSectionRail() {
+  const sections = document.querySelectorAll("section.cs-section");
+  if (sections.length < 2 || !("IntersectionObserver" in window)) return;
+
+  const rail = document.createElement("div");
+  rail.className = "section-rail";
+  rail.setAttribute("aria-hidden", "true");
+
+  const dots = Array.from(sections).map(() => {
+    const dot = document.createElement("span");
+    dot.className = "rail-dot";
+    rail.appendChild(dot);
+    return dot;
+  });
+  document.body.appendChild(rail);
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const idx = Array.from(sections).indexOf(entry.target);
+      dots.forEach((d) => d.classList.remove("active"));
+      dots[idx].classList.add("active");
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach((s) => io.observe(s));
+}
+
+/* ---------------------------------------------------------------------
+   8b. Case-study rail
+   The sticky left column on the long-form case studies: highlights the
+   section you're reading and fills a progress line as you scroll it.
+   --------------------------------------------------------------------- */
+function initCaseRail() {
+  const rail = document.querySelector(".cs-rail");
+  const layout = document.querySelector(".cs-layout");
+  const blocks = Array.from(document.querySelectorAll(".cs-block"));
+  if (!rail || !layout || blocks.length < 2) return;
+
+  const links = Array.from(rail.querySelectorAll(".cs-rail-list a"));
+  const fill = rail.querySelector(".cs-rail-track i");
+
+  const setActive = (id) => {
+    links.forEach((a) => {
+      a.parentElement.classList.toggle("active", a.getAttribute("href") === "#" + id);
+    });
+  };
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
+    blocks.forEach((b) => io.observe(b));
+  }
+
+  if (fill && !reduceMotion) {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const start = layout.offsetTop - 120;
+      const end = layout.offsetTop + layout.offsetHeight - window.innerHeight;
+      const p = Math.min(Math.max((window.scrollY - start) / (end - start), 0), 1);
+      fill.style.transform = "scaleY(" + p.toFixed(4) + ")";
+    };
+    document.addEventListener("scroll", () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  }
+}
+
+/* ---------------------------------------------------------------------
+   9. Hero parallax
+   The polaroid drifts very slightly on scroll, independent of its own
+   rotation/hover transform (uses `top`, not `transform`, so the two
+   never fight each other).
+   --------------------------------------------------------------------- */
+function initParallax() {
+  if (reduceMotion) return;
+
+  const polaroid = document.querySelector(".polaroid");
+  if (!polaroid) return;
+
+  polaroid.style.position = "relative";
+
+  window.addEventListener("scroll", () => {
+    const offset = Math.min(window.scrollY * 0.08, 24);
+    polaroid.style.top = `${offset}px`;
+  }, { passive: true });
+}
+
+/* ---------------------------------------------------------------------
+   10. Sticky nav hairline
    --------------------------------------------------------------------- */
 function initNav() {
   const nav = document.querySelector(".site-nav");
@@ -376,7 +467,7 @@ function initNav() {
 }
 
 /* ---------------------------------------------------------------------
-   9. Console note — for the curious few who open dev tools
+   11. Console note — for the curious few who open dev tools
    --------------------------------------------------------------------- */
 function initConsoleNote() {
   console.log(
@@ -396,9 +487,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initCursor();
   initReveal();
   initMagnetic();
-  initHoverPreview();
-  initLiquidDistortion();
   initOpalDust();
+  initWordReveal();
+  initCountUp();
+  initSectionRail();
+  initCaseRail();
+  initParallax();
   initNav();
   initConsoleNote();
 });

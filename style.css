@@ -4,13 +4,17 @@
    ========================================================================== */
 
 :root {
+  color-scheme: light only;
+
   --bone:       #F5F2FC;
   --bone-deep:  #EAE2F7;
   --paper:      #FFFFFF;
   --ink:        #1C1A24;
   --ink-soft:   #5C5769;
   --ink-faint:  #9791A6;
-  --tan:        #7C82E8;
+  --tan:        #D98FBB;
+  --accent-blue: #7C93E0;
+  --accent-mint: #6FC9A8;
   --line:       rgba(28, 26, 36, 0.12);
   --line-soft:  rgba(28, 26, 36, 0.07);
 
@@ -52,18 +56,9 @@ h1, h2, h3 { font-weight: 400; margin: 0; }
    label appears over anything clickable.
    -------------------------------------------------------------------------- */
 .cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  width: 7px; height: 7px;
-  margin: -3.5px 0 0 -3.5px;
-  border-radius: 50%;
-  background: var(--ink);
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.3s;
+  /* Removed per request — the paw trail alone now represents the cursor. */
+  display: none;
 }
-body.cursor-ready .cursor-dot { opacity: 1; }
 
 #cursor-trail-canvas {
   position: fixed;
@@ -460,6 +455,8 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   white-space: nowrap;
 }
 .marquee span::after { content: " ✦"; color: var(--tan); }
+.marquee span:nth-child(3n+2)::after { color: var(--accent-blue); }
+.marquee span:nth-child(3n)::after { color: var(--accent-mint); }
 @keyframes slide { to { transform: translateX(-50%); } }
 
 /* --------------------------------------------------------------------------
@@ -519,39 +516,115 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   transform: rotate(-45deg);
 }
 
-/* hover preview image that follows the cursor */
-.hover-preview {
-  position: fixed;
-  top: 0; left: 0;
-  width: 260px; height: 190px;
-  border-radius: 8px;
-  background: var(--bone-deep);
-  border: 1px solid var(--line);
-  pointer-events: none;
-  z-index: 400;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.9) rotate(-3deg);
-  transition: opacity 0.35s var(--ease), transform 0.45s var(--ease);
-  overflow: hidden;
+
+/* --------------------------------------------------------------------------
+   BENTO GRID LAYOUT
+   Asymmetric grid with varying card sizes for visual interest
+   -------------------------------------------------------------------------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: clamp(40px, 5vw, 60px);
+}
+
+.bento-card {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease),
+              border-color 0.4s var(--ease);
+  height: 100%;
+}
+
+.bento-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--ink);
+  box-shadow: 0 20px 40px rgba(28, 26, 36, 0.1);
+}
+
+.bento-image {
+  width: 100%;
+  overflow: hidden;
+  background: var(--bone);
+}
+
+.bento-card-lg .bento-image {
+  height: 320px;
+}
+
+.bento-card-md .bento-image {
+  height: 240px;
+}
+
+.bento-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+
+.bento-card:hover .bento-image img {
+  transform: scale(1.05);
+}
+
+.bento-content {
+  padding: clamp(20px, 4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.bento-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.bento-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.bento-tags {
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ink-faint);
-  text-align: center;
-  padding: 14px;
-  filter: url(#liquid-distort);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: auto;
 }
-.hover-preview.show {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1) rotate(-3deg);
-}
-.hover-preview img { width: 100%; height: 100%; object-fit: cover; }
 
-@media (hover: none), (pointer: coarse) { .hover-preview { display: none; } }
+/* Bento grid variations - make first card larger */
+.bento-grid .bento-card-lg {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-grid .bento-card-lg {
+    grid-column: span 1;
+  }
+
+  .bento-card-lg .bento-image {
+    height: 280px;
+  }
+}
 
 /* --------------------------------------------------------------------------
    PAGE HEADER (interior pages)
@@ -714,6 +787,17 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 }
 .chip:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
 
+.chip-group { margin-bottom: 22px; }
+.chip-group:last-child { margin-bottom: 0; }
+.chip-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 12px;
+}
+
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -768,6 +852,8 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   letter-spacing: 0.1em;
   margin-bottom: 14px;
 }
+.hobby-card:nth-of-type(3n+2) .num { color: var(--accent-blue); }
+.hobby-card:nth-of-type(3n) .num { color: var(--accent-mint); }
 .hobby-card h3 {
   font-family: var(--font-display);
   font-size: clamp(22px, 2.8vw, 28px);
@@ -852,8 +938,19 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   align-items: center;
   justify-content: center;
   margin-bottom: clamp(48px, 7vw, 84px);
+  overflow: hidden;
+  position: relative;
 }
 .image-frame.tall { aspect-ratio: 4 / 3; margin-bottom: 0; }
+.image-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
 .image-frame .cap {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -863,6 +960,10 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   background: rgba(255, 253, 249, 0.9);
   padding: 7px 14px;
   border-radius: 100px;
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 10;
 }
 
 .cs-section { max-width: 760px; margin: 0 auto; padding-bottom: clamp(50px, 8vw, 84px); }
@@ -875,6 +976,8 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   text-transform: uppercase;
   margin: 0 0 10px;
 }
+section.cs-section:nth-of-type(2) .num { color: var(--accent-blue); }
+section.cs-section:nth-of-type(3) .num { color: var(--accent-mint); }
 .cs-section h2 {
   font-family: var(--font-display);
   font-size: clamp(27px, 3.6vw, 38px);
@@ -920,6 +1023,505 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   letter-spacing: -0.01em;
 }
 .cs-next a:hover .title { color: var(--tan); }
+
+/* --------------------------------------------------------------------------
+   CASE STUDY — long-form layout (sticky rail + rich sections)
+   -------------------------------------------------------------------------- */
+.cs-layout {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+  margin-top: clamp(10px, 3vw, 30px);
+}
+
+.cs-rail {
+  position: sticky;
+  top: 104px;
+  align-self: start;
+  display: grid;
+  grid-template-columns: 1px 1fr;
+  gap: 0 18px;
+}
+.cs-rail-name {
+  grid-column: 1 / -1;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.cs-rail-track {
+  position: relative;
+  width: 1px;
+  background: var(--line);
+  border-radius: 1px;
+}
+.cs-rail-track i {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 100%;
+  background: var(--tan);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.15s linear;
+}
+.cs-rail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.cs-rail-list a {
+  display: block;
+  padding: 8px 0;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--ink-faint);
+  transition: color 0.3s var(--ease);
+}
+.cs-rail-list a:hover { color: var(--ink-soft); }
+.cs-rail-list li.active a { color: var(--ink); }
+
+.cs-body { min-width: 0; }
+
+.cs-block {
+  padding: clamp(38px, 6vw, 76px) 0;
+  border-top: 1px solid var(--line-soft);
+  scroll-margin-top: 92px;
+}
+.cs-block:first-child { border-top: none; padding-top: 0; }
+.cs-block > .reveal { will-change: opacity, transform; }
+
+.cs-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tan);
+  margin: 0 0 12px;
+}
+.cs-block h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin: 0 0 22px;
+  max-width: 22ch;
+}
+.cs-block h3 {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  letter-spacing: -0.005em;
+  margin: 42px 0 14px;
+}
+.cs-block h4 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.cs-block p {
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+  max-width: 64ch;
+}
+.cs-block strong { color: var(--ink); font-weight: 600; }
+.cs-block > ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  color: var(--ink-soft);
+  font-size: 16.5px;
+  max-width: 64ch;
+}
+.cs-block > ul li { margin-bottom: 8px; }
+.cs-block > ul li::marker { color: var(--tan); }
+
+.cs-goals {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  max-width: 64ch;
+  border-top: 1px solid var(--line);
+}
+.cs-goals li {
+  padding: 14px 0 14px 22px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  position: relative;
+}
+.cs-goals li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 22px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tan);
+}
+
+.cs-shot a { display: block; }
+.cs-shot figcaption a {
+  color: var(--ink-faint);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cs-shot figcaption a:hover { color: var(--ink); }
+
+.cs-hint,
+.cs-block p.cs-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 12px;
+}
+
+.cs-step { padding-top: 4px; }
+
+/* module blocks — a stack of short "here's what it does" entries */
+.cs-mod {
+  padding: 26px 0;
+  border-top: 1px solid var(--line-soft);
+}
+.cs-mod:first-of-type { border-top: none; }
+.cs-mod h3 { margin: 0 0 10px; }
+.cs-mod > p { margin: 0; }
+.cs-mod .cs-shot { margin-top: 18px; }
+
+/* browser-chrome frame for product screenshots */
+.cs-window {
+  margin-top: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 0 26px 46px -30px rgba(28, 26, 36, 0.24);
+}
+.cs-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  background: var(--bone);
+  border-bottom: 1px solid var(--line);
+}
+.cs-window-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+}
+.cs-window-bar em {
+  margin-left: 12px;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+.cs-window img {
+  width: 100%;
+  display: block;
+  border: 0;
+  border-radius: 0;
+}
+figure.cs-winfig { margin: 0; }
+figure.cs-winfig figcaption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 10px;
+}
+
+/* phone mockup — reused from the reel, for a single still */
+.cs-phone {
+  width: min(240px, 62vw);
+  margin: 18px 0 0;
+  border-radius: 30px;
+  overflow: hidden;
+  filter: drop-shadow(0 36px 52px rgba(28, 26, 36, 0.32));
+}
+.cs-phone img { width: 100%; display: block; }
+
+/* mobile-app walkthrough inside a module block */
+#tzapp .cs-screen { padding: clamp(26px, 4vw, 44px) 0; }
+#tzapp .cs-screen-text h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(18px, 2.2vw, 23px);
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+#tzapp .cs-screen-media img {
+  max-height: 470px;
+  border-radius: 24px;
+}
+#tzapp .cs-modnote { margin: 24px 0 0; }
+#tzapp .cs-shot-pair {
+  max-width: 460px;
+  margin-top: 16px;
+}
+#tzapp .cs-shot-pair img { border-radius: 22px; }
+
+.cs-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 26px;
+}
+.cs-cols ul { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 15px; }
+.cs-cols li { margin-bottom: 7px; }
+.cs-cols li::marker { color: var(--tan); }
+
+/* clean imagery — no frame, no striped background */
+.cs-shot { margin: 26px 0 0; }
+.cs-shot img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.cs-shot figcaption,
+.cs-shot-pair figcaption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 10px;
+}
+.cs-shot-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 26px;
+}
+.cs-shot-pair figure { margin: 0; }
+.cs-shot-pair img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+/* browser frame with the scrollable landing page */
+.cs-browser {
+  margin-top: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 0 34px 60px -34px rgba(28, 26, 36, 0.22);
+}
+.cs-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 16px;
+  background: var(--bone);
+  border-bottom: 1px solid var(--line);
+}
+.cs-browser-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+.cs-browser-bar em {
+  margin-left: 14px;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+.cs-browser-view {
+  height: clamp(360px, 58vh, 560px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.cs-browser-view img { width: 100%; display: block; }
+
+/* feature grid */
+.cs-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cs-feature {
+  padding: 20px 22px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.cs-feature:nth-child(1),
+.cs-feature:nth-child(2) { border-top: none; }
+.cs-feature:nth-child(odd) { border-left: none; }
+.cs-feature p { font-size: 13.5px; margin: 0; max-width: none; }
+
+/* screen showcase — alternating text / mockup */
+.cs-screen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 292px;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(32px, 5vw, 54px) 0;
+  border-top: 1px solid var(--line-soft);
+}
+.cs-screen:first-of-type { border-top: none; padding-top: 8px; }
+.cs-screen.reverse { grid-template-columns: 292px minmax(0, 1fr); }
+.cs-screen.reverse .cs-screen-text { order: 2; }
+.cs-screen-text h3 { margin: 0 0 12px; }
+.cs-screen-text p { margin: 0; }
+.cs-screen-media {
+  display: flex;
+  justify-content: center;
+}
+.cs-screen-media img {
+  width: auto;
+  max-width: 100%;
+  max-height: 460px;
+  display: block;
+  border-radius: 30px;
+  box-shadow: 0 40px 70px -34px rgba(28, 26, 36, 0.42);
+}
+/* screens cropped from a Figma frame already carry a device bezel;
+   drop-shadow follows the phone's alpha, box-shadow would draw a rectangle */
+#hifi .cs-screen-media img {
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 34px 50px rgba(28, 26, 36, 0.3));
+}
+
+/* auto-cycling screen reel — a lightweight stand-in for a screen recording:
+   3 screens with near-instant cuts and a tap indicator walking the tab bar */
+.cs-reel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 6px;
+}
+.cs-reel-phone {
+  position: relative;
+  width: min(250px, 66vw);
+  aspect-ratio: 428 / 865;
+  filter: drop-shadow(0 38px 55px rgba(28, 26, 36, 0.32));
+  /* fallback so the frame is never empty during a cut */
+  background: url(assets/images/myride-home.png) center / contain no-repeat;
+}
+.cs-reel-phone img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: cs-reel 9s linear infinite;
+}
+.cs-reel-phone img:nth-child(1) { animation-delay: 0s; }
+.cs-reel-phone img:nth-child(2) { animation-delay: 3s; }
+.cs-reel-phone img:nth-child(3) { animation-delay: 6s; }
+@keyframes cs-reel {
+  0%   { opacity: 0; }
+  1%   { opacity: 1; }
+  32%  { opacity: 1; }
+  33%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* the tap dot — jumps between tab positions, pulses near each cut */
+.cs-tap {
+  position: absolute;
+  top: 92.5%;
+  left: 62%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  background: rgba(28, 26, 36, 0.55);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  animation: cs-tap-pos 9s linear infinite,
+             cs-tap-pulse 3s ease-out infinite;
+}
+.cs-tap::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(28, 26, 36, 0.4);
+  animation: cs-tap-ring 3s ease-out infinite;
+}
+@keyframes cs-tap-pos {
+  0%,   33.32% { left: 62%; }   /* Home screen → press Wallet tab */
+  33.33%, 66.65% { left: 38%; } /* Wallet screen → press Schedule tab */
+  66.66%, 100% { left: 15%; }   /* Schedule screen → press Home tab */
+}
+@keyframes cs-tap-pulse {
+  0%, 66%  { opacity: 0; transform: scale(0.5); }
+  74%      { opacity: 0.9; transform: scale(1); }
+  88%      { opacity: 0.5; transform: scale(0.92); }
+  96%, 100% { opacity: 0; transform: scale(0.9); }
+}
+@keyframes cs-tap-ring {
+  0%, 68%  { opacity: 0; transform: scale(0.4); }
+  74%      { opacity: 0.7; transform: scale(0.7); }
+  92%, 100% { opacity: 0; transform: scale(1.5); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-reel-phone img { animation: none; opacity: 0; }
+  .cs-reel-phone img:first-child { opacity: 1; }
+  .cs-tap { display: none; }
+}
+
+.cs-learned {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+  border-top: 1px solid var(--line);
+}
+.cs-learned li {
+  padding: 20px 0 20px 28px;
+  border-bottom: 1px solid var(--line);
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  position: relative;
+}
+.cs-learned li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--tan);
+}
+
+@media (max-width: 1000px) {
+  .cs-layout { grid-template-columns: 1fr; gap: 0; }
+  .cs-rail { display: none; }
+  .cs-cols,
+  .cs-shot-pair { grid-template-columns: 1fr; }
+  .cs-screen,
+  .cs-screen.reverse { grid-template-columns: 1fr; gap: 22px; }
+  .cs-screen.reverse .cs-screen-text { order: 0; }
+  .cs-screen-media { max-width: 260px; }
+}
 
 /* --------------------------------------------------------------------------
    CTA + FOOTER
@@ -1081,6 +1683,62 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 }
 
 /* --------------------------------------------------------------------------
+   WORD REVEAL — headings animate in word by word
+   -------------------------------------------------------------------------- */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+.word.in { opacity: 1; transform: none; }
+
+/* --------------------------------------------------------------------------
+   SECTION RAIL — scroll progress indicator on case study pages
+   Desktop only; a case study's numbered sections light up as you pass them.
+   -------------------------------------------------------------------------- */
+.section-rail {
+  position: fixed;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 300;
+}
+.section-rail::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  bottom: -20px;
+  width: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.rail-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.rail-dot.active {
+  background: var(--tan);
+  transform: scale(1.8);
+}
+
+@media (max-width: 1100px) {
+  .section-rail { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rail-dot { transition: none; }
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE
    -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
@@ -1107,8 +1765,6 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
-  .cursor-dot, #cursor-trail-canvas, .cursor-label, .hover-preview { display: none; }
+  .word { opacity: 1; transform: none; }
+  .cursor-dot, #cursor-trail-canvas, .cursor-label { display: none; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .hover-preview { filter: none; }}
