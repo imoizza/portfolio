@@ -1363,6 +1363,7 @@ figure.cs-winfig figcaption {
    -------------------------------------------------------------------------- */
 .app-shot { margin: 24px 0 0; }
 .app-shot.cover { margin: 0 0 clamp(40px, 6vw, 72px); }
+.app-shot.cover img { max-height: 640px; width: auto; max-width: 100%; }
 .app-shot img,
 .app-pair img,
 .app-row img {
@@ -1476,6 +1477,55 @@ figure.cs-winfig figcaption {
   .cs-stat { border-left: 0; border-top: 1px solid var(--line); }
   .cs-stat:first-child { border-top: 0; }
 }
+
+/* Pinjara Kari: fabrication photos */
+#pk .app-shot img,
+#pk .app-pair img {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+#pk .app-shot img {
+  max-height: 600px;
+  width: auto;
+  max-width: 100%;
+}
+#pk .app-shot.cover img { max-height: 620px; border-radius: 12px; }
+#pk .app-pair { align-items: start; }
+#pk .app-pair img {
+  max-height: 440px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* simple spec table */
+.spec-table {
+  width: 100%;
+  max-width: 62ch;
+  border-collapse: collapse;
+  margin-top: 26px;
+  font-size: 14.5px;
+}
+.spec-table th,
+.spec-table td {
+  text-align: left;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.spec-table tr:first-child th,
+.spec-table tr:first-child td { border-top: 1px solid var(--line); }
+.spec-table th {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 400;
+  width: 38%;
+  padding-right: 18px;
+}
+.spec-table td { color: var(--ink-soft); }
 
 .cs-cols {
   display: grid;

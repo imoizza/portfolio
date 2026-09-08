@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pinjara Kari · Moizza Azhar</title>
+<meta name="description" content="Chinioti latticework reimagined in 3D print: a 50 cm square of interlocking tiles that flex like fabric." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · The Art of Fabricating Tangible Interfaces</p>
+    <h1>Pinjara Kari</h1>
+    <p class="lede">Chinioti latticework, 3D-printed. A 50 cm square of interlocking geometric tiles that flex like fabric, built at the Paris-Saclay FabLab over seven weeks.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Solo · concept, digital design, fabrication</p></div>
+      <div><p class="label">Made with</p><p class="value">Figma · Fusion 360 · PrusaSlicer</p></div>
+      <div><p class="label">Year</p><p class="value">2026</p></div>
+      <div><p class="label">Output</p><p class="value">196 tiles, 50 × 50 cm</p></div>
+    </div>
+    <figure class="app-shot cover reveal">
+      <img src="../assets/images/pk-hero.jpg" alt="Sunlight passing through the finished terracotta lattice mesh" loading="lazy">
+      <figcaption>The finished mesh, backlit</figcaption>
+    </figure>
+  </div>
+
+  <main class="cs-layout wrap" id="pk">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#heritage">The heritage</a></li>
+        <li><a href="#digital">Digital translation</a></li>
+        <li><a href="#joint">The joint</a></li>
+        <li><a href="#material">Material &amp; scale</a></li>
+        <li><a href="#installation">The installation</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="heritage" data-rail="The heritage">
+        <p class="cs-kicker">01 · The heritage</p>
+        <h2>From a woodcarver's chisel</h2>
+        <p class="reveal">Chiniot, in Pakistan, is known for <em>Manabat Kari</em>, a hand-carved woodwork tradition. It is what families travel for when they want furniture to last a lifetime. The same geometry runs through Jali lattice screens and mosque facades, and master artisans still cut it entirely by hand.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/pk-artisan.jpg" alt="An artisan hand-carving a wooden chair" loading="lazy"><figcaption>Still carved by hand</figcaption></figure>
+          <figure><img src="../assets/images/pk-chinioti.jpg" alt="Traditional Chinioti carved beds and seating" loading="lazy"><figcaption>Chinioti carved furniture</figcaption></figure>
+        </div>
+        <p class="reveal">I wanted to move that craft into digital fabrication without losing what makes it feel handmade. After studying the motifs I settled on one eight-point star as the seed of the pattern.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/pk-star-pattern.jpg" alt="The eight-point star motif, rendered as a repeating pattern" loading="lazy">
+          <figcaption>The eight-point star, the repeating unit</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="digital" data-rail="Digital translation">
+        <p class="cs-kicker">02 · Digital translation</p>
+        <h2>Figma to Fusion to filament</h2>
+        <p class="reveal">On a tip from classmates I drew the star in Figma, whose line tools kept the symmetry exact, exported it as SVG, and brought it into Fusion 360 to scale and extrude. PrusaSlicer prepared each file for the Prusa MINI.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/pk-figma.jpg" alt="The eight-point star drawn as vectors in Figma" loading="lazy"><figcaption>Drawn in Figma</figcaption></figure>
+          <figure><img src="../assets/images/pk-fusion.jpg" alt="The star sketch extruded in Fusion 360" loading="lazy"><figcaption>Extruded in Fusion 360</figcaption></figure>
+        </div>
+        <p class="reveal">The first prints in black PLA came out crisp. They were also too big: the motif broke the 50 mm tile limit, so every pattern had to be rescaled.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/pk-multiprint.jpg" alt="Several early star prints in different colours" loading="lazy">
+          <figcaption>Early star prints, testing colour</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="joint" data-rail="The joint">
+        <p class="cs-kicker">03 · The joint</p>
+        <h2>Making plastic behave like cloth</h2>
+        <p class="reveal">A tile is only half the problem. To turn the pattern into a surface I needed a connector that holds tight and lies flat. Rigid interlocking tabs warped. A pin-and-dot system printed too small. A diamond layout amplified every tolerance error.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/pk-diamond-fail.jpg" alt="A diamond-oriented assembly that has warped out of flat" loading="lazy"><figcaption>The diamond layout warped</figcaption></figure>
+          <figure><img src="../assets/images/pk-connector.jpg" alt="A printed star with a rigid connector" loading="lazy"><figcaption>Rigid connectors, before flexures</figcaption></figure>
+        </div>
+        <p class="reveal">The fix came from flexures: thin sections of material that bend instead of snap. By printing the star motif at 0.90 mm for rigidity and the connector bridge at just 0.30 mm, the joint became a living hinge. The tiles fold like a textile and still spring flat.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/pk-livinghinge.jpg" alt="The final living-hinge connection between two tiles" loading="lazy">
+          <figcaption>The living hinge: 0.90 mm motif, 0.30 mm bridge</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="material" data-rail="Material &amp; scale">
+        <p class="cs-kicker">04 · Material &amp; scale</p>
+        <h2>One colour, two hundred tiles</h2>
+        <p class="reveal">A two-tone version, red motifs and skin-tone connectors, made the joints the loudest thing on the surface. Monochrome skin-tone did the opposite: it reads as a soft material and lets the shadow of the Kari work carry the pattern.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/pk-color-test.jpg" alt="The two-tone test assembly, red and skin-tone" loading="lazy"><figcaption>The two-tone test</figcaption></figure>
+          <figure><img src="../assets/images/pk-box.jpg" alt="Tiles folded into a standing column to test the hinge" loading="lazy"><figcaption>Folded into a column to test the hinge</figcaption></figure>
+        </div>
+        <p class="reveal">Then it scaled. Coverage maths pushed the count from 100 tiles to 196, a 14 by 14 grid, printed in batches. For the final run I switched from PLA to skin-tone PETG, for durability and a little more give in the joints.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/pk-massprint.jpg" alt="A full print bed of star motifs in PrusaSlicer" loading="lazy">
+          <figcaption>A full bed of stars</figcaption>
+        </figure>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/pk-assembly.jpg" alt="Assembling nearly two hundred tiles on a workbench" loading="lazy">
+          <figcaption>Assembling 196 tiles</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="installation" data-rail="The installation">
+        <p class="cs-kicker">05 · The installation</p>
+        <h2>A screen that prints light</h2>
+        <p class="reveal">The finished mesh mounts on a black backdrop on an easel, which throws the negative space of the pattern into relief. Held against a window it works as a Jali screen: the 0.90 mm tiles filter sunlight into a moving field of geometric shadow.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/pk-jali.jpg" alt="The mesh against a window, casting patterned light" loading="lazy">
+          <figcaption>Against the window, as a Jali screen</figcaption>
+        </figure>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/pk-backdrop.jpg" alt="The mesh laid out on a black backdrop" loading="lazy"><figcaption>On the black backdrop</figcaption></figure>
+          <figure><img src="../assets/images/pk-easel.jpg" alt="The mounted installation on an easel at the show" loading="lazy"><figcaption>At the Tangible Interfaces Show</figcaption></figure>
+        </div>
+
+        <table class="spec-table reveal">
+          <tr><th>Tiles</th><td>196 · 14 × 14 grid</td></tr>
+          <tr><th>Material</th><td>Skin-tone PETG</td></tr>
+          <tr><th>Star motif</th><td>0.90 mm, rigid and detailed</td></tr>
+          <tr><th>Connector flexure</th><td>0.30 mm, flexible and durable</td></tr>
+          <tr><th>Size</th><td>50 × 50 cm, uniform surface</td></tr>
+          <tr><th>Fit</th><td>Interlocking press-fit, seamless and flat</td></tr>
+        </table>
+
+        <figure class="app-shot reveal">
+          <img src="../assets/images/pk-me.jpg" alt="Moizza with the finished piece at the exhibition" loading="lazy">
+          <figcaption>At the show</figcaption>
+        </figure>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="reso.html" data-cursor="next">
+        <p class="label">Another project</p>
+        <p class="title">Reso →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
