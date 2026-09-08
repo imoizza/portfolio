@@ -2,3 +2,6 @@
 .DS_Store?
 **/.DS_Store
 Notion_export/
+
+# large raw video source (compressed version is colorait-demo.mp4)
+assets/videos/upscaled-video.mp4
