@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Minesweeper PRO · Moizza Azhar</title>
+<meta name="description" content="An advanced JavaFX Minesweeper with a persistent shield and a dynamic time bonus." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · Programming of Interactive Systems</p>
+    <h1>Minesweeper PRO</h1>
+    <p class="lede">An advanced JavaFX take on Minesweeper with a glassmorphism interface and two mechanics of my own: a shield you keep between games, and a time bonus for playing fast.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Solo build</p></div>
+      <div><p class="label">Built with</p><p class="value">JavaFX · Java</p></div>
+      <div><p class="label">Year</p><p class="value">2026</p></div>
+      <div><p class="label">Course</p><p class="value">Programming of Interactive Systems</p></div>
+    </div>
+    <figure class="app-shot cover reveal">
+      <img src="../assets/images/msw-setup.png" alt="Minesweeper PRO setup screen" loading="lazy">
+      <figcaption>Setup screen · difficulty and time limit as toggle buttons</figcaption>
+    </figure>
+  </div>
+
+  <main class="cs-layout wrap">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#shield">The shield</a></li>
+        <li><a href="#bonus">The time bonus</a></li>
+        <li><a href="#states">The screens</a></li>
+        <li><a href="#build">Under the hood</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="overview" data-rail="Overview">
+        <p class="cs-kicker">01 · Overview</p>
+        <h2>Classic rules, a modern shell</h2>
+        <p class="reveal">Minesweeper PRO keeps the original game intact and wraps it in a responsive blue glassmorphism UI: a setup screen for difficulty and time limit, a real-time HUD, and custom modal dialogs in place of the default JavaFX alerts. Two mechanics change how it actually plays.</p>
+        <h3>Setup</h3>
+        <p class="reveal">One screen picks difficulty (Easy, Medium, Hard) and a time limit (1, 2 or 5 minutes) through toggle buttons. Difficulty sets the grid size, the mine count (4, 20, 40) and the timer together.</p>
+      </section>
+
+      <section class="cs-block" id="shield" data-rail="The shield">
+        <p class="cs-kicker">02 · Persistent shield</p>
+        <h2>A shield you keep between games</h2>
+        <p class="reveal">Every game hides one shield in a random safe cell. Open that cell and it goes into a permanent inventory, stored with Java Preferences so it survives closing the app.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/msw-shield-found.png" alt="Shield found dialog" loading="lazy">
+          <figcaption>Picking up the hidden shield</figcaption>
+        </figure>
+        <p class="reveal">Click a mine while holding a shield and a dialog offers one last save. Use it and the mine is defused, the cell reveals as safe, the shield and mine counters both drop by one, and the progress bar updates so play continues. Decline and it is game over.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/msw-shield-opp.png" alt="Shield opportunity prompt" loading="lazy"><figcaption>The save prompt</figcaption></figure>
+          <figure><img src="../assets/images/msw-shield-used.png" alt="Board after defusing a mine" loading="lazy"><figcaption>After defusing</figcaption></figure>
+        </div>
+        <p class="reveal">The win check accounts for this: a board is won when every safe cell is open and every mine is either flagged or defused.</p>
+      </section>
+
+      <section class="cs-block" id="bonus" data-rail="The time bonus">
+        <p class="cs-kicker">03 · Dynamic time bonus</p>
+        <h2>Twenty seconds for playing fast</h2>
+        <p class="reveal">Clear half of the safe cells within the first quarter of your time limit and the game adds 20 seconds. A dialog confirms it, and the timer jumps the moment you close it: a 60 second game becomes 80.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/msw-bonus.png" alt="Time bonus dialog" loading="lazy"><figcaption>Bonus awarded</figcaption></figure>
+          <figure><img src="../assets/images/msw-bonus-timer.png" alt="Timer after the bonus" loading="lazy"><figcaption>Timer updated instantly</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-block" id="states" data-rail="The screens">
+        <p class="cs-kicker">04 · The screens</p>
+        <h2>Every state has a look</h2>
+        <p class="reveal">Difficulty scales the whole board.</p>
+        <div class="app-row reveal">
+          <figure><img src="../assets/images/msw-easy.png" alt="Easy board" loading="lazy"><figcaption>Easy · 4 mines</figcaption></figure>
+          <figure><img src="../assets/images/msw-medium.png" alt="Medium board" loading="lazy"><figcaption>Medium · 20 mines</figcaption></figure>
+          <figure><img src="../assets/images/msw-hard.png" alt="Hard board" loading="lazy"><figcaption>Hard · 40 mines</figcaption></figure>
+        </div>
+
+        <h3>In game</h3>
+        <p class="reveal">The HUD carries the countdown, a win progress bar, the shield inventory, the remaining mine count and a quit button. Reveals cascade recursively through empty regions.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/msw-ingame.png" alt="Mid-game HUD and board" loading="lazy">
+          <figcaption>Mid-game HUD and board</figcaption>
+        </figure>
+
+        <h3>Endings</h3>
+        <p class="reveal">Win, loss and time out each get their own top-to-bottom animation: confetti for a win, sad emojis for a loss (with every mine revealed), and a Time's Up screen when the clock runs out. Each offers Home and Retry.</p>
+        <div class="app-row reveal">
+          <figure><img src="../assets/images/msw-win.png" alt="Win screen with confetti" loading="lazy"><figcaption>Win · confetti</figcaption></figure>
+          <figure><img src="../assets/images/msw-lose.png" alt="Game over screen" loading="lazy"><figcaption>Loss · mines revealed</figcaption></figure>
+          <figure><img src="../assets/images/msw-timeup.png" alt="Time's up screen" loading="lazy"><figcaption>Time out</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-block" id="build" data-rail="Under the hood">
+        <p class="cs-kicker">05 · Under the hood</p>
+        <h2>How it runs</h2>
+        <p class="reveal"><code>GameSetupController</code> loads the settings screen. Start Game hands off to <code>GameController</code>, which builds the grid, places the mines and the shield, loads the saved shield count and starts the countdown. All the game logic lives in that one controller: recursive reveals, mine handling, and the shield and bonus rules. It launches the same way as the practical exercises from class.</p>
+        <ul class="cs-goals reveal">
+          <li><strong>Java Preferences</strong> for shield persistence across sessions.</li>
+          <li><strong>Recursive flood reveal</strong> for empty regions.</li>
+          <li><strong>Custom modal overlays</strong> replacing JavaFX alerts, with enter and exit animations.</li>
+          <li><strong>Responsive layout</strong> that adapts grid, mines and timer to the chosen difficulty.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="../index.html#work" data-cursor="next">
+        <p class="label">Case studies</p>
+        <p class="title">The three main projects →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
