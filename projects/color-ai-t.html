@@ -56,114 +56,142 @@
     <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
     <p class="eyebrow">Coursework · Advanced Design of Interactive Systems</p>
     <h1>Color-AI-t</h1>
-    <p class="lede">A pen-based AI coloring-page generator for tablets, redesigned with a team of five. The idea: make AI one tool on the canvas, alongside the pen, the lasso and a reusable library, instead of a prompt box you wait on.</p>
+    <p class="lede">A pen-based AI coloring-page generator for tablets, redesigned with a team of five. The idea: make AI one tool on the canvas, next to the pen and a reusable library, instead of a prompt box you wait on and can't edit.</p>
   </header>
 
   <div class="wrap">
     <div class="cs-meta reveal">
-      <div><p class="label">Role</p><p class="value">Team of five · interaction design, prototyping, research</p></div>
-      <div><p class="label">Built with</p><p class="value">Figma</p></div>
+      <div><p class="label">Role</p><p class="value">Team of five · redesign, prototyping, study</p></div>
+      <div><p class="label">Built with</p><p class="value">Figma · paper prototyping</p></div>
       <div><p class="label">Year</p><p class="value">2026</p></div>
       <div><p class="label">Course</p><p class="value">Advanced Design of Interactive Systems</p></div>
     </div>
-    <!-- Moizza: a hero mockup of the canvas goes here, e.g.
-    <figure class="app-shot cover reveal">
-      <img src="../assets/images/colorait-canvas.png" alt="Color-AI-t canvas" loading="lazy">
-      <figcaption>The canvas · AI, pen and library in one space</figcaption>
-    </figure>
-    -->
   </div>
 
-  <main class="cs-layout wrap">
+  <main class="cs-layout wrap" id="cait">
     <aside class="cs-rail" aria-hidden="true">
       <p class="cs-rail-name">Moizza Azhar</p>
       <div class="cs-rail-track"><i></i></div>
       <ol class="cs-rail-list">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#canvas">The canvas</a></li>
-        <li><a href="#research">Research</a></li>
+        <li><a href="#overview">The problem</a></li>
+        <li><a href="#idea">The idea</a></li>
+        <li><a href="#walkthrough">Generative walkthrough</a></li>
         <li><a href="#study">The study</a></li>
-        <li><a href="#next">What we'd change</a></li>
+        <li><a href="#impact">Feasibility &amp; impact</a></li>
       </ol>
     </aside>
 
     <div class="cs-body">
 
-      <section class="cs-block" id="overview" data-rail="Overview">
-        <p class="cs-kicker">01 · Overview</p>
-        <h2>AI as a tool, not a vending machine</h2>
-        <p class="reveal">Coloring-page tools that use AI tend to work in one direction: type a prompt, wait, get a full page, start over if it is wrong. Color-AI-t treats the AI differently. It sits inside a drawing canvas, so you can generate a base image, draw on it, cut pieces out, regenerate a single region, or pull in something you made earlier. The prompt is a starting point, not the whole interaction.</p>
+      <section class="cs-block" id="overview" data-rail="The problem">
+        <p class="cs-kicker">01 · The problem</p>
+        <h2>Prompting a coloring page is a bad deal</h2>
+        <p class="reveal">We started from ColorifyAI, an existing text-to-coloring-page tool, and ran eight story interviews. The same frustrations kept surfacing.</p>
+        <ul class="cs-goals reveal">
+          <li><strong>Words are a poor handle for a picture.</strong> "I say a pretty butterfly with wings, but I don't know how to be more specific than this."</li>
+          <li><strong>The output often isn't good to color.</strong> "The rose didn't look like a proper rose at all, it looked like an ugly mushroom."</li>
+          <li><strong>It takes many tries.</strong> People run the same prompt again and again until something sticks.</li>
+          <li><strong>People stop when they tire, not when it's good.</strong> "When did you decide the page was good enough? When I got tired."</li>
+          <li><strong>You can't edit the image once it exists.</strong> A small flaw means regenerating the whole page.</li>
+        </ul>
       </section>
 
-      <section class="cs-block" id="canvas" data-rail="The canvas">
-        <p class="cs-kicker">02 · The canvas</p>
-        <h2>The interactions we redesigned</h2>
+      <section class="cs-block" id="idea" data-rail="The idea">
+        <p class="cs-kicker">02 · The idea</p>
+        <h2>A pen-based canvas, not a prompt box</h2>
+        <p class="reveal">Color-AI-t is a tablet app for people who color as a hobby, and for parents making custom pages for their kids. It still generates coloring-page outlines with AI, but the outline lands on a canvas you can draw on, and you can regenerate one part instead of the whole page. Input can be a text prompt, a sketch, or a photo reference.</p>
 
-        <h3>Projects and pages</h3>
-        <p class="reveal">You name a project and pick a page size, A4 or A5. A plus icon adds a page as a split screen; swiping left moves between pages.</p>
-
-        <h3>Prompting</h3>
-        <p class="reveal">A full-screen overlay holds the prompt. You can draw directly inside the prompt area to show the AI what you mean, and switch between prompting a selected region and prompting the whole page.</p>
-
-        <h3>Local edits</h3>
-        <p class="reveal">A localized circle tool marks a small area for the AI to change on its own; the test task was adding a chef's hat to a character. A lasso selects a freeform shape, and holding the selection for a moment lifts it off the page.</p>
-
-        <h3>The library</h3>
-        <p class="reveal">Anything you draw or lift can go into a library. On any other page you retrieve it and drop it in place, so a character designed once (the study used a cat called Kitty) travels across the whole project.</p>
-
-        <h3>Toolbar and history</h3>
-        <p class="reveal">A bottom toolbar changes stroke thickness. A history panel lists previous steps, so you can see how a page reached its current state.</p>
-        <!-- Moizza: this section wants 3-4 screens. Drop them in assets/images/ as
-             colorait-prompt.png, colorait-circle.png, colorait-library.png (etc.) and
-             I'll build a gallery here. -->
+        <h3>Directions we sketched first</h3>
+        <p class="reveal">Before the canvas we considered a few others: a node-based editor, a storybook layout, an education mode, and a search-first approach.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/colorait-alt-1.jpg" alt="Storybook layout concept sketch" loading="lazy"><figcaption>Storybook layout</figcaption></figure>
+          <figure><img src="../assets/images/colorait-alt-2.jpg" alt="Search and family-sets concept sketch" loading="lazy"><figcaption>Search and family sets</figcaption></figure>
+        </div>
       </section>
 
-      <section class="cs-block" id="research" data-rail="Research">
-        <p class="cs-kicker">03 · Research</p>
-        <h2>Story interviews first</h2>
-        <p class="reveal">We ran story interviews to understand how people actually make coloring pages, where AI helped and where it got in the way. The recurring theme: people wanted to stay in control of the drawing and use AI as an assistant for the parts that are tedious to do by hand, not as a replacement for the drawing itself.</p>
+      <section class="cs-block" id="walkthrough" data-rail="Generative walkthrough">
+        <p class="cs-kicker">03 · Generative walkthrough</p>
+        <h2>Five rounds of feedback on paper</h2>
+        <p class="reveal">We ran a generative walkthrough on a paper prototype, mapping each piece of feedback to a change, the interview it addressed, and a socio-technical principle.</p>
+
+        <div class="cs-mod reveal">
+          <h3>1 · Spatial prompting was confusing</h3>
+          <p>Replaced the three-dot menu with a drag-and-drop AI anchor, so you act on a specific part of the object in context. <em>Situated action; keep users in control, prevent errors.</em></p>
+          <figure class="app-shot"><img src="../assets/images/colorait-proto-1.jpg" alt="Paper prototype: dragging an AI anchor onto a drawing" loading="lazy"><figcaption>The anchor interaction</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>2 · The AI only gave one result</h3>
+          <p>After a prompt it now returns three to five variations directly on the canvas, instead of one take-it-or-leave-it image. <em>Reciprocal co-adaptation.</em></p>
+          <figure class="app-shot"><img src="../assets/images/colorait-proto-2.jpg" alt="Paper prototype: AI variations shown on the canvas" loading="lazy"><figcaption>Variations on the canvas</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>3 · "Photo", "Prompt" and "Draw" felt separate</h3>
+          <p>Merged into one AI panel that shows all three inputs at once, so you don't hold the mode in your head. <em>Distributed cognition; lower memory load.</em></p>
+          <figure class="app-shot"><img src="../assets/images/colorait-proto-3.jpg" alt="Paper prototype: unified AI panel with type, draw and photo input" loading="lazy"><figcaption>One unified AI panel</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>4 · Layout and icons weren't clear</h3>
+          <p>Reworked the layout and the icon set for consistency, and to make what each control does easier to read. <em>Explainability, consistency.</em></p>
+          <figure class="app-shot"><img src="../assets/images/colorait-proto-4.jpg" alt="Paper prototype: reworked canvas and toolbar" loading="lazy"><figcaption>Reworked canvas and toolbar</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>5 · Interactions were missing or unclear</h3>
+          <p>Added a reusable components library, a history panel, and multi-page projects, so a character made once travels across pages and any step can be undone. <em>Distributed cognition; permit easy reversal.</em></p>
+          <div class="app-pair">
+            <figure><img src="../assets/images/colorait-proto-5.jpg" alt="Paper prototype: apply a change across all pages" loading="lazy"><figcaption>Apply a change across pages</figcaption></figure>
+            <figure><img src="../assets/images/colorait-history.jpg" alt="Paper prototype: history panel of previous steps" loading="lazy"><figcaption>The history panel</figcaption></figure>
+          </div>
+        </div>
       </section>
 
       <section class="cs-block" id="study" data-rail="The study">
         <p class="cs-kicker">04 · The study</p>
         <h2>Color-AI-t against a baseline</h2>
-        <p class="reveal">We ran a comparative study, putting Color-AI-t next to a baseline AI coloring tool. Participants did the same tasks in both: generate a character and add a chef's hat with a local edit, then save that character and reuse it on a second page.</p>
-        <!-- Moizza: add the participant count and any completion / timing data. The
-             responses I built this from are a small early round; say how many total. -->
+        <p class="reveal">A comparative evaluation. Two participants did the same tasks in System A (Colorify, the baseline) and System B (Color-AI-t), then filled in a questionnaire. The tasks: generate a character, add a chef's hat with a local edit, and reuse that character on a second page.</p>
 
         <figure class="cs-video reveal">
-          <video controls preload="none" playsinline poster="../assets/images/colorait-poster.png">
+          <video controls preload="none" playsinline poster="../assets/images/colorait-poster.jpg">
             <source src="../assets/videos/colorait-demo.mp4" type="video/mp4">
           </video>
-          <figcaption>A session on the pen: generating a character, adding the chef's hat with a local edit, then saving and reusing it</figcaption>
+          <figcaption>A session on the pen: generate a character, add the chef's hat with a local edit, then save and reuse it</figcaption>
         </figure>
 
-        <h3>What worked</h3>
+        <h3>What they said</h3>
         <ul class="cs-goals reveal">
-          <li>Drawing inside the prompt was the favourite interaction, and the clearest advantage over the baseline.</li>
-          <li>The localized circle tool gave enough precision for small, specific edits.</li>
-          <li>Saving a character to the library and dropping it onto a new page felt seamless.</li>
-          <li>Swiping between pages read as natural.</li>
-        </ul>
-        <p class="reveal">Every participant said Color-AI-t was the easier of the two systems to reach the result they wanted.</p>
-
-        <h3>What didn't</h3>
-        <ul class="cs-goals reveal">
-          <li>The full-screen AI overlay felt obstructive rather than helpful. It was the lowest-rated part of the flow.</li>
-          <li>Moving between screens and tools that share the same area of the interface was confusing. Participants raised it without being asked.</li>
-          <li>The toggle between selecting a region and selecting the whole page was not obvious.</li>
+          <li>Both preferred Color-AI-t. "Because it has the localized circle tool and the drawing feature." Easier to use, and more to work with.</li>
+          <li>The favourite interaction was drawing directly into the prompt, then the AI anchor.</li>
+          <li>The clear problem was navigation: moving between screens and tools that share the same area of the interface. Both raised it without being asked.</li>
         </ul>
         <blockquote class="pull-quote reveal">You need to understand the UI of the application before you can fully utilise it.</blockquote>
+
+        <h3>What we'd change</h3>
+        <ul class="cs-goals reveal">
+          <li>Make navigation between tools and screens explicit, not layered in one space.</li>
+          <li>Give people a way to describe hard things like camera angle and perspective, for example guiding lines.</li>
+          <li>Act on the top requests: a rough sketch the AI refines into line art, and pulling a saved library item straight from a prompt.</li>
+        </ul>
       </section>
 
-      <section class="cs-block" id="next" data-rail="What we'd change">
-        <p class="cs-kicker">05 · What we'd change</p>
-        <h2>Where the findings pointed</h2>
+      <section class="cs-block" id="impact" data-rail="Feasibility &amp; impact">
+        <p class="cs-kicker">05 · Feasibility &amp; impact</p>
+        <h2>Could it be built, and what would it do to people</h2>
+
+        <h3>Feasibility</h3>
+        <p class="reveal">Most of it is possible with today's models. The new part is the interface that snaps hand-drawing and AI generation together, and a hybrid prompt area where you can type and draw at the same time. The generation can lean on existing tools like ChatGPT or Leonardo for clean line art.</p>
+
+        <h3>Keeping people in control</h3>
         <ul class="cs-goals reveal">
-          <li><strong>Rework the AI overlay</strong> so prompting does not cover the canvas you are working on.</li>
-          <li><strong>Make navigation explicit</strong> between tools and screens, instead of layering them in one space.</li>
-          <li><strong>Act on the top requests:</strong> a rough sketch the AI refines into line art, reusing library items straight from a prompt, and guiding lines to control perspective and camera angle.</li>
+          <li>Every prompt returns three options; if none fit, regenerate.</li>
+          <li>A history panel steps back to any earlier version.</li>
+          <li>All AI output is editable by hand on the canvas, so nothing is permanent.</li>
         </ul>
+
+        <h3>Upskilling, not replacing</h3>
+        <p class="reveal">The larger aim is to move people from passive consumers of AI toward active collaborators. The tool nudges them to think spatially and linguistically about what they want, rather than accepting whatever the first prompt returns.</p>
       </section>
 
     </div>

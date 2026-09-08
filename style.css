@@ -1426,6 +1426,16 @@ figure.cs-winfig figcaption {
   .app-pair { grid-template-columns: 1fr; }
 }
 
+/* Color-AI-t: prototype photos want a hairline border */
+#cait .app-shot img,
+#cait .app-pair img {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+#cait .cs-mod .app-shot,
+#cait .cs-mod .app-pair { margin-top: 16px; }
+#cait .app-pair { align-items: start; }
+
 .cs-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
