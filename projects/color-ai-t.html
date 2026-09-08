@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Color-AI-t · Moizza Azhar</title>
+<meta name="description" content="A pen-based AI coloring-page generator, redesigned so AI is one tool on the canvas instead of a prompt box you wait on." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · Advanced Design of Interactive Systems</p>
+    <h1>Color-AI-t</h1>
+    <p class="lede">A pen-based AI coloring-page generator for tablets, redesigned with a team of five. The idea: make AI one tool on the canvas, alongside the pen, the lasso and a reusable library, instead of a prompt box you wait on.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Team of five · interaction design, prototyping, research</p></div>
+      <div><p class="label">Built with</p><p class="value">Figma</p></div>
+      <div><p class="label">Year</p><p class="value">2026</p></div>
+      <div><p class="label">Course</p><p class="value">Advanced Design of Interactive Systems</p></div>
+    </div>
+    <!-- Moizza: a hero mockup of the canvas goes here, e.g.
+    <figure class="app-shot cover reveal">
+      <img src="../assets/images/colorait-canvas.png" alt="Color-AI-t canvas" loading="lazy">
+      <figcaption>The canvas · AI, pen and library in one space</figcaption>
+    </figure>
+    -->
+  </div>
+
+  <main class="cs-layout wrap">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#canvas">The canvas</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#study">The study</a></li>
+        <li><a href="#next">What we'd change</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="overview" data-rail="Overview">
+        <p class="cs-kicker">01 · Overview</p>
+        <h2>AI as a tool, not a vending machine</h2>
+        <p class="reveal">Coloring-page tools that use AI tend to work in one direction: type a prompt, wait, get a full page, start over if it is wrong. Color-AI-t treats the AI differently. It sits inside a drawing canvas, so you can generate a base image, draw on it, cut pieces out, regenerate a single region, or pull in something you made earlier. The prompt is a starting point, not the whole interaction.</p>
+      </section>
+
+      <section class="cs-block" id="canvas" data-rail="The canvas">
+        <p class="cs-kicker">02 · The canvas</p>
+        <h2>The interactions we redesigned</h2>
+
+        <h3>Projects and pages</h3>
+        <p class="reveal">You name a project and pick a page size, A4 or A5. A plus icon adds a page as a split screen; swiping left moves between pages.</p>
+
+        <h3>Prompting</h3>
+        <p class="reveal">A full-screen overlay holds the prompt. You can draw directly inside the prompt area to show the AI what you mean, and switch between prompting a selected region and prompting the whole page.</p>
+
+        <h3>Local edits</h3>
+        <p class="reveal">A localized circle tool marks a small area for the AI to change on its own; the test task was adding a chef's hat to a character. A lasso selects a freeform shape, and holding the selection for a moment lifts it off the page.</p>
+
+        <h3>The library</h3>
+        <p class="reveal">Anything you draw or lift can go into a library. On any other page you retrieve it and drop it in place, so a character designed once (the study used a cat called Kitty) travels across the whole project.</p>
+
+        <h3>Toolbar and history</h3>
+        <p class="reveal">A bottom toolbar changes stroke thickness. A history panel lists previous steps, so you can see how a page reached its current state.</p>
+        <!-- Moizza: this section wants 3-4 screens. Drop them in assets/images/ as
+             colorait-prompt.png, colorait-circle.png, colorait-library.png (etc.) and
+             I'll build a gallery here. -->
+      </section>
+
+      <section class="cs-block" id="research" data-rail="Research">
+        <p class="cs-kicker">03 · Research</p>
+        <h2>Story interviews first</h2>
+        <p class="reveal">We ran story interviews to understand how people actually make coloring pages, where AI helped and where it got in the way. The recurring theme: people wanted to stay in control of the drawing and use AI as an assistant for the parts that are tedious to do by hand, not as a replacement for the drawing itself.</p>
+      </section>
+
+      <section class="cs-block" id="study" data-rail="The study">
+        <p class="cs-kicker">04 · The study</p>
+        <h2>Color-AI-t against a baseline</h2>
+        <p class="reveal">We ran a comparative study, putting Color-AI-t next to a baseline AI coloring tool. Participants did the same tasks in both: generate a character and add a chef's hat with a local edit, then save that character and reuse it on a second page.</p>
+        <!-- Moizza: add the participant count and any completion / timing data. The
+             responses I built this from are a small early round; say how many total. -->
+
+        <h3>What worked</h3>
+        <ul class="cs-goals reveal">
+          <li>Drawing inside the prompt was the favourite interaction, and the clearest advantage over the baseline.</li>
+          <li>The localized circle tool gave enough precision for small, specific edits.</li>
+          <li>Saving a character to the library and dropping it onto a new page felt seamless.</li>
+          <li>Swiping between pages read as natural.</li>
+        </ul>
+        <p class="reveal">Every participant said Color-AI-t was the easier of the two systems to reach the result they wanted.</p>
+
+        <h3>What didn't</h3>
+        <ul class="cs-goals reveal">
+          <li>The full-screen AI overlay felt obstructive rather than helpful. It was the lowest-rated part of the flow.</li>
+          <li>Moving between screens and tools that share the same area of the interface was confusing. Participants raised it without being asked.</li>
+          <li>The toggle between selecting a region and selecting the whole page was not obvious.</li>
+        </ul>
+        <blockquote class="pull-quote reveal">You need to understand the UI of the application before you can fully utilise it.</blockquote>
+      </section>
+
+      <section class="cs-block" id="next" data-rail="What we'd change">
+        <p class="cs-kicker">05 · What we'd change</p>
+        <h2>Where the findings pointed</h2>
+        <ul class="cs-goals reveal">
+          <li><strong>Rework the AI overlay</strong> so prompting does not cover the canvas you are working on.</li>
+          <li><strong>Make navigation explicit</strong> between tools and screens, instead of layering them in one space.</li>
+          <li><strong>Act on the top requests:</strong> a rough sketch the AI refines into line art, reusing library items straight from a prompt, and guiding lines to control perspective and camera angle.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="minesweeper-pro.html" data-cursor="next">
+        <p class="label">Another project</p>
+        <p class="title">Minesweeper PRO →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
