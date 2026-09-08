@@ -1436,6 +1436,47 @@ figure.cs-winfig figcaption {
 #cait .cs-mod .app-pair { margin-top: 16px; }
 #cait .app-pair { align-items: start; }
 
+/* Reso: screenshots and diagrams want a hairline border too */
+#reso .app-shot img,
+#reso .app-pair img { border: 1px solid var(--line); border-radius: 10px; }
+#reso .app-pair { align-items: start; }
+#reso .app-shot.cover img { border-radius: 12px; }
+
+/* result stat cards */
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cs-stat {
+  padding: 22px;
+  border-left: 1px solid var(--line);
+}
+.cs-stat:first-child { border-left: 0; }
+.cs-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 10px;
+}
+.cs-stat-big {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 29px);
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+.cs-stat-big span { color: var(--ink-faint); margin: 0 3px; }
+.cs-stat-note { font-size: 12.5px; color: var(--ink-soft); margin: 0; line-height: 1.4; }
+@media (max-width: 620px) {
+  .cs-stat { border-left: 0; border-top: 1px solid var(--line); }
+  .cs-stat:first-child { border-top: 0; }
+}
+
 .cs-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;

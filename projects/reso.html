@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reso · Moizza Azhar</title>
+<meta name="description" content="A videoconferencing interface that makes the emotion in a voice visible for Deaf and Hard-of-Hearing users." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · Design Project 2</p>
+    <h1>Reso</h1>
+    <p class="lede">A videoconferencing interface that makes the emotion in a voice visible, for Deaf and Hard-of-Hearing users in online meetings. I led a team of five under Prof. Ouriel Grynszpan.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Team lead · research, design, study</p></div>
+      <div><p class="label">Built with</p><p class="value">Figma · JavaScript · Electron</p></div>
+      <div><p class="label">Year</p><p class="value">2026</p></div>
+      <div><p class="label">Study</p><p class="value">18 participants, within-subjects</p></div>
+    </div>
+    <figure class="app-shot cover reveal">
+      <img src="../assets/images/reso-conditions.jpg" alt="Plain captions next to Reso's emotion-coded captions with a sound-rhythm graph" loading="lazy">
+      <figcaption>Left: plain captions. Right: Reso, with emotion colour and a voice-intensity graph</figcaption>
+    </figure>
+  </div>
+
+  <main class="cs-layout wrap" id="reso">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#gap">The gap</a></li>
+        <li><a href="#system">Reso</a></li>
+        <li><a href="#process">Design process</a></li>
+        <li><a href="#study">The study</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#discussion">What we learned</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="gap" data-rail="The gap">
+        <p class="cs-kicker">01 · The gap</p>
+        <h2>Captions carry the words, not the tone</h2>
+        <p class="reveal">Standard live captions give a Deaf or Hard-of-Hearing person the literal transcript of a meeting, but not the tone, emphasis or energy behind it. Hearing colleagues read sarcasm, urgency or support from a voice instantly. On captions, an angry "that's fine" and a sincere "that's fine" look identical.</p>
+        <p class="reveal">In fast group calls that gap compounds: turn-taking is hard to follow, and stacking captions, speaker cues and faces on one screen is tiring. We called it affective blindness, and it is what Reso targets.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-affective-gap.jpg" alt="The same phrase read as neutral, angry and sarcastic, but the caption is identical" loading="lazy">
+          <figcaption>Same words, different intent, identical caption</figcaption>
+        </figure>
+        <blockquote class="pull-quote reveal">What is the effect of combining emotion-coded text and visual sound rhythms on the cognitive load and emotional understanding of DHH users, compared with plain text captions?</blockquote>
+      </section>
+
+      <section class="cs-block" id="system" data-rail="Reso">
+        <p class="cs-kicker">02 · Reso</p>
+        <h2>Two layers over the meeting</h2>
+        <p class="reveal">Reso runs as a transparent caption overlay plus a small control panel, so it sits on top of whatever meeting app is already open. The control panel handles speech capture, monitoring and display settings; the overlay stays out of the way during the call.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-overlay.jpg" alt="Reso control panel" loading="lazy">
+          <figcaption>The control panel</figcaption>
+        </figure>
+
+        <h3>Emotion in colour</h3>
+        <p class="reveal">Every caption is tagged with one of six emotions (happy, sad, angry, surprised, neutral, fearful) and rendered in a matching colour: warm and vivid for activated states, cooler and quieter for calm ones. It is an interpretive cue, not a verdict, and the set is kept small on purpose so tone reads at a glance.</p>
+
+        <h3>Rhythm as a second channel</h3>
+        <p class="reveal">A lightweight rhythm layer shows general changes in speaking intensity and pace, so a rise in energy or an interruption registers without reading. In this prototype emotion is assigned from the text of each caption, which let us test the visual design on its own before building a full audio pipeline.</p>
+      </section>
+
+      <section class="cs-block" id="process" data-rail="Design process">
+        <p class="cs-kicker">03 · Design process</p>
+        <h2>Paper first</h2>
+        <p class="reveal">The low-fidelity prototype tried two ideas: square blocks stacked like an equaliser to show sound frequency, and caption text that changes colour with emotion, red for angry and so on. Paper let us check that both read quickly before committing to either.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/reso-lofi-rhythm.jpg" alt="Paper prototype: square blocks showing sound frequency" loading="lazy"><figcaption>Square blocks for rhythm</figcaption></figure>
+          <figure><img src="../assets/images/reso-lofi-color.jpg" alt="Paper prototype: emotion colours in caption text" loading="lazy"><figcaption>Emotion colours in text</figcaption></figure>
+        </div>
+        <p class="reveal">The high-fidelity build put it together: a browser page captures microphone speech and forwards final transcripts to a local overlay app, which tags the emotion and renders the coloured captions and rhythm.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-system.jpg" alt="The working system: a browser capture page feeding the caption overlay" loading="lazy">
+          <figcaption>Browser capture feeding the overlay</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="study" data-rail="The study">
+        <p class="cs-kicker">04 · The study</p>
+        <h2>Reso against plain captions</h2>
+        <p class="reveal">A within-subjects study with 18 participants, aged 18 to 30, all hearing, used as proxy users for usability and cognitive load. It ran in the browser, hosted on GitHub Pages, so people took part on their own machines.</p>
+        <p class="reveal">Each person did both conditions in counterbalanced order.</p>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>Condition A · baseline</h4>
+            <p>Plain white captions below the video. No colour, no rhythm.</p>
+          </div>
+          <div>
+            <h4>Condition B · Reso</h4>
+            <p>Emotion-coloured captions and a live voice-intensity graph.</p>
+          </div>
+        </div>
+        <p class="reveal">Two blocks of six muted clips, one speaker and one sentence each. After a clip, the participant picked the emotion they perceived from six options, as fast as they could. Reaction time and accuracy were logged; NASA-TLX ran after each block; a short debrief closed it out.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-task.jpg" alt="The emotion-recognition task in Condition B, with six emotion buttons and a voice-intensity graph" loading="lazy">
+          <figcaption>The emotion-recognition task, Condition B</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="results" data-rail="Results">
+        <p class="cs-kicker">05 · Results</p>
+        <h2>Colour helped. The graph didn't.</h2>
+
+        <div class="cs-stats reveal">
+          <div class="cs-stat">
+            <p class="cs-stat-label">Emotion accuracy</p>
+            <p class="cs-stat-big">50.9% <span>→</span> 63.0%</p>
+            <p class="cs-stat-note">+12 points · significant, p &lt; .05, medium effect</p>
+          </div>
+          <div class="cs-stat">
+            <p class="cs-stat-label">Reaction time</p>
+            <p class="cs-stat-big">3.73s <span>→</span> 4.21s</p>
+            <p class="cs-stat-note">+0.5s · not significant</p>
+          </div>
+          <div class="cs-stat">
+            <p class="cs-stat-label">Cognitive load (NASA-TLX)</p>
+            <p class="cs-stat-big">39.1 <span>→</span> 44.1</p>
+            <p class="cs-stat-note">+5 · not significant</p>
+          </div>
+        </div>
+
+        <p class="reveal">The accuracy gain was statistically significant, a medium effect, and it concentrated exactly where text struggles most: Angry recognition rose 33 points and Sad 28 points. Surprised, already easy, dipped slightly.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-chart-accuracy.jpg" alt="Emotion-recognition accuracy by category, Condition A vs B" loading="lazy">
+          <figcaption>Accuracy by emotion, A vs B</figcaption>
+        </figure>
+
+        <h3>The rhythm graph backfired</h3>
+        <p class="reveal">Emotion colour was liked across the board, described as intuitive and reinforcing the caption. The voice-intensity graph was the opposite: most participants found it confusing or distracting and several ignored it entirely, because it had no legend or scale. Effort and frustration on NASA-TLX rose the most, which tracks.</p>
+        <blockquote class="pull-quote reveal">When the subtitle is red, I think it strengthens the tone, or the person is angry. If it is blue and yellow, I think this sentence is peaceful and relaxed.</blockquote>
+        <p class="reveal">56% of participants preferred the plain baseline for its lower visual load; 33% preferred Reso for the extra context.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-chart-tlx.jpg" alt="NASA-TLX scores by dimension, Condition A vs B" loading="lazy">
+          <figcaption>NASA-TLX by dimension</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="discussion" data-rail="What we learned">
+        <p class="cs-kicker">06 · What we learned</p>
+        <h2>Visual enrichment only helps if it's instantly legible</h2>
+        <p class="reveal">The clearest lesson: an extra visual layer earns its place only when a user can tell what they are looking at without instruction. Colour passed that test; the raw waveform failed it. Part of the added load is also an artifact of the study itself, since the final product would keep emotion labels and drop the countdown timer, both of which we removed to make the task meaningful.</p>
+
+        <h3>Limits</h3>
+        <ul class="cs-goals reveal">
+          <li>All 18 participants were hearing. Muted video simulates but cannot replicate caption fatigue, social exclusion, or the coping strategies DHH users build over time.</li>
+          <li>One speaker, one sentence per clip. Real meetings have overlapping speech, turn-taking and constant attention demands.</li>
+          <li>No participatory input from the DHH community, so the design carries hearing assumptions.</li>
+          <li>Six colour categories flatten sarcasm, mixed feeling and cultural colour associations.</li>
+        </ul>
+
+        <h3>Next</h3>
+        <p class="reveal">Co-design with DHH users, let people define their own emotion-to-colour mapping, rebuild the rhythm layer with labels or replace it, test with live multi-speaker calls, and take the AR and haptic direction further from the second prototype.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="color-ai-t.html" data-cursor="next">
+        <p class="label">Another project</p>
+        <p class="title">Color-AI-t →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
