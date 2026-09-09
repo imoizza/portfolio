@@ -25,9 +25,23 @@
   --max: 1180px;
   --pad: clamp(22px, 5vw, 68px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* paw print, used as the site's decorative mark */
+  --paw: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='15.6' rx='5' ry='4.3'/%3E%3Cellipse cx='5.3' cy='9.2' rx='2.15' ry='2.75'/%3E%3Cellipse cx='9.7' cy='5.9' rx='2.15' ry='2.85'/%3E%3Cellipse cx='14.3' cy='5.9' rx='2.15' ry='2.85'/%3E%3Cellipse cx='18.7' cy='9.2' rx='2.15' ry='2.75'/%3E%3C/svg%3E");
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+/* reusable paw mark: colour follows the element (or set background-color) */
+.paw,
+.marquee span::after,
+.cs-goals li::before,
+.cs-cols li::before,
+.cs-learned li::before,
+.fact-list li::before {
+  -webkit-mask: var(--paw) center / contain no-repeat;
+          mask: var(--paw) center / contain no-repeat;
+}
 
 html { scroll-behavior: smooth; }
 
@@ -334,6 +348,17 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   margin-bottom: 8px;
 }
 .section-head .eyebrow { margin: 0; }
+.section-head .eyebrow + .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 8px;
+  vertical-align: -1px;
+  background-color: var(--tan);
+  -webkit-mask: var(--paw) center / contain no-repeat;
+          mask: var(--paw) center / contain no-repeat;
+}
 
 /* scroll reveal */
 .reveal {
@@ -464,9 +489,17 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   color: var(--ink-soft);
   white-space: nowrap;
 }
-.marquee span::after { content: " ✦"; color: var(--tan); }
-.marquee span:nth-child(3n+2)::after { color: var(--accent-blue); }
-.marquee span:nth-child(3n)::after { color: var(--accent-mint); }
+.marquee span::after {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-left: 12px;
+  vertical-align: -1px;
+  background-color: var(--tan);
+}
+.marquee span:nth-child(3n+2)::after { background-color: var(--accent-blue); }
+.marquee span:nth-child(3n)::after { background-color: var(--accent-mint); }
 @keyframes slide { to { transform: translateX(-50%); } }
 
 /* --------------------------------------------------------------------------
@@ -835,10 +868,13 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   border-bottom: 1px solid var(--line-soft);
 }
 .fact-list li::before {
-  content: "✦";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--tan);
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--tan);
 }
 
 /* --------------------------------------------------------------------------
@@ -1282,12 +1318,11 @@ section.cs-section:nth-of-type(3) .num { color: var(--accent-mint); }
 .cs-goals li::before {
   content: "";
   position: absolute;
-  left: 2px;
-  top: 22px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--tan);
+  left: 0;
+  top: 18px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--tan);
 }
 
 .cs-shot a { display: block; }
@@ -1612,9 +1647,17 @@ figure.cs-winfig figcaption {
   gap: 30px;
   margin-top: 26px;
 }
-.cs-cols ul { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 15px; }
-.cs-cols li { margin-bottom: 7px; }
-.cs-cols li::marker { color: var(--tan); }
+.cs-cols ul { margin: 0; padding-left: 0; list-style: none; color: var(--ink-soft); font-size: 15px; }
+.cs-cols li { margin-bottom: 7px; padding-left: 22px; position: relative; }
+.cs-cols li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  background-color: var(--tan);
+}
 
 /* clean imagery — no frame, no striped background */
 .cs-shot { margin: 26px 0 0; }
@@ -1836,10 +1879,13 @@ figure.cs-winfig figcaption {
   position: relative;
 }
 .cs-learned li::before {
-  content: "→";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--tan);
+  top: 5px;
+  width: 13px;
+  height: 13px;
+  background-color: var(--tan);
 }
 
 @media (max-width: 1000px) {
@@ -1880,6 +1926,17 @@ figure.cs-winfig figcaption {
   justify-content: space-between;
   font-size: 13px;
   color: var(--ink-faint);
+}
+.site-footer > span::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  vertical-align: -2px;
+  background-color: var(--tan);
+  -webkit-mask: var(--paw) center / contain no-repeat;
+          mask: var(--paw) center / contain no-repeat;
 }
 .footer-links {
   display: flex;
