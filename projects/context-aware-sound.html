@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Context-Aware Sound Classifier · Moizza Azhar</title>
+<meta name="description" content="A browser-based, client-side sound classifier that Deaf and Hard-of-Hearing users and their trusted circle train and tune themselves, with per-context activation and PIN-authenticated labelling." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · Interactive Machine Learning</p>
+    <h1>Context-Aware Sound Classifier</h1>
+    <p class="lede">A sound recogniser that a Deaf or Hard-of-Hearing person builds and tunes themselves, with help from their trusted circle. It runs entirely in the browser, learns from a handful of their own recordings, and shows different alerts depending on where they are. Built with Sukhjot Kaur, who led the machine learning; I led the interaction design.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Team of two · interaction design, workflow, evaluation plan</p></div>
+      <div><p class="label">Course</p><p class="value">Interactive Machine Learning</p></div>
+      <div><p class="label">Year</p><p class="value">2026</p></div>
+      <div><p class="label">Built with</p><p class="value">Svelte · Marcelle · Web Audio API</p></div>
+    </div>
+    <figure class="app-shot cover reveal">
+      <img src="../assets/images/cas-classmanager.jpg" alt="The Class Manager tab: a table of sound classes with a checkbox for each context, home, university, night, and with baby" loading="lazy">
+      <figcaption>The core control: which sounds can trigger an alert, per context</figcaption>
+    </figure>
+  </div>
+
+  <main class="cs-layout wrap" id="cas">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#gap">The gap</a></li>
+        <li><a href="#idea">The idea</a></li>
+        <li><a href="#workflow">How it works</a></li>
+        <li><a href="#controls">The controls</a></li>
+        <li><a href="#hood">Under the hood</a></li>
+        <li><a href="#eval">The evaluation</a></li>
+        <li><a href="#limits">Limits and next</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="gap" data-rail="The gap">
+        <p class="cs-kicker">01 · The gap</p>
+        <h2>Off-the-shelf recognisers do not know your home</h2>
+        <p class="reveal">Environmental sound recognition can help a Deaf or Hard-of-Hearing person keep track of things they cannot hear directly: a door knock, an alarm, a baby crying, someone calling their name. Commercial systems do this with a fixed, pre-trained model. It does not know which door in this house, which alarm, or which of these sounds actually matters to this person right now, so alerts get missed or arrive when they are not wanted.</p>
+        <p class="reveal">The fix we chose is not a bigger model. It is handing the controls to the people who know the home: the DHH user, and the friends or family who help set up their assistive tech.</p>
+        <blockquote class="pull-quote reveal">Can a DHH user and their trusted circle shape a sound recogniser to their own home and priorities, and come to trust its alerts, without touching any machine learning?</blockquote>
+      </section>
+
+      <section class="cs-block" id="idea" data-rail="The idea">
+        <p class="cs-kicker">02 · The idea</p>
+        <h2>Interactive machine learning, two roles</h2>
+        <p class="reveal">In interactive machine learning the training loop lives inside the interface: the user collects the data, triggers the training, and audits what the model says, rather than treating it as a black box. We split that work across two roles.</p>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>The primary user</h4>
+            <p>The DHH person. Decides which sounds to track, turns classes on or off per context, sets the alert sensitivity, and reacts to live predictions. Assumed non-technical.</p>
+          </div>
+          <div>
+            <h4>The validators</h4>
+            <p>Friends and family. Record and label sound samples, check predictions, and correct mistakes. They sign in with a PIN so only trusted people can change the training data.</p>
+          </div>
+        </div>
+        <p class="reveal">Everything runs client-side. Audio, samples and the model stay in the browser; there is no server and no pre-trained dataset. That keeps a stream of a person's home audio off the network entirely.</p>
+      </section>
+
+      <section class="cs-block" id="workflow" data-rail="How it works">
+        <p class="cs-kicker">03 · How it works</p>
+        <h2>Set up, collect, train, then a live loop</h2>
+        <p class="reveal">The flow is linear to set up and then circular in use. The user picks a context and sensitivity, classes and validators get configured, validators record labelled samples and clean the table, the system computes one prototype per class locally, and then live prediction runs with structured feedback feeding back into the data.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/cas-flow.jpg" alt="Flowchart: open app, select context and sensitivity, configure classes and validators, record samples, clean the table, prepare model, sound prediction, feedback of correct, wrong label, or false alarm, then refinement" loading="lazy">
+          <figcaption>The interactive and personalised workflow</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="controls" data-rail="The controls">
+        <p class="cs-kicker">04 · The controls</p>
+        <h2>Four tabs, one per stage</h2>
+        <p class="reveal">The interface is split into four tabs (Personalization, Microphone &amp; Samples, Class Manager, Model &amp; Live Prediction) so nobody sees every control at once. The DHH user mostly lives in personalisation and live prediction; validators spend their time in recording and class management.</p>
+
+        <h3>Context and sensitivity</h3>
+        <p class="reveal">The user picks their current context from a short list, then sets a single sensitivity slider. A continuous slider, not presets, lets a non-technical person feel out the trade-off between missed sounds and false alarms and nudge it in small steps.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/cas-personalization.jpg" alt="The Personalization tab with a context dropdown set to HOME and a sensitivity slider at 60 percent" loading="lazy">
+          <figcaption>Context and one sensitivity slider</figcaption>
+        </figure>
+
+        <h3>Which sounds, in which context</h3>
+        <p class="reveal">The Class Manager is a table: sound classes down the side, contexts across the top, a checkbox at each crossing. Door knock at home and university but not at night; baby cry at night but not on campus. Context becomes something you can see and set, not an opaque input to the model.</p>
+
+        <h3>Recording, and who is allowed to</h3>
+        <p class="reveal">Validators authenticate with a PIN tied to their role, then record from the mic or upload a file and assign a label. The sample table can be played back, pruned of bad recordings, and relabelled. The dataset starts empty and stays small on purpose, roughly five to ten examples per class, growing to fit the home over time.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/cas-recording.jpg" alt="The Microphone and Samples tab with a validator dropdown, a PIN field, a Start Recording button, and an upload option" loading="lazy">
+          <figcaption>Validator sign-in, then record or upload</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="hood" data-rail="Under the hood">
+        <p class="cs-kicker">05 · Under the hood</p>
+        <h2>A small, legible classifier</h2>
+        <p class="reveal">Audio comes in through the Web Audio API: eight frames of FFT data, the first 40 frequency bins, converted to linear magnitude, log-compressed, normalised to zero mean and unit variance, then averaged into one feature vector. Lightweight, and interpretable enough to reason about.</p>
+        <p class="reveal">Instead of comparing every stored sample, the classifier keeps one prototype per class, a mean and a per-dimension variance, and scores a new sound by its variance-weighted distance to each. It also refuses to answer when it is unsure: a prediction only shows if it clears the sensitivity threshold and beats the runner-up class by a margin. Combined with the per-context activation, the same model behaves differently in each situation.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/cas-live.jpg" alt="The Model and Live Prediction tab with a Prepare Model button and a Start Listening button" loading="lazy">
+          <figcaption>Build the model locally, then start listening</figcaption>
+        </figure>
+        <p class="reveal">Feedback on a live alert is handled asymmetrically. "Correct" and "false alarm" are logged with a timestamp, label, confidence and context but do not touch the model. "Wrong label" opens a relabel step, and the corrected sample is added to the dataset, ready for the next manual retrain.</p>
+      </section>
+
+      <section class="cs-block" id="eval" data-rail="The evaluation">
+        <p class="cs-kicker">06 · The evaluation</p>
+        <h2>A study designed around control and trust</h2>
+        <p class="reveal">The brief asked for a human-centered evaluation method, not a finished study, so this is the design rather than results. It deliberately does not chase raw accuracy. The questions are whether the interactive controls give people a sense of agency, and whether they come to trust the alerts.</p>
+        <ul class="cs-goals reveal">
+          <li><strong>RQ1.</strong> Does per-context activation of sound classes increase perceived control over alerts?</li>
+          <li><strong>RQ2.</strong> Does structured feedback on live predictions build trust across successive interaction cycles?</li>
+          <li><strong>RQ3.</strong> How do people actually appropriate the personalisation features when building their own recogniser?</li>
+        </ul>
+        <p class="reveal">The plan: 4 to 6 DHH participants, each with a validator, run through four phases, class and context setup, data collection, live testing, then interview and questionnaires. Behavioural measures cover classes per context and the mix of feedback types over time; subjective measures use 7-point items for perceived control and trust, plus a short NASA-TLX subset for workload.</p>
+      </section>
+
+      <section class="cs-block" id="limits" data-rail="Limits and next">
+        <p class="cs-kicker">07 · Limits and next</p>
+        <h2>An honest prototype</h2>
+        <ul class="cs-goals reveal">
+          <li>Data and models live in browser memory only. Nothing survives a refresh or moves between devices.</li>
+          <li>The dataset is small and sparse, so it will not generalise well to messy real-world conditions.</li>
+          <li>Feedback does not retrain anything automatically. The user has to click Prepare Model again.</li>
+          <li>The evaluation is designed but not run, and it is lab-scale.</li>
+        </ul>
+        <h3>Next</h3>
+        <p class="reveal">Add a datastore so setups persist and can be shared across a household, turn feedback into automatic incremental updates and active-learning prompts when the model is unsure, compare pre-trained audio embeddings inside the same interactive pipeline, and add haptic alerts on a phone or watch for when a screen is not in view.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="reso.html" data-cursor="next">
+        <p class="label">Another project</p>
+        <p class="title">Reso →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
