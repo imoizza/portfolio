@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Escape++ · Moizza Azhar</title>
+<meta name="description" content="A dungeon-maze serious game that teaches beginner C++ through short quiz tasks, with an energy bar for light tension and a tutorial tested two ways." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · Serious Games</p>
+    <h1>Escape++</h1>
+    <p class="lede">A dungeon maze you get through by answering C++ questions. Reach a tile, solve a short quiz, keep your energy up, unlock the next level. Built with Adarsh Vijayvargiya and Jay Gupte for a Serious Games course, with a small study built around whether the tutorial format changes how hard it feels.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Team of three · concept, UI design, tutorial study</p></div>
+      <div><p class="label">Course</p><p class="value">Serious Games</p></div>
+      <div><p class="label">Year</p><p class="value">2025</p></div>
+      <div><p class="label">Team</p><p class="value">With Adarsh Vijayvargiya and Jay Gupte</p></div>
+    </div>
+    <figure class="app-shot cover reveal">
+      <img src="../assets/images/esc-cover.jpg" alt="The Escape++ start screen: a torch-lit dungeon entrance with the tagline Master C++ to Escape the Dungeon and a Start Game button" loading="lazy">
+      <figcaption>Master C++ to escape the dungeon</figcaption>
+    </figure>
+  </div>
+
+  <main class="cs-layout wrap" id="esc">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#gap">The gap</a></li>
+        <li><a href="#concept">The concept</a></li>
+        <li><a href="#journey">The player journey</a></li>
+        <li><a href="#build">Paper to build</a></li>
+        <li><a href="#tutorial">Two tutorials</a></li>
+        <li><a href="#study">The study</a></li>
+        <li><a href="#next">What is next</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="gap" data-rail="The gap">
+        <p class="cs-kicker">01 · The gap</p>
+        <h2>C++ is usually taught by reading</h2>
+        <p class="reveal">Beginner C++ mostly means working through text and then a set of exercises. It is passive, and attention drifts. Serious games are a known way to push engagement and time-on-task up in STEM learning, so the goal here was direct: put game mechanics around actual C++ practice, and keep each piece small enough not to overload a beginner.</p>
+        <blockquote class="pull-quote reveal">Can a light maze game with short quiz tasks make early C++ practice feel less like homework, without adding stress?</blockquote>
+      </section>
+
+      <section class="cs-block" id="concept" data-rail="The concept">
+        <p class="cs-kicker">02 · The concept</p>
+        <h2>A maze, an energy bar, a quiz at each tile</h2>
+        <p class="reveal">Escape++ is a dungeon-themed maze with grid-based movement. You walk to task tiles, each one poses a C++ question tied to that level's topic (syntax, variables, if-else), and clearing every task unlocks the next dungeon level. An energy bar sits in the corner and drops on a wrong answer, which is enough to create light tension without punishing a learner who is still working it out.</p>
+        <p class="reveal">We shaped it through the MDA framework: the mechanics are movement, task pop-ups and the energy system; the dynamics are explore, solve, and gate progression on clearing the level; the aesthetic is curiosity and a small sense of accomplishment as each room opens.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/esc-levels.jpg" alt="The Escape++ level select screen with four numbered dungeon levels" loading="lazy"><figcaption>Four levels, unlocked in order</figcaption></figure>
+          <figure><img src="../assets/images/esc-maze.jpg" alt="Gameplay: a character on a grid maze in a torch-lit forest dungeon, task tiles marked, an energy bar of hearts top-left" loading="lazy"><figcaption>Task tiles in the maze, energy top-left</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-block" id="journey" data-rail="The player journey">
+        <p class="cs-kicker">03 · The player journey</p>
+        <h2>Watch, move, solve, unlock</h2>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>Each level</h4>
+            <ul>
+              <li>Watch the short tutorial for the level's topic</li>
+              <li>Move through the maze with the arrow keys</li>
+              <li>Reach a task tile and open its question</li>
+              <li>Answer: multiple choice, fill in the blank, or true or false</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Then</h4>
+            <ul>
+              <li>Correct, and you carry on through the maze</li>
+              <li>Wrong, and you retry while the energy bar drops</li>
+              <li>Clear every task tile to open the exit</li>
+              <li>Unlock the next dungeon level</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/esc-quiz.jpg" alt="A System Hack pop-up asking the player to choose the missing piece to include the iostream header, with four answer options" loading="lazy">
+          <figcaption>A task tile: pick the missing piece of the include line</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="build" data-rail="Paper to build">
+        <p class="cs-kicker">04 · Paper to build</p>
+        <h2>Storyboarded first</h2>
+        <p class="reveal">The whole game was drawn on paper before anything was built: two rooms, the screen-by-screen flow through each one, where the task tiles and the final task sit, and a home screen that tracks which rooms are unlocked. It kept the scope honest, one topic per room, a final task that pulls the room's concepts together.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/esc-storyboard.jpg" alt="Hand-drawn storyboard of Escape++: Room 1 and Room 2 laid out screen by screen, with task tiles, a final task, and a home screen" loading="lazy">
+          <figcaption>The paper storyboard: rooms, screens, tasks, home screen</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="tutorial" data-rail="Two tutorials">
+        <p class="cs-kicker">05 · Two tutorials</p>
+        <h2>The same lesson, two ways</h2>
+        <p class="reveal">The part we actually tested was the tutorial. Cognitive load theory says to keep one idea in front of the learner at a time, so we built two versions of the level-one syntax lesson and compared them.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/esc-tutorial-v1.jpg" alt="Tutorial V1: the full code sample with all seven line-by-line explanations and a notes block shown at once" loading="lazy"><figcaption>V1: the whole explanation on one screen</figcaption></figure>
+          <figure><img src="../assets/images/esc-tutorial-v2.jpg" alt="Tutorial V2: the code sample with one line highlighted, a single explanation, and previous and next controls showing step 1 of 7" loading="lazy"><figcaption>V2: one line highlighted, stepped 1 of 7</figcaption></figure>
+        </div>
+        <p class="reveal">V1 shows the code, all seven line explanations and a notes block together. V2 highlights one line, explains just that line, and moves through the program step by step with previous and next, then a resume button back to the maze.</p>
+      </section>
+
+      <section class="cs-block" id="study" data-rail="The study">
+        <p class="cs-kicker">06 · The study</p>
+        <h2>Low workload, high perceived success</h2>
+        <p class="reveal">Six master's students with C++ experience played through Escape++, explored the tutorial and the questions, then filled in a NASA-TLX workload questionnaire plus enjoyment and UI ratings on a 1 to 10 scale.</p>
+        <div class="cs-stats reveal">
+          <div class="cs-stat">
+            <p class="cs-stat-label">Mental demand</p>
+            <p class="cs-stat-big">3.5<span> / 10</span></p>
+            <p class="cs-stat-note">SD 2.43 · low</p>
+          </div>
+          <div class="cs-stat">
+            <p class="cs-stat-label">Frustration</p>
+            <p class="cs-stat-big">2.67<span> / 10</span></p>
+            <p class="cs-stat-note">SD 2.25 · low</p>
+          </div>
+          <div class="cs-stat">
+            <p class="cs-stat-label">Perceived performance</p>
+            <p class="cs-stat-big">8.83<span> / 10</span></p>
+            <p class="cs-stat-note">SD 0.75 · high and consistent</p>
+          </div>
+        </div>
+        <p class="reveal">For this audience Escape++ read as usable and not stressful: about a minute per level, low mental demand and frustration, and near-unanimous confidence that they had done what was asked. The stepped tutorial and the short quiz tasks worked well together. What the study does not show is learning gain, since everyone already knew C++ and there was no pre or post test.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/esc-chart-perf.jpg" alt="Bar chart of perceived performance: all six responses fall between 8 and 10" loading="lazy">
+          <figcaption>Perceived performance, all six responses between 8 and 10</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="next" data-rail="What is next">
+        <p class="cs-kicker">07 · What is next</p>
+        <h2>A real test with beginners</h2>
+        <p class="reveal">The obvious next step is the study this one could not be: C++ beginners, randomly split between a plain version with the same slides and questions and the Escape++ game, playing about 15 minutes a day for a week or two, measured with a pre and post C++ test alongside the same workload and enjoyment ratings. The expectation is a larger pre-to-post improvement for the game group at a similar or lower workload.</p>
+        <h3>Beyond that</h3>
+        <ul class="cs-goals reveal">
+          <li>More C++ concepts and more levels.</li>
+          <li>Adaptive hints: extra explanation when the same answer is missed repeatedly.</li>
+          <li>Accessibility and UX: better colour contrast, text-to-speech, conversational feedback.</li>
+          <li>A reward layer, points, streaks or badges, for longer-term engagement.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="minesweeper-pro.html" data-cursor="next">
+        <p class="label">Another project</p>
+        <p class="title">Minesweeper PRO →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1442,6 +1442,12 @@ figure.cs-winfig figcaption {
 #cas .app-shot.cover img { border-radius: 12px; max-height: 620px; width: auto; max-width: 100%; }
 #cas .app-shot img { max-height: 640px; width: auto; max-width: 100%; }
 
+/* Escape++: game screenshots and the storyboard scan want a hairline frame */
+#esc .app-shot img,
+#esc .app-pair img { border: 1px solid var(--line); border-radius: 10px; }
+#esc .app-shot.cover img { border-radius: 12px; }
+#esc .app-pair { align-items: start; }
+
 /* Reso: screenshots and diagrams want a hairline border too */
 #reso .app-shot img,
 #reso .app-pair img { border: 1px solid var(--line); border-radius: 10px; }
