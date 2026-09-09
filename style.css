@@ -252,32 +252,36 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  font-weight: 700;
 }
 
-.logo-mark {
-  width: 34px; height: 34px;
-  background: linear-gradient(135deg, #a78bd9 0%, #e7a8d0 52%, #8fddbe 100%);
-  color: #fff;
-  border-radius: 50% 50% 50% 9px;
-  display: flex;
+.logo-blob {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 16px;
+  gap: 7px;
+  background: var(--ink);
+  color: #f7f4ef;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.005em;
   line-height: 1;
-  letter-spacing: 0.01em;
-  padding-bottom: 1px;
-  box-shadow: 0 2px 9px rgba(167, 139, 217, 0.4);
+  padding: 9px 15px 10px;
+  border-radius: 22px 22px 22px 8px;
+  box-shadow: 0 3px 12px rgba(28, 26, 36, 0.18);
+  transition: transform 0.5s var(--ease), border-radius 0.5s var(--ease);
+}
+.logo:hover .logo-blob {
+  transform: rotate(-2deg) scale(1.04);
+  border-radius: 22px 8px 22px 22px;
+}
+.logo-paw {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: #8fddbe;
   transition: transform 0.5s var(--ease);
 }
-.logo:hover .logo-mark { transform: rotate(-10deg) scale(1.08); }
+.logo:hover .logo-paw { transform: rotate(16deg) scale(1.18); }
 
 .nav-links {
   display: flex;
