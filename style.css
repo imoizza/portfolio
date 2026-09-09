@@ -659,31 +659,53 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 
 .lab-visual {
   position: relative;
-  height: 116px;
+  height: 150px;
   display: flex;
   align-items: flex-end;
   padding: 16px 20px;
   overflow: hidden;
   background-image: linear-gradient(135deg, var(--lab-a, #6b6bd6), var(--lab-b, #b06bd6));
 }
+.lab-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.lab-card:hover .lab-visual img { transform: scale(1.05); }
+/* project-colour wash over the photo */
 .lab-visual::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(130% 150% at 12% 0%, rgba(255, 255, 255, 0.32), transparent 55%),
-    radial-gradient(120% 140% at 100% 100%, rgba(0, 0, 0, 0.18), transparent 60%);
+  background: linear-gradient(135deg, var(--lab-a, #6b6bd6), var(--lab-b, #b06bd6));
+  mix-blend-mode: multiply;
+  opacity: 0.62;
+  transition: opacity 0.4s var(--ease);
 }
-.lab-card:hover .lab-visual::after { opacity: 0.85; }
+.lab-card:hover .lab-visual::after { opacity: 0.5; }
+/* readability floor for the number + top sheen */
+.lab-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(120% 130% at 12% 0%, rgba(255, 255, 255, 0.22), transparent 50%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.42), transparent 55%);
+}
 .lab-num {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-family: var(--font-mono);
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #fff;
-  opacity: 0.94;
+  opacity: 0.96;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .lab-body {
