@@ -1500,7 +1500,9 @@ figure.cs-winfig figcaption {
 #reso .app-shot img,
 #reso .app-pair img { border: 1px solid var(--line); border-radius: 10px; }
 #reso .app-pair { align-items: start; }
-#reso .app-shot.cover img { border-radius: 12px; }
+#reso .app-shot img { max-height: 540px; width: auto; max-width: 100%; }
+#reso .app-pair img { max-height: 420px; width: auto; max-width: 100%; margin: 0 auto; }
+#reso .app-shot.cover img { border-radius: 12px; max-height: none; width: auto; }
 
 /* result stat cards */
 .cs-stats {

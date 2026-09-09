@@ -53,17 +53,17 @@
 
   <header class="page-head wrap reveal">
     <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
-    <p class="eyebrow">Coursework · Design Project 2</p>
+    <p class="eyebrow">Coursework · Design Project 1 and 2</p>
     <h1>Reso</h1>
-    <p class="lede">A videoconferencing interface that makes the emotion in a voice visible, for Deaf and Hard-of-Hearing users in online meetings. I led a team of five under Prof. Ouriel Grynszpan.</p>
+    <p class="lede">Making the emotion in a voice visible for Deaf and Hard-of-Hearing users in online meetings. Two project cycles: first mapping the problem and testing paper prototypes, then building the tool and evaluating it with 18 people. Reso kept its name from the very first sketch.</p>
   </header>
 
   <div class="wrap">
     <div class="cs-meta reveal">
-      <div><p class="label">Role</p><p class="value">Team lead · research, design, study</p></div>
-      <div><p class="label">Built with</p><p class="value">Figma · JavaScript · Electron</p></div>
+      <div><p class="label">Role</p><p class="value">Research, interaction design, two user studies</p></div>
+      <div><p class="label">Course</p><p class="value">Design Project 1 and 2</p></div>
       <div><p class="label">Year</p><p class="value">2026</p></div>
-      <div><p class="label">Study</p><p class="value">18 participants, within-subjects</p></div>
+      <div><p class="label">Team</p><p class="value">DP1 with Zhang Peiwen · DP2 a team of five, under Prof. Ouriel Grynszpan</p></div>
     </div>
     <figure class="app-shot cover reveal">
       <img src="../assets/images/reso-conditions.jpg" alt="Plain captions next to Reso's emotion-coded captions with a sound-rhythm graph" loading="lazy">
@@ -77,8 +77,11 @@
       <div class="cs-rail-track"><i></i></div>
       <ol class="cs-rail-list">
         <li><a href="#gap">The gap</a></li>
-        <li><a href="#system">Reso</a></li>
-        <li><a href="#process">Design process</a></li>
+        <li><a href="#space">Design space</a></li>
+        <li><a href="#prototypes">Two prototypes</a></li>
+        <li><a href="#firststudy">First study</a></li>
+        <li><a href="#bridge">One to two</a></li>
+        <li><a href="#system">Reso, built</a></li>
         <li><a href="#study">The study</a></li>
         <li><a href="#results">Results</a></li>
         <li><a href="#discussion">What we learned</a></li>
@@ -91,18 +94,107 @@
         <p class="cs-kicker">01 · The gap</p>
         <h2>Captions carry the words, not the tone</h2>
         <p class="reveal">Standard live captions give a Deaf or Hard-of-Hearing person the literal transcript of a meeting, but not the tone, emphasis or energy behind it. Hearing colleagues read sarcasm, urgency or support from a voice instantly. On captions, an angry "that's fine" and a sincere "that's fine" look identical.</p>
-        <p class="reveal">In fast group calls that gap compounds: turn-taking is hard to follow, and stacking captions, speaker cues and faces on one screen is tiring. We called it affective blindness, and it is what Reso targets.</p>
+        <p class="reveal">In the first project cycle, with Zhang Peiwen, we framed this as three linked problems for DHH users in social settings, online and in person.</p>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>The emotion gap</h4>
+            <p>Text captions strip out tone, so users get the words but not the feeling behind them.</p>
+          </div>
+          <div>
+            <h4>Environmental disconnect</h4>
+            <p>Ambient sound is missing too: a name being called, an alarm, someone approaching from the side.</p>
+          </div>
+          <div>
+            <h4>Vigilance fatigue</h4>
+            <p>Constantly scanning the screen and the room to compensate is tiring and adds up to real overload.</p>
+          </div>
+        </div>
         <figure class="app-shot reveal">
           <img src="../assets/images/reso-affective-gap.jpg" alt="The same phrase read as neutral, angry and sarcastic, but the caption is identical" loading="lazy">
           <figcaption>Same words, different intent, identical caption</figcaption>
         </figure>
+        <p class="reveal">The second cycle narrowed the scope to the first of these, the emotion gap, and asked a sharper question.</p>
         <blockquote class="pull-quote reveal">What is the effect of combining emotion-coded text and visual sound rhythms on the cognitive load and emotional understanding of DHH users, compared with plain text captions?</blockquote>
       </section>
 
-      <section class="cs-block" id="system" data-rail="Reso">
-        <p class="cs-kicker">02 · Reso</p>
+      <section class="cs-block" id="space" data-rail="Design space">
+        <p class="cs-kicker">02 · Design space</p>
+        <h2>Where to sit between alert and expression</h2>
+        <p class="reveal">Before sketching anything we mapped the design space across five dimensions: interaction style, haptic intensity, representation, attention load, and purpose. Existing tools cluster around passive safety alerts, which come with high alert fatigue and dense information.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-dp1-space.jpg" alt="A radar diagram plotting Reso against captioning and sign-overlay tools across five dimensions" loading="lazy">
+          <figcaption>Reso against existing tools across the five dimensions</figcaption>
+        </figure>
+        <p class="reveal">We chose the opposite corner: combine visual and tactile feedback to support active social rhythm and expression at a low information density, rather than one more functional alert system.</p>
+      </section>
+
+      <section class="cs-block" id="prototypes" data-rail="Two prototypes">
+        <p class="cs-kicker">03 · Two prototypes</p>
+        <h2>A screen, then a headset</h2>
+        <h3>Prototype 1: the laptop interface</h3>
+        <p class="reveal">A screen-based tool for online meetings, and the first thing to carry the name Reso. Two ideas: square blocks stacked like an equaliser to show sound frequency, and caption text that changes colour with emotion, red for angry and so on.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/reso-dp1-proto1.jpg" alt="Paper prototype of the laptop interface with stacked square blocks for sound frequency" loading="lazy"><figcaption>Square blocks for sound frequency</figcaption></figure>
+          <figure><img src="../assets/images/reso-dp1-emotion.jpg" alt="Paper prototype: caption text colour-coded by emotion with a legend, an angry line in red" loading="lazy"><figcaption>Emotion colour in the caption text, with a legend</figcaption></figure>
+        </div>
+        <h3>Prototype 2: the AR headset</h3>
+        <p class="reveal">Looking down at a laptop breaks eye contact and cuts you off from the room, so the second prototype moved off the screen. Captions pinned in space to the speaker's body, so you read while looking at their face, and haptic motors in the frame buzz left or right to show sound direction and volume.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-dp1-arheadset.jpg" alt="A person wearing a paper mock-up of the AR headset during Wizard-of-Oz testing" loading="lazy">
+          <figcaption>The AR headset, mocked in paper</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="firststudy" data-rail="First study">
+        <p class="cs-kicker">04 · The first study</p>
+        <h2>Wizard of Oz, three users</h2>
+        <p class="reveal">We tested both prototypes on paper, with a facilitator playing the system, to check whether the visuals were intuitive and the interaction felt socially comfortable.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/reso-dp1-woz.jpg" alt="A Wizard-of-Oz session: one person in the paper headset while another speaks from her right" loading="lazy">
+          <figcaption>Testing directional haptic feedback in the headset condition</figcaption>
+        </figure>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>What worked</h4>
+            <ul>
+              <li>The uncluttered UI was praised for keeping cognitive load and visual fatigue low</li>
+              <li>Colour-coded emotion text read as highly intuitive</li>
+              <li>A clear visual legend was the bridge that let people trust the abstract cues</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What broke</h4>
+            <ul>
+              <li>People needed a verbal explanation to get started, a cold-start problem</li>
+              <li>The abstract blocks were not read as volume; users preferred text</li>
+              <li>Missing Back and Test controls left people stuck</li>
+              <li>Safety alerts were buried too deep in the settings</li>
+            </ul>
+          </div>
+        </div>
+        <p class="reveal">So we changed the design: added Back and Set buttons, replaced the abstract blocks with a line graph and prioritised text, moved safety alerts onto the main dashboard for one-tap control, and added explicit labels and an onboarding walkthrough for the cold start.</p>
+      </section>
+
+      <section class="cs-block" id="bridge" data-rail="One to two">
+        <p class="cs-kicker">05 · One to two</p>
+        <h2>The screen was the one to build</h2>
+        <p class="reveal">The headset was the more ambitious idea, but the laptop interface was the one that could be built and tested properly in the time available, so the second project cycle took it forward as a working tool.</p>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>Carried across</h4>
+            <p>Emotion colour, the legend, and the low-load minimalist layout, the three things the first study confirmed.</p>
+          </div>
+          <div>
+            <h4>Changed</h4>
+            <p>The equaliser blocks became a continuous rhythm graph, labels and onboarding were added, and safety was surfaced. The AR and haptic path stayed a documented future direction.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-block" id="system" data-rail="Reso, built">
+        <p class="cs-kicker">06 · Reso, built</p>
         <h2>Two layers over the meeting</h2>
-        <p class="reveal">Reso runs as a transparent caption overlay plus a small control panel, so it sits on top of whatever meeting app is already open. The control panel handles speech capture, monitoring and display settings; the overlay stays out of the way during the call.</p>
+        <p class="reveal">The built version runs as a transparent caption overlay plus a small control panel, so it sits on top of whatever meeting app is already open. The control panel handles speech capture, monitoring and display settings; the overlay stays out of the way during the call.</p>
         <figure class="app-shot reveal">
           <img src="../assets/images/reso-overlay.jpg" alt="Reso control panel" loading="lazy">
           <figcaption>The control panel</figcaption>
@@ -116,18 +208,7 @@
         </figure>
 
         <h3>Rhythm as a second channel</h3>
-        <p class="reveal">A lightweight rhythm layer shows general changes in speaking intensity and pace, so a rise in energy or an interruption registers without reading. In this prototype emotion is assigned from the text of each caption, which let us test the visual design on its own before building a full audio pipeline.</p>
-      </section>
-
-      <section class="cs-block" id="process" data-rail="Design process">
-        <p class="cs-kicker">03 · Design process</p>
-        <h2>Paper first</h2>
-        <p class="reveal">The low-fidelity prototype tried two ideas: square blocks stacked like an equaliser to show sound frequency, and caption text that changes colour with emotion, red for angry and so on. Paper let us check that both read quickly before committing to either.</p>
-        <div class="app-pair reveal">
-          <figure><img src="../assets/images/reso-lofi-rhythm.jpg" alt="Paper prototype: square blocks showing sound frequency" loading="lazy"><figcaption>Square blocks for rhythm</figcaption></figure>
-          <figure><img src="../assets/images/reso-lofi-color.jpg" alt="Paper prototype: emotion colours in caption text" loading="lazy"><figcaption>Emotion colours in text</figcaption></figure>
-        </div>
-        <p class="reveal">The high-fidelity build put it together: a browser page captures microphone speech and forwards final transcripts to a local overlay app, which tags the emotion and renders the coloured captions and rhythm.</p>
+        <p class="reveal">A lightweight rhythm layer shows general changes in speaking intensity and pace, so a rise in energy or an interruption registers without reading. Emotion is assigned from the text of each caption, which let us test the visual design on its own before building a full audio pipeline. Under the hood, a browser page captures microphone speech and forwards final transcripts to a local overlay app that tags the emotion and renders everything.</p>
         <figure class="app-shot reveal">
           <img src="../assets/images/reso-system.jpg" alt="The working system: a browser capture page feeding the caption overlay" loading="lazy">
           <figcaption>Browser capture feeding the overlay</figcaption>
@@ -135,7 +216,7 @@
       </section>
 
       <section class="cs-block" id="study" data-rail="The study">
-        <p class="cs-kicker">04 · The study</p>
+        <p class="cs-kicker">07 · The study</p>
         <h2>Reso against plain captions</h2>
         <p class="reveal">A within-subjects study with 18 participants, aged 18 to 30, all hearing, used as proxy users for usability and cognitive load. It ran in the browser, hosted on GitHub Pages, so people took part on their own machines.</p>
         <p class="reveal">Each person did both conditions in counterbalanced order.</p>
@@ -157,7 +238,7 @@
       </section>
 
       <section class="cs-block" id="results" data-rail="Results">
-        <p class="cs-kicker">05 · Results</p>
+        <p class="cs-kicker">08 · Results</p>
         <h2>Colour helped. The graph didn't.</h2>
 
         <div class="cs-stats reveal">
@@ -195,9 +276,10 @@
       </section>
 
       <section class="cs-block" id="discussion" data-rail="What we learned">
-        <p class="cs-kicker">06 · What we learned</p>
+        <p class="cs-kicker">09 · What we learned</p>
         <h2>Visual enrichment only helps if it's instantly legible</h2>
         <p class="reveal">The clearest lesson: an extra visual layer earns its place only when a user can tell what they are looking at without instruction. Colour passed that test; the raw waveform failed it. Part of the added load is also an artifact of the study itself, since the final product would keep emotion labels and drop the countdown timer, both of which we removed to make the task meaningful.</p>
+        <p class="reveal">It is the same lesson the first study gave us, a cycle earlier: the abstract equaliser blocks were not read as volume then, and the abstract rhythm graph was not read as intensity now. Legible-at-a-glance is the bar, and the rhythm channel still has not cleared it.</p>
 
         <h3>Limits</h3>
         <ul class="cs-goals reveal">
