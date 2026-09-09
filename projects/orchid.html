@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OrchID · Moizza Azhar</title>
+<meta name="description" content="Breakout rooms reimagined as a spatial canvas, where a professor orchestrates a class by drawing, dragging and stretching." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · Situated Interaction</p>
+    <h1>OrchID</h1>
+    <p class="lede">Breakout rooms reimagined as a spatial canvas. Instead of menus and dialogs, a professor orchestrates a class by drawing rooms, dragging files across them, and stretching things to resize. A team-of-four project grounded in instrumental-interaction principles.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Team of four · concept, interaction design</p></div>
+      <div><p class="label">Course</p><p class="value">Situated Interaction</p></div>
+      <div><p class="label">Year</p><p class="value">2026</p></div>
+      <div><p class="label">Team</p><p class="value">With Daniyal Nasiri-Bavil, Osuke Sashida, Jay Gupte</p></div>
+    </div>
+  </div>
+
+  <main class="cs-layout wrap" id="orchid">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#gap">The gap</a></li>
+        <li><a href="#concept">The concept</a></li>
+        <li><a href="#interactions">The interactions</a></li>
+        <li><a href="#storyboard">The storyboard</a></li>
+        <li><a href="#reflection">What it's about</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="gap" data-rail="The gap">
+        <p class="cs-kicker">01 · The gap</p>
+        <h2>Breakout tools never moved on</h2>
+        <p class="reveal">Online teaching grew fast, but breakout rooms stayed a dropdown and a countdown. Two people feel that.</p>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>The professor</h4>
+            <p>Has no idea what is happening inside any room, sets every session up by hand, and cannot reuse a configuration.</p>
+          </div>
+          <div>
+            <h4>The student</h4>
+            <p>Has no intuitive way to raise a question or show progress, and loses the files and notes from last week.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-block" id="concept" data-rail="The concept">
+        <p class="cs-kicker">02 · The concept</p>
+        <h2>One canvas, direct manipulation</h2>
+        <p class="reveal">OrchID turns the class into a single shared canvas. Rooms, timers, files and questions are objects you draw and move. The whole interface flips between the lecture and the breakout with one control, a lightbulb on a pull cord, so the professor is never in the wrong mode by accident.</p>
+
+        <figure class="cs-video reveal">
+          <video controls preload="none" playsinline poster="../assets/images/orchid-poster.jpg">
+            <source src="../assets/videos/orchid-demo.mp4" type="video/mp4">
+          </video>
+          <figcaption>The full walkthrough: creating rooms, sending files, collecting questions, saving a layout, and reusing it the next week</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="interactions" data-rail="The interactions">
+        <p class="cs-kicker">03 · The interactions</p>
+        <h2>Every move maps to a principle</h2>
+        <p class="reveal">Situated Interaction is about instruments and substrates. Each interaction in OrchID is one of those ideas made concrete.</p>
+
+        <div class="cs-mod reveal">
+          <h3>Draw a room, stretch it to size</h3>
+          <p>The lasso draws a rectangle; that rectangle is the breakout room. Resizing it sets how many people it holds. Draw a smaller rectangle inside and it is a timer; stretch it to change the duration. <em>Reification and adjustment: capacity and time are things you shape, not fields you fill.</em></p>
+          <figure class="app-shot"><img src="../assets/images/orchid-rooms.jpg" alt="Two breakout rooms drawn on the canvas, one being resized" loading="lazy"><figcaption>Rooms A and B, drawn and resized</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>Alt-drag to duplicate, with a ghost first</h3>
+          <p>Hold Alt and drag a room to make another, then resize the copy to a different size. A ghost preview shows where it will land before you commit. <em>Feedforward.</em></p>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>The lasso is polymorphic</h3>
+          <p>The same lasso does different things in different places. A student draws a closed shape and it becomes a question container other students can drop questions into. Draw one around a PDF and it becomes a shared document the group edits together. <em>Polymorphism and interaction substrates: a shape you draw becomes a live container.</em></p>
+          <figure class="app-shot"><img src="../assets/images/orchid-student.jpg" alt="A breakout room from the student's side, with a shared file panel" loading="lazy"><figcaption>The student's view of a room</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>Everything crosses room boundaries</h3>
+          <p>Files, questions and timers are draggable between rooms. Drop a file in the empty space outside every room and it goes to all of them at once. Question bubbles surface on each room; the professor hovers one to hear that room, or drags a bubble and same-type objects attach to the cursor magnetically as it passes over the others. <em>Feedback, and a substrate that collects.</em></p>
+          <figure class="app-shot"><img src="../assets/images/orchid-questions.jpg" alt="Six rooms with question bubbles and a questions sidebar" loading="lazy"><figcaption>Question bubbles collected off the rooms</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>Connect rooms into groups</h3>
+          <p>To have groups present to each other, the professor links rooms with a rubber-band connection (A to B to C), sets a shared timer, and drags the whole linked set to the library to reuse the arrangement later.</p>
+          <figure class="app-shot"><img src="../assets/images/orchid-connect.jpg" alt="Rooms connected in a 3-by-3 arrangement with elastic connectors" loading="lazy"><figcaption>Rooms linked for cross-group presentation</figcaption></figure>
+        </div>
+
+        <div class="cs-mod reveal">
+          <h3>Save the class, rebuild it next week</h3>
+          <p>Shrink the whole layout to an icon and drop it on the left to save it. The saved copy keeps updating, with members who join later and files added during the session. Next week, drag it back and every room rebuilds with its students in place. To reach older material, peel the canvas back; each peel is one week further into the past. <em>Reuse, and a persistent library.</em></p>
+          <figure class="app-shot"><img src="../assets/images/orchid-library.jpg" alt="The layout library panel with a saved template" loading="lazy"><figcaption>Layouts and lists saved to the library</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-block" id="storyboard" data-rail="The storyboard">
+        <p class="cs-kicker">04 · The storyboard</p>
+        <h2>Twenty-seven steps on paper first</h2>
+        <p class="reveal">Before the prototype, the whole scenario was drawn out by hand: a professor running a design class, switching to breakout, sending an exercise, fielding questions, grouping teams to present, and picking it all back up the following week.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/orchid-sb1.jpg" alt="Hand-drawn storyboard panels: adding timers, duplicating rooms, saving a layout" loading="lazy">
+          <figcaption>Storyboard: timers, Alt-duplication with ghosting, saving a layout</figcaption>
+        </figure>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/orchid-sb2.jpg" alt="Hand-drawn storyboard panels: sending a file to all rooms, the lasso question container" loading="lazy">
+          <figcaption>Storyboard: broadcasting a file, the lasso as a question container</figcaption>
+        </figure>
+      </section>
+
+      <section class="cs-block" id="reflection" data-rail="What it's about">
+        <p class="cs-kicker">05 · What it's about</p>
+        <h2>Instruments and substrates, applied</h2>
+        <p class="reveal">The point of the project was to take a framework from the course, instrumental interaction and substrates, and push it onto a problem people actually have. Breakout rooms are a good test: they are simple, everyone has suffered them, and almost every action a teacher wants is spatial. Treating rooms, files and questions as objects on one canvas made the awkward parts (awareness, setup, memory) fall out of the model instead of needing their own menus.</p>
+        <p class="reveal">What I would test next: whether a professor can actually track six rooms of question bubbles without it becoming noise, and whether the peel-back-in-time gesture reads as clearly to a class as it did to us drawing it.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="reso.html" data-cursor="next">
+        <p class="label">Another project</p>
+        <p class="title">Reso →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

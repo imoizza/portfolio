@@ -1478,6 +1478,15 @@ figure.cs-winfig figcaption {
   .cs-stat:first-child { border-top: 0; }
 }
 
+/* OrchID: prototype stills and storyboard scans want a hairline border */
+#orchid .app-shot img,
+#orchid .app-pair img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+#orchid .cs-mod .app-shot { margin-top: 16px; }
+#orchid .cs-mod .app-shot img { max-width: 620px; }
+
 /* Pinjara Kari: fabrication photos */
 #pk .app-shot img,
 #pk .app-pair img {
