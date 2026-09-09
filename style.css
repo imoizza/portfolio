@@ -1507,6 +1507,15 @@ figure.cs-winfig figcaption {
   margin: 0 auto;
 }
 
+/* VR for ADHD: VR screenshots want a hairline frame */
+#adhd .app-shot img,
+#adhd .app-pair img {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+#adhd .app-shot.cover img { border-radius: 12px; }
+#adhd .app-pair { align-items: start; }
+
 /* simple spec table */
 .spec-table {
   width: 100%;

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VR for ADHD · Moizza Azhar</title>
+<meta name="description" content="A VR game that trains sustained and selective attention for people with ADHD, with a Convai AI guide giving adaptive audio-visual feedback." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+    <div class="scene">
+      <div class="die">
+        <div class="face f1"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f2"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f3"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f4"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f5"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+        <div class="face f6"><span class="pip p1"></span><span class="pip p2"></span><span class="pip p3"></span><span class="pip p4"></span><span class="pip p5"></span><span class="pip p6"></span><span class="pip p7"></span><span class="pip p8"></span><span class="pip p9"></span></div>
+      </div>
+    </div>
+    <p class="loader-label">rolling the dice…</p>
+  </div>
+
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob one"></div>
+    <div class="bg-blob two"></div>
+    <div class="bg-blob three"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../index.html" data-cursor="home">
+        <span class="logo-mark">MA</span>
+        MOIZZA AZHAR
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="current">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../hobbies.html">Hobbies</a>
+        <a href="../resume.html">Résumé</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head wrap reveal">
+    <a class="cs-back" href="../index.html#lab" data-cursor="back">← All work</a>
+    <p class="eyebrow">Coursework · Advanced Immersive Interactions</p>
+    <h1>VR for ADHD</h1>
+    <p class="lede">A VR game that turns attention training into something you want to keep doing. Two calm scenes, a set of everyday tasks, controlled distractions, and an AI guide who talks you through it. Built with a team of three: Shubham Bhatt, Jay Gupte, and me.</p>
+  </header>
+
+  <div class="wrap">
+    <div class="cs-meta reveal">
+      <div><p class="label">Role</p><p class="value">Team of three · concept, interaction design, testing</p></div>
+      <div><p class="label">Course</p><p class="value">Advanced Immersive Interactions</p></div>
+      <div><p class="label">Year</p><p class="value">2026</p></div>
+      <div><p class="label">Built with</p><p class="value">Unity · Convai · Vive Cosmos</p></div>
+    </div>
+    <figure class="app-shot cover reveal">
+      <img src="../assets/images/adhd-cover.jpg" alt="A VR garden scene with a fountain and an AI virtual human named Steve, seen between two white controllers" loading="lazy">
+      <figcaption>The garden: Steve, the AI guide, sets the first task</figcaption>
+    </figure>
+  </div>
+
+  <main class="cs-layout wrap" id="adhd">
+    <aside class="cs-rail" aria-hidden="true">
+      <p class="cs-rail-name">Moizza Azhar</p>
+      <div class="cs-rail-track"><i></i></div>
+      <ol class="cs-rail-list">
+        <li><a href="#gap">The gap</a></li>
+        <li><a href="#game">The game</a></li>
+        <li><a href="#garden">The garden</a></li>
+        <li><a href="#kitchen">The kitchen</a></li>
+        <li><a href="#guide">The AI guide</a></li>
+        <li><a href="#build">Building it</a></li>
+        <li><a href="#learned">What we learned</a></li>
+      </ol>
+    </aside>
+
+    <div class="cs-body">
+
+      <section class="cs-block" id="gap" data-rail="The gap">
+        <p class="cs-kicker">01 · The gap</p>
+        <h2>Ordinary tasks are the hard part</h2>
+        <p class="reveal">People with ADHD often struggle with anything that asks for sustained attention, and small outside stimuli pull focus away fast. On top of that there is the emotional side: frustration when a task drags, and a guilt that shows up around performing well or badly. Mundane tasks become a hassle, engagement drops, and that carries into school and work.</p>
+        <p class="reveal">Training that attention usually means drills that feel like drills. We wanted the opposite: a space where the distractions are real but controlled, where every action gets an immediate reward, and where a patient voice keeps you company through the boring bits.</p>
+        <blockquote class="pull-quote reveal">Can a game make attention practice feel rewarding instead of punishing, and hold the distractions at a level the player can actually work through?</blockquote>
+      </section>
+
+      <section class="cs-block" id="game" data-rail="The game">
+        <p class="cs-kicker">02 · The game</p>
+        <h2>Two scenes, a handful of chores</h2>
+        <p class="reveal">The game is two connected scenes, a garden and a kitchen, each with a couple of tasks. The garden runs on audio and visuals; the kitchen switches to text instructions on purpose, so we could feel the difference when the guidance is not spoken. An AI virtual human moves between them with you, explaining tasks, answering questions, and walking you to the next area when you are done.</p>
+        <div class="cs-cols reveal">
+          <div>
+            <h4>What it trains</h4>
+            <ul>
+              <li>Sustained attention, holding focus while things try to pull it away</li>
+              <li>Selective attention, picking the right targets out of a busy field</li>
+              <li>Alertness to change, adapting when the rule shifts under you</li>
+              <li>Executive function, working through a multi-step task in order</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What it gives back</h4>
+            <ul>
+              <li>Immediate audio and visual feedback on every correct action</li>
+              <li>Distractions kept in a controlled range, never overwhelming</li>
+              <li>Encouragement and error correction from the AI guide</li>
+              <li>Steps broken small to keep cognitive load down</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-block" id="garden" data-rail="The garden">
+        <p class="cs-kicker">03 · The garden</p>
+        <h2>Water the trees, pull the weeds</h2>
+        <p class="reveal">The first task trains sustained attention. You pick up the watering can, fill it at the fountain, a bubbling sound confirms it, then carry it to the trees. As you water, the trees grow, so progress is visible the whole time. Meanwhile butterflies drift across your view and birdsong plays around you. Those are the controlled distractions: enough to pull at your focus, not enough to stop the task.</p>
+        <figure class="app-shot reveal">
+          <img src="../assets/images/adhd-garden-water.jpg" alt="Pouring water from a can onto a blossoming tree in VR, with a butterfly nearby as a distraction" loading="lazy">
+          <figcaption>Watering a tree while a butterfly crosses the frame</figcaption>
+        </figure>
+        <p class="reveal">Next is weeding, which trains selective attention: the weeds sit among the fruit trees and you have to single them out. Clear them all and the fruit trees grow bigger. When each task is done, Steve compliments the work and then leads you to the portal gate for the next scene.</p>
+      </section>
+
+      <section class="cs-block" id="kitchen" data-rail="The kitchen">
+        <p class="cs-kicker">04 · The kitchen</p>
+        <h2>Text instructions, on purpose</h2>
+        <p class="reveal">The kitchen drops the spoken guidance and uses on-wall text instead, so we could see how performance changes without the audio-visual scaffolding. The first task is making a sandwich, shown one step at a time. Breaking a multi-step job into small ordered steps keeps the cognitive load low, and if you do something out of order the system says so and tells you how to fix it.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/adhd-sandwich-step.jpg" alt="A VR kitchen counter with the instruction Step 2: Add the Cheese on the wall" loading="lazy"><figcaption>One step shown at a time</figcaption></figure>
+          <figure><img src="../assets/images/adhd-sandwich-error.jpg" alt="A red error message reading Remove TomatoSlice, need cheese first" loading="lazy"><figcaption>Out of order, and how to correct it</figcaption></figure>
+        </div>
+        <p class="reveal">The second task is sorting waste into bins, and the rule keeps changing: sometimes sort by colour (blue, green, yellow), sometimes by material (paper, plastic, glass). The rule is always shown as colour and text together, so it never depends on reading alone. A correct bin lights green with a confirming sound; a wrong bin lights red so you can correct it. Because the rule shifts, the task trains alertness to a changing environment.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/adhd-bins-rule.jpg" alt="A VR wall showing the rule: sort by material, green organic, yellow plastic, blue paper" loading="lazy"><figcaption>The rule, in colour and words</figcaption></figure>
+          <figure><img src="../assets/images/adhd-bins-feedback.jpg" alt="Three coloured waste bins with a red warning light after a wrong sort" loading="lazy"><figcaption>Red light on a wrong bin</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="cs-block" id="guide" data-rail="The AI guide">
+        <p class="cs-kicker">05 · The AI guide</p>
+        <h2>Steve, built in Convai</h2>
+        <p class="reveal">The virtual human was made with Convai, which handles voice recognition, lip sync and real-time responses between Unity and its servers. Steve is not just a talking head: a narrative flow gives him knowledge of the current task, so he can greet you, hand out the next job, take questions, and react when you finish. His personality is adjustable too, calm, mature, friendly, which matters when the player is someone who gets frustrated easily.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/adhd-convai-flow.jpg" alt="A node graph of the game's narrative flow: greeting, water the plants, pull the weeds, make the sandwich, throw the garbage" loading="lazy"><figcaption>The narrative flow, task by task</figcaption></figure>
+          <figure><img src="../assets/images/adhd-convai-prompt.jpg" alt="A Convai editing panel with an objective and a decision that connects to the next node" loading="lazy"><figcaption>One node: an objective and its exit condition</figcaption></figure>
+        </div>
+        <p class="reveal">On the headset we could only run the pre-scripted pipeline: we could not get live microphone input working with the Vive Cosmos, though it works fine with a keyboard to toggle the mic. The Convai trial key also caps tokens, so we kept the number of interactions small.</p>
+      </section>
+
+      <section class="cs-block" id="build" data-rail="Building it">
+        <p class="cs-kicker">06 · Building it</p>
+        <h2>Assets, audio, feedback</h2>
+        <p class="reveal">Most environment models came from Sketchfab, retextured and adjusted in Blender to fit the scenes; small props like the bread, tomato and cheese slices were modelled in Unity. Then came the animations and the spatial audio. The fountain is animated with a falling-water sound that scales with distance, so it is loud up close and quiet as you walk away. The watering can bubbles when it fills, water particles land on the trees as they grow, and throwing a weed plays a mud sound. Audio came from Pixabay, which is a good source of 3D stereo clips. The kitchen instruction screens and the bin lights were built in Unity to give that instant feedback.</p>
+      </section>
+
+      <section class="cs-block" id="learned" data-rail="What we learned">
+        <p class="cs-kicker">07 · What we learned</p>
+        <h2>The rewards landed, the pacing did not</h2>
+        <p class="reveal">We tested the final build with two people with ADHD. The audio-visual feedback and the small rewards on finishing a task worked well, that was the part they enjoyed. The tasks themselves felt too long or too slow and got frustrating, which is a very ADHD response and a clear signal that the pacing needs to adapt to the player. They liked having the AI guide, but said he talked too long and gave too much at once.</p>
+
+        <h3>Limits</h3>
+        <ul class="cs-goals reveal">
+          <li>Two testers, no logging or data collection, so we cannot measure whether the training actually helps.</li>
+          <li>Live voice input never worked on the Vive Cosmos, so headset testing used the scripted pipeline only.</li>
+          <li>The Convai trial cap kept interactions short and limited how far we could push the guide.</li>
+        </ul>
+
+        <h3>Next</h3>
+        <p class="reveal">Adaptive difficulty so tasks scale with the player as they improve, tasks with time pressure and a memory component, a shorter and more responsive guide, and proper logging of completion time and error rate so the next round of testing produces real data.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="wrap">
+    <div class="cs-next reveal">
+      <a href="../index.html#lab" data-cursor="back">
+        <p class="label">← Back</p>
+        <p class="title">All course &amp; lab work</p>
+      </a>
+      <a href="orchid.html" data-cursor="next">
+        <p class="label">Another project</p>
+        <p class="title">OrchID →</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Moizza Azhar. Built by hand, no framework.</span>
+    <div class="footer-links">
+      <a href="mailto:moizzaazhar24@gmail.com" data-cursor="email">Email</a>
+      <a href="https://linkedin.com/in/moizza-azhar/" target="_blank" rel="noopener" data-cursor="visit">LinkedIn</a>
+      <a href="../Moizza_Azhar_CV.pdf" data-cursor="pdf">Résumé PDF</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
