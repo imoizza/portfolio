@@ -76,7 +76,7 @@
         <li><a href="#gap">The gap</a></li>
         <li><a href="#concept">The concept</a></li>
         <li><a href="#interactions">The interactions</a></li>
-        <li><a href="#storyboard">The storyboard</a></li>
+        <li><a href="#prototype">Paper to build</a></li>
         <li><a href="#reflection">What it's about</a></li>
       </ol>
     </aside>
@@ -103,13 +103,6 @@
         <p class="cs-kicker">02 · The concept</p>
         <h2>One canvas, direct manipulation</h2>
         <p class="reveal">OrchID turns the class into a single shared canvas. Rooms, timers, files and questions are objects you draw and move. The whole interface flips between the lecture and the breakout with one control, a lightbulb on a pull cord, so the professor is never in the wrong mode by accident.</p>
-
-        <figure class="cs-video reveal">
-          <video controls preload="none" playsinline poster="../assets/images/orchid-poster.jpg">
-            <source src="../assets/videos/orchid-demo.mp4" type="video/mp4">
-          </video>
-          <figcaption>The full walkthrough: creating rooms, sending files, collecting questions, saving a layout, and reusing it the next week</figcaption>
-        </figure>
       </section>
 
       <section class="cs-block" id="interactions" data-rail="The interactions">
@@ -153,17 +146,34 @@
         </div>
       </section>
 
-      <section class="cs-block" id="storyboard" data-rail="The storyboard">
-        <p class="cs-kicker">04 · The storyboard</p>
-        <h2>Twenty-seven steps on paper first</h2>
-        <p class="reveal">Before the prototype, the whole scenario was drawn out by hand: a professor running a design class, switching to breakout, sending an exercise, fielding questions, grouping teams to present, and picking it all back up the following week.</p>
-        <figure class="app-shot reveal">
-          <img src="../assets/images/orchid-sb1.jpg" alt="Hand-drawn storyboard panels: adding timers, duplicating rooms, saving a layout" loading="lazy">
-          <figcaption>Storyboard: timers, Alt-duplication with ghosting, saving a layout</figcaption>
+      <section class="cs-block" id="prototype" data-rail="Paper to build">
+        <p class="cs-kicker">04 · From paper to build</p>
+        <h2>Storyboard, then acted, then built</h2>
+        <p class="reveal">The design went through three fidelities. Each one tested whether the spatial idea actually held up before we spent more effort on it.</p>
+
+        <h3>The storyboard</h3>
+        <p class="reveal">First the whole scenario was drawn by hand over twenty-seven steps: a professor running a design class, switching to breakout, sending an exercise, fielding questions, grouping teams to present, and picking it all back up the following week.</p>
+        <div class="app-pair reveal">
+          <figure><img src="../assets/images/orchid-sb1.jpg" alt="Hand-drawn storyboard panels: adding timers, duplicating rooms, saving a layout" loading="lazy"><figcaption>Timers, Alt-duplication, saving a layout</figcaption></figure>
+          <figure><img src="../assets/images/orchid-sb2.jpg" alt="Hand-drawn storyboard panels: sending a file to all rooms, the lasso question container" loading="lazy"><figcaption>Broadcasting a file, the lasso question container</figcaption></figure>
+        </div>
+
+        <h3>The video prototype</h3>
+        <p class="reveal">Next we acted the scenario out on video: a paper canvas, hand-drawn rooms and cards, a cut-out toolbar, and a hand performing every gesture. It caught the ordering problems and the moments where a gesture needed feedforward, before any of it was built.</p>
+        <figure class="cs-video reveal">
+          <video controls preload="none" playsinline poster="../assets/images/orchid-vp-poster.jpg">
+            <source src="../assets/videos/orchid-videoproto.mp4" type="video/mp4">
+          </video>
+          <figcaption>The video prototype: the full flow acted out</figcaption>
         </figure>
-        <figure class="app-shot reveal">
-          <img src="../assets/images/orchid-sb2.jpg" alt="Hand-drawn storyboard panels: sending a file to all rooms, the lasso question container" loading="lazy">
-          <figcaption>Storyboard: broadcasting a file, the lasso as a question container</figcaption>
+
+        <h3>The high-fidelity prototype</h3>
+        <p class="reveal">Then it became an interactive prototype with the real interface: drawable rooms, draggable files and questions, the library, and the lightbulb toggle.</p>
+        <figure class="cs-video reveal">
+          <video controls preload="none" playsinline poster="../assets/images/orchid-poster.jpg">
+            <source src="../assets/videos/orchid-demo.mp4" type="video/mp4">
+          </video>
+          <figcaption>The high-fidelity walkthrough: rooms, files, questions, and reusing a layout the next week</figcaption>
         </figure>
       </section>
 
