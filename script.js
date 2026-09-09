@@ -127,11 +127,11 @@ function initCursor() {
     label.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -46px)`;
     document.body.classList.add("cursor-ready");
 
-    // A new paw print roughly every ~46px moved, so prints don't crowd.
+    // A new paw print roughly every ~28px moved, so the trail stays tight.
     const dx = mouseX - lastStepX;
     const dy = mouseY - lastStepY;
     const dist = Math.hypot(dx, dy);
-    if (dist > 46) {
+    if (dist > 28) {
       spawnStep(mouseX, mouseY, Math.atan2(dy, dx));
       lastStepX = mouseX;
       lastStepY = mouseY;
@@ -153,7 +153,7 @@ function initCursor() {
         ctx.restore();
       }
 
-      p.alpha -= 0.005;
+      p.alpha -= 0.003;
       if (p.alpha <= 0) steps.splice(i, 1);
     }
     requestAnimationFrame(paint);

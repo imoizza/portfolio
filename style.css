@@ -258,6 +258,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  white-space: nowrap;
   background: var(--ink);
   color: #f7f4ef;
   font-family: var(--font-body);
@@ -304,6 +305,13 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 .nav-links a.current { color: var(--ink); }
 .nav-links a.current::after { transform: scaleX(1); }
+
+@media (max-width: 480px) {
+  .nav-inner { padding: 14px 16px; gap: 10px; }
+  .logo-blob { font-size: 12.5px; padding: 7px 12px 8px; }
+  .logo-paw { width: 12px; height: 12px; }
+  .nav-links { gap: 12px; font-size: 13px; }
+}
 
 /* --------------------------------------------------------------------------
    SHARED LAYOUT
