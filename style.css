@@ -1165,7 +1165,7 @@ section.cs-section:nth-of-type(3) .num { color: var(--accent-mint); }
 .cs-body { min-width: 0; }
 
 .cs-block {
-  padding: clamp(38px, 6vw, 76px) 0;
+  padding: clamp(30px, 4vw, 52px) 0;
   border-top: 1px solid var(--line-soft);
   scroll-margin-top: 92px;
 }
