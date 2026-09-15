@@ -25,11 +25,11 @@ function initLoader() {
 
 /* ---------------------------------------------------------------------
    0. Favicon
-   Recolours the paw into a pastel purple and injects it as a data URI,
+   Recolours the paw into a warm terracotta and injects it as a data URI,
    so it works from any page depth without a file path.
    --------------------------------------------------------------------- */
 function initFavicon() {
-  const FAVICON_COLOR = "#A78BD9"; // pastel purple
+  const FAVICON_COLOR = "#C2703D"; // warm terracotta
   const svg =
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 26 50 50">` +
     `<path fill="${FAVICON_COLOR}" d="${PAW_PATH_D}"/></svg>`;
@@ -49,7 +49,7 @@ function initFavicon() {
 const PAW_PATH_D =
   "M29.22,44.21c-2,1.14-2.3,4.28-.72,7s4.46,4,6.44,2.89,2.3-4.29.72-7S31.19,43.07,29.22,44.21ZM70.78,44.21c-2-1.14-4.86.15-6.44,2.89s-1.25,5.88.72,7,4.86-.16,6.44-2.89S72.76,45.35,70.78,44.21ZM43.85,45.86c3.07-.71,4.83-4.45,3.93-8.35S43.66,31,40.59,31.73s-4.83,4.45-3.93,8.35S40.78,46.57,43.85,45.86ZM59.41,31.73c-3.07-.71-6.29,1.88-7.19,5.78s.86,7.64,3.93,8.35,6.29-1.88,7.19-5.78S62.48,32.44,59.41,31.73ZM59.42,54.75A40.8,40.8,0,0,1,56,51.63a8.33,8.33,0,0,0-11.94,0,40.8,40.8,0,0,1-3.45,3.12,6.92,6.92,0,0,0-2.81,5.31c0,4.6,5.47,8.32,12.23,8.32s12.23-3.72,12.23-8.32A6.92,6.92,0,0,0,59.42,54.75Z";
 
-const PAW_COLORS = ["#E7A8D0", "#9AB0EE", "#8FDDBE"]; // pastel pink, blue, mint
+const PAW_COLORS = ["#E3A47A", "#B7BE84", "#E8C179"]; // warm terracotta, olive, mustard
 
 function buildPawImages() {
   return PAW_COLORS.map((color) => {
