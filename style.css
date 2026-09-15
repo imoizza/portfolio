@@ -6,17 +6,17 @@
 :root {
   color-scheme: light only;
 
-  --bone:       #EDE6D3;
-  --bone-deep:  #E1D6B4;
+  --bone:       #F5F2FC;
+  --bone-deep:  #EAE2F7;
   --paper:      #FFFFFF;
-  --ink:        #211D16;
-  --ink-soft:   #5C5546;
-  --ink-faint:  #948B76;
-  --tan:        #C2703D;
-  --accent-blue: #7C8C4E;
-  --accent-mint: #C99A3E;
-  --line:       rgba(33, 29, 22, 0.14);
-  --line-soft:  rgba(33, 29, 22, 0.08);
+  --ink:        #1C1A24;
+  --ink-soft:   #5C5769;
+  --ink-faint:  #9791A6;
+  --tan:        #D98FBB;
+  --accent-blue: #7C93E0;
+  --accent-mint: #6FC9A8;
+  --line:       rgba(28, 26, 36, 0.12);
+  --line-soft:  rgba(28, 26, 36, 0.07);
 
   --font-display: "Instrument Serif", "Times New Roman", serif;
   --font-body:    "Inter Tight", -apple-system, "Segoe UI", sans-serif;
@@ -27,8 +27,8 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* rough, hand-drawn accent marks used across the site */
-  --doodle-underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3,12 C20,4 35,17 55,9 C75,2 95,16 115,8 C135,1 155,15 175,7 C185,4 192,10 197,9' fill='none' stroke='%23C2703D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  --doodle-circle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M60,4 C90,2 112,16 111,31 C110,48 84,57 58,56 C30,55 7,45 8,28 C9,12 32,3 55,5 C68,6 78,10 82,15' fill='none' stroke='%23C2703D' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  --doodle-underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3,12 C20,4 35,17 55,9 C75,2 95,16 115,8 C135,1 155,15 175,7 C185,4 192,10 197,9' fill='none' stroke='%23D98FBB' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  --doodle-circle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M60,4 C90,2 112,16 111,31 C110,48 84,57 58,56 C30,55 7,45 8,28 C9,12 32,3 55,5 C68,6 78,10 82,15' fill='none' stroke='%23D98FBB' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -204,16 +204,16 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 }
 .bg-blob.one {
   width: 46vw; height: 46vw; top: -14vw; left: -10vw;
-  background: radial-gradient(circle at 35% 35%, #F1E0BE, transparent 72%);
+  background: radial-gradient(circle at 35% 35%, #F6E3F2, transparent 72%);
 }
 .bg-blob.two {
   width: 38vw; height: 38vw; top: 26vw; right: -12vw;
-  background: radial-gradient(circle at 60% 40%, #E3E4C0, transparent 72%);
+  background: radial-gradient(circle at 60% 40%, #E1E7FB, transparent 72%);
   animation-delay: -10s;
 }
 .bg-blob.three {
   width: 34vw; height: 34vw; bottom: -16vw; left: 22vw;
-  background: radial-gradient(circle at 50% 50%, #F0D3B8, transparent 72%);
+  background: radial-gradient(circle at 50% 50%, #E2F4EC, transparent 72%);
   animation-delay: -20s;
 }
 
@@ -283,7 +283,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  fill: #D99A4E;
+  fill: #8fddbe;
   transition: transform 0.5s var(--ease);
 }
 .logo:hover .logo-paw { transform: rotate(16deg) scale(1.18); }
@@ -423,7 +423,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 
 .polaroid-frame {
   aspect-ratio: 4 / 5;
-  background: linear-gradient(160deg, #F3ECD6, #F7E7CD 55%, #ECE0BE);
+  background: linear-gradient(160deg, #EFE9FB, #FBEAF4 55%, #E3EFFB);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -460,7 +460,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   overflow: hidden;
   padding: 15px 0;
   margin: clamp(22px, 4vw, 40px) 0;
-  background: rgba(250, 246, 233, 0.5);
+  background: rgba(255, 253, 249, 0.4);
 }
 .marquee-track {
   display: flex;
@@ -920,7 +920,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   border: 1px solid var(--line);
   border-radius: 100px;
   color: var(--ink-soft);
-  background: rgba(250, 246, 233, 0.6);
+  background: rgba(255, 253, 249, 0.55);
   transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s;
 }
 .chip:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
@@ -1095,7 +1095,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  background: rgba(250, 246, 233, 0.92);
+  background: rgba(255, 253, 249, 0.9);
   padding: 7px 14px;
   border-radius: 100px;
   position: absolute;
