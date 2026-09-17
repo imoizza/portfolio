@@ -25,10 +25,6 @@
   --max: 1180px;
   --pad: clamp(22px, 5vw, 68px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* rough, hand-drawn accent marks used across the site */
-  --doodle-underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3,12 C20,4 35,17 55,9 C75,2 95,16 115,8 C135,1 155,15 175,7 C185,4 192,10 197,9' fill='none' stroke='%23D98FBB' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  --doodle-circle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 60'%3E%3Cpath d='M60,4 C90,2 112,16 111,31 C110,48 84,57 58,56 C30,55 7,45 8,28 C9,12 32,3 55,5 C68,6 78,10 82,15' fill='none' stroke='%23D98FBB' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -379,7 +375,6 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   margin: 0 0 26px;
 }
 .hero h1 em {
-  position: relative;
   font-style: italic;
   color: var(--ink-soft);
 }
@@ -777,7 +772,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
   letter-spacing: -0.02em;
   margin: 0 0 20px;
 }
-.page-head h1 em { position: relative; font-style: italic; color: var(--ink-soft); }
+.page-head h1 em { font-style: italic; color: var(--ink-soft); }
 .page-head .lede {
   font-size: clamp(16px, 1.6vw, 18.5px);
   color: var(--ink-soft);
@@ -1182,7 +1177,6 @@ section.cs-section:nth-of-type(3) .num { color: var(--accent-mint); }
   gap: 0 18px;
 }
 .cs-rail-name {
-  position: relative;
   grid-column: 1 / -1;
   font-family: var(--font-mono);
   font-size: 10px;
@@ -1190,20 +1184,8 @@ section.cs-section:nth-of-type(3) .num { color: var(--accent-mint); }
   text-transform: uppercase;
   color: var(--ink-faint);
   margin: 0 0 18px;
-  padding: 0 0 14px 20px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
-}
-.cs-rail-name::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  top: -3px;
-  width: 17px;
-  height: 13px;
-  background-image: var(--doodle-circle);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  opacity: 0.85;
 }
 .cs-rail-track {
   position: relative;
@@ -1897,21 +1879,7 @@ figure.cs-winfig figcaption {
   letter-spacing: -0.02em;
   margin: 0 0 24px;
 }
-.cta-band h2 em { position: relative; font-style: italic; color: var(--ink-soft); }
-.hero h1 em::after,
-.page-head h1 em::after,
-.cta-band h2 em::after {
-  content: "";
-  position: absolute;
-  left: -3%;
-  right: -3%;
-  bottom: -0.1em;
-  height: 0.16em;
-  background-image: var(--doodle-underline);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  pointer-events: none;
-}
+.cta-band h2 em { font-style: italic; color: var(--ink-soft); }
 
 .site-footer {
   border-top: 1px solid var(--line);
