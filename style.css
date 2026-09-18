@@ -644,7 +644,7 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 }
 .lab-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(20px, 3vw, 36px);
   margin-top: clamp(22px, 3vw, 36px);
 }
@@ -729,9 +729,6 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 .lab-card--adhd   { --lab-a: #1b6d4f; --lab-b: #5ec98f; }
 .lab-card--escape { --lab-a: #5010b8; --lab-b: #d61fd6; }
 
-@media (max-width: 900px) {
-  .lab-grid { grid-template-columns: repeat(2, 1fr); }
-}
 @media (max-width: 560px) {
   .lab-grid { grid-template-columns: 1fr; }
 }
