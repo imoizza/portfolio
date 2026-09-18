@@ -547,90 +547,83 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 }
 
 .bento-card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  border-radius: 24px;
-  overflow: hidden;
-  min-height: 380px;
-  box-shadow: 0 1px 3px rgba(33, 29, 22, 0.1);
-  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.4s var(--ease);
 }
 
-.bento-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 30px 50px -18px rgba(33, 29, 22, 0.4);
-}
+.bento-card:hover { transform: translateY(-5px); }
 
 .bento-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bone-deep);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  aspect-ratio: 4 / 3;
+  padding: 18px;
+  display: flex;
+  transition: box-shadow 0.4s var(--ease);
+}
+
+.bento-card:hover .bento-image {
+  box-shadow: 0 20px 40px rgba(28, 26, 36, 0.12);
 }
 
 .bento-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
   display: block;
   transition: transform 0.6s var(--ease);
 }
 
 .bento-card:hover .bento-image img {
-  transform: scale(1.07);
-}
-
-/* modern scrim so the title always reads over any photo */
-.bento-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(15, 12, 6, 0.97) 0%, rgba(15, 12, 6, 0.9) 52%, rgba(15, 12, 6, 0.22) 80%, rgba(15, 12, 6, 0) 98%);
+  transform: scale(1.03);
 }
 
 .bento-content {
-  position: relative;
-  z-index: 1;
-  padding: clamp(20px, 4vw, 28px);
+  padding: 22px 2px 0;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 8px;
 }
 
-.bento-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.68);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin: 0;
-}
+.bento-num { display: none; }
 
 .bento-title {
   font-family: var(--font-display);
-  font-size: clamp(22px, 2.7vw, 32px);
+  font-size: clamp(22px, 2.7vw, 30px);
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: #fff;
+  color: var(--ink);
   margin: 0;
+  order: 1;
 }
 
 .bento-tags {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.78);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14.5px;
+  color: var(--ink-faint);
   margin: 0;
+  order: 2;
+}
+
+.bento-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 2px 0 0;
+  order: 3;
 }
 
 /* Bento grid variations - make first card larger */
 .bento-grid .bento-card-lg {
   grid-column: span 2;
-  min-height: 420px;
 }
 
 @media (max-width: 768px) {
@@ -657,95 +650,79 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 }
 
 .lab-card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  border-radius: 22px;
-  overflow: hidden;
-  min-height: 300px;
   color: inherit;
   text-decoration: none;
-  box-shadow: 0 1px 3px rgba(33, 29, 22, 0.1);
-  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  transition: transform 0.4s var(--ease);
 }
-.lab-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 48px -16px rgba(33, 29, 22, 0.4);
-}
-
-/* thin project-colour accent strip along the top keeps each card's identity */
-.lab-card::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 5px;
-  z-index: 2;
-  background-image: linear-gradient(90deg, var(--lab-a, #6b6bd6), var(--lab-b, #b06bd6));
-}
+.lab-card:hover { transform: translateY(-5px); }
 
 .lab-visual {
-  position: absolute;
-  inset: 0;
+  border-radius: 18px;
   overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  aspect-ratio: 4 / 3;
+  padding: 16px;
+  display: flex;
+  transition: box-shadow 0.4s var(--ease);
+}
+.lab-card:hover .lab-visual {
+  box-shadow: 0 20px 40px rgba(28, 26, 36, 0.12);
 }
 .lab-visual img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 9px;
+  display: block;
   transition: transform 0.6s var(--ease);
 }
-.lab-card:hover .lab-visual img { transform: scale(1.06); }
-/* scrim so title/tags always read over the photo */
-.lab-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(15, 12, 6, 0.97) 0%, rgba(15, 12, 6, 0.9) 52%, rgba(15, 12, 6, 0.22) 80%, rgba(15, 12, 6, 0) 98%);
-}
+.lab-card:hover .lab-visual img { transform: scale(1.03); }
 
 .lab-body {
-  position: relative;
-  z-index: 1;
-  padding: clamp(18px, 3vw, 24px);
+  padding: 18px 2px 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
 }
-.lab-num {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.68);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin: 0;
-}
+.lab-num { display: none; }
 .lab-title {
   font-family: var(--font-display);
-  font-size: clamp(18px, 2.5vw, 28px);
+  font-size: clamp(18px, 2.5vw, 26px);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #fff;
+  color: var(--ink);
   margin: 0;
+  order: 1;
   transition: color 0.3s var(--ease);
 }
 .lab-card:hover .lab-title { color: var(--lab-a, var(--tan)); }
 .lab-tags {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ink-faint);
   margin: 0;
+  order: 2;
+}
+.lab-desc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 2px 0 0;
+  order: 3;
 }
 
 /* per-project colours, pulled from each project */
 .lab-card--msw    { --lab-a: #e5484d; --lab-b: #f4a340; }
 .lab-card--cait   { --lab-a: #7c3aed; --lab-b: #ec4899; }
 .lab-card--reso   { --lab-a: #4361ee; --lab-b: #4cc9f0; }
+/* the Reso cover art is a wide 2:1 graphic; favour the wordmark side in the 4:3 card */
+.lab-card--reso .lab-visual img { object-position: 12% center; }
 .lab-card--cas    { --lab-a: #3a0ca3; --lab-b: #4895ef; }
 .lab-card--orchid { --lab-a: #0d9488; --lab-b: #34d399; }
 .lab-card--pk     { --lab-a: #b45309; --lab-b: #e6b271; }
