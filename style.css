@@ -743,17 +743,6 @@ body.cursor-ready #cursor-trail-canvas { opacity: 1; }
 .page-head {
   padding: clamp(40px, 6vw, 76px) 0 clamp(24px, 4vw, 40px);
 }
-.page-head-row {
-  display: grid;
-  grid-template-columns: 1fr minmax(340px, 440px);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: center;
-}
-.page-head-row .page-head-text { min-width: 0; }
-.page-head-row .cs-video.cover { margin: 0; }
-@media (max-width: 900px) {
-  .page-head-row { grid-template-columns: 1fr; }
-}
 .page-head h1 {
   font-family: var(--font-display);
   font-size: clamp(42px, 7.5vw, 92px);
