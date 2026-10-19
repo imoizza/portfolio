@@ -1444,6 +1444,7 @@ figure.cs-winfig figcaption {
 .cs-video {
   margin: 26px 0 0;
 }
+.cs-video.cover { margin: 0 0 clamp(28px, 4vw, 48px); }
 .cs-video video {
   width: 100%;
   display: block;
@@ -1563,8 +1564,8 @@ figure.cs-winfig figcaption {
   border: 1px solid var(--line);
   border-radius: 10px;
 }
-#adhd .app-shot.cover img { border-radius: 12px; }
 #adhd .app-pair { align-items: start; }
+#adhd .cs-video.cover video { border-radius: 12px; }
 
 /* simple spec table */
 .spec-table {
